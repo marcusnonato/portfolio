@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar, Zap } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 const Carrer = () => {

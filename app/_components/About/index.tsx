@@ -39,7 +39,8 @@ export function About() {
             transition={{ duration: 0.4, delay: 0.25 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            Hi, I'm Marcus Nonato—a Fullstack and Mobile Developer from Brazil.
+            Hi, I&apos;m Marcus Nonato—a Fullstack and Mobile Developer from
+            Brazil.
             <br />
             <span className="font-bold">
               With 2 years of experience and strong specialization in React.js,
@@ -82,7 +83,8 @@ export function About() {
             <br />
             with a strong command of database modeling, I deliver solutions
             <br />
-            aligned with the best practices in the market. Let's collaborate to
+            aligned with the best practices in the market. Let&apos;s
+            collaborate to
             <br />
             build something exceptional.
           </motion.span>

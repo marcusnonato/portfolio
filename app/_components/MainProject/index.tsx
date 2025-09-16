@@ -20,7 +20,7 @@ interface MainProjectProps {
 
 interface MainProps {
   project: MainProjectProps;
-  inverse?: Boolean;
+  inverse?: boolean;
 }
 
 export default function MainProject({ project, inverse }: MainProps) {

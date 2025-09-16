@@ -69,7 +69,7 @@ export const SocialFooter = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">Whatsapp</span>
                   <span className="text-sm text-gray-300">
-                    Let's chat directly
+                    Let&apos;s chat directly
                   </span>
                 </div>
               </a>

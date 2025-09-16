@@ -27,7 +27,7 @@ export default function Main() {
           />
           <div className="flex gap-24">
             <p className="mb-2 text-xl text-white">
-              HEY, I'M
+              HEY, I&apos;M
               <br />
               MARCUS
               <br />
