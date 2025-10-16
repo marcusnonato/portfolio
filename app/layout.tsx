@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${exo.className} antialiased`}>
+      <body className={`${exo.className} dark antialiased`}>
         <Toaster />
         {children}
       </body>

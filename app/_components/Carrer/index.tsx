@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from "motion/react";
 const Carrer = () => {
   const experiences = [
     {
-      title: "Full Stack Developer - Sucesso.APP",
+      title: "Desenvolvedor Full Stack - Sucesso.APP",
       description:
-        "Full stack developer working with Next.js and Kotlin/Springboot. Participated in the development of a musical marketplace platform. Integration with SQL/NoSQL databases. Complete refactoring of the site from Angular to NextJS. Working in an agile environment.",
-      date: "Jan 2025 - Present",
+        "Desenvolvedor full stack trabalhando com Next.js e Kotlin/Springboot. Participei do desenvolvimento de uma plataforma de marketplace musical. Integração com bancos de dados SQL/NoSQL. Refatoração completa do site de Angular para NextJS. Trabalhando em ambiente ágil.",
+      date: "Jan 2025 - Presente",
       highlight: "Full Stack",
       tags: [
         "Next.js",
@@ -21,18 +21,18 @@ const Carrer = () => {
       ],
     },
     {
-      title: "Web/Mobile Dev Intern - Feira da Tecnologia e Inovação",
+      title: "Estagiário Dev Web/Mobile - Feira da Tecnologia e Inovação",
       description:
-        "Creation of Smarteduca website/app. Parental management application. Developed using React, React Native, Vite, NextJS and Firebase to create innovative solutions in the educational area.",
+        "Criação do site/app Smarteduca. Aplicativo de gestão parental. Desenvolvido usando React, React Native, Vite, NextJS e Firebase para criar soluções inovadoras na área educacional.",
       date: "Jun 2024 - Nov 2024",
       highlight: "Mobile",
       tags: ["React", "React Native", "Vite", "Next.js", "Firebase"],
     },
     {
-      title: "Web/Mobile Dev Intern - Uninorte",
+      title: "Estagiário Dev Web/Mobile - Uninorte",
       description:
-        "Creation of web and mobile prototype made in Figma. Creation of the structure and base architecture of the project (HTML, CSS and JavaScript for web). Android Studio for Mobile App development.",
-      date: "Aug 2023 - Dec 2023",
+        "Criação de protótipo web e mobile feito no Figma. Criação da estrutura e arquitetura base do projeto (HTML, CSS e JavaScript para web). Android Studio para desenvolvimento de App Mobile.",
+      date: "Ago 2023 - Dez 2023",
       highlight: "Mobile",
       tags: ["HTML", "CSS", "JavaScript", "Android Studio", "Figma"],
     },
@@ -58,7 +58,7 @@ const Carrer = () => {
           viewport={{ once: true, amount: 0.7 }}
           className="mb-2 text-5xl font-bold text-white md:text-3xl"
         >
-          Career
+          Carreira
         </motion.h2>
         <motion.p
           initial={{ transform: "translateY(20px)", opacity: 0 }}
@@ -67,7 +67,7 @@ const Carrer = () => {
           viewport={{ once: true, amount: 0.7 }}
           className="m-0 text-lg text-white"
         >
-          Full Stack & Mobile Developer
+          Desenvolvedor Full Stack & Mobile
         </motion.p>
       </div>
 
@@ -125,7 +125,7 @@ const Carrer = () => {
                       transition={{ duration: 0.4, delay: 0.35 + index * 0.05 }}
                       viewport={{ once: true, amount: 0.7 }}
                       key={index}
-                      className="origin-bottom rounded-xl border border-b-4 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-y-95 hover:border-b-2"
+                      className="origin-bottom rounded-xl border border-b-4 px-4 py-2 text-sm font-medium text-white transition-all duration-300 select-none hover:scale-y-95 hover:border-b-2"
                     >
                       {tag}
                     </motion.span>

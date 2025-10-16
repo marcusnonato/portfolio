@@ -3,13 +3,13 @@ import { motion } from "motion/react";
 
 export function About() {
   return (
-    <div id="about" className="mt-20 flex flex-col items-center">
+    <div id="about" className="mt-20 flex flex-col items-center px-4 md:px-8">
       <motion.h1
         initial={{ transform: "translateY(20px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-4xl font-bold"
+        className="text-2xl font-bold md:text-4xl"
       >
         ABOUT
       </motion.h1>
@@ -18,28 +18,28 @@ export function About() {
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.1 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="mt-4 text-5xl font-semibold"
+        className="mt-4 text-center text-2xl font-semibold md:text-5xl"
       >
         Passion, Creativity and Code
       </motion.p>
-      <div className="mt-32 flex items-center justify-center gap-18">
+      <div className="mt-12 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row md:gap-18">
         <motion.div
           initial={{ transform: "scale(0)", opacity: 0 }}
           whileInView={{ transform: "scale(1)", opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="relative h-96 w-96 overflow-hidden rounded-2xl"
+          className="relative h-64 w-64 overflow-hidden rounded-2xl md:h-96 md:w-96"
         >
           <Image fill src="/me-pixel.png" alt="About Image" />
         </motion.div>
-        <p className="max-w-xl text-lg leading-7 font-light text-white">
+        <div className="max-w-xl text-base leading-7 font-light text-white md:text-lg">
           <motion.span
             initial={{ transform: "translateY(20px)", opacity: 0 }}
             whileInView={{ transform: "translateY(0)", opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.25 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            Hi, I&apos;m Marcus Nonato—a Fullstack and Mobile Developer from
+            Hi, I&apos;m Marcus Vinicius — a Fullstack and Mobile Developer from
             Brazil.
             <br />
             <span className="font-bold">
@@ -88,7 +88,7 @@ export function About() {
             <br />
             build something exceptional.
           </motion.span>
-        </p>
+        </div>
       </div>
     </div>
   );

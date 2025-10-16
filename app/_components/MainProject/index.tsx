@@ -1,6 +1,7 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import MediaGallery from "../MediaGallery";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 interface MainProjectProps {
   id: string;
@@ -24,8 +25,21 @@ interface MainProps {
 }
 
 export default function MainProject({ project, inverse }: MainProps) {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center center"],
+  });
+
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["80px", "0px"]);
+
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-950 to-black px-4 py-16 text-white shadow-[0_10px_25px_rgba(0,0,0,0.7)] before:pointer-events-none before:absolute before:-top-px before:left-0 before:z-20 before:h-36 before:w-full before:bg-gradient-to-t before:from-transparent before:to-black before:content-[''] lg:px-36 lg:pt-36 lg:before:z-0">
+    <motion.section
+      ref={ref}
+      style={{ scale: scrollYProgress, borderRadius: borderRadius }}
+      className={`sticky top-0 min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-950 to-black px-4 py-16 text-white shadow-[0_10px_25px_rgba(0,0,0,0.7)] before:pointer-events-none before:absolute before:-top-px before:left-0 before:z-20 before:h-36 before:w-full before:bg-gradient-to-t before:from-transparent before:to-black before:content-[''] lg:px-36 lg:pt-36 lg:before:z-0`}
+    >
       <div
         className="absolute inset-0 scale-105 bg-cover bg-top opacity-40 blur-sm"
         style={{ backgroundImage: `url(${project.coverImage})` }}
@@ -117,6 +131,6 @@ export default function MainProject({ project, inverse }: MainProps) {
           <MediaGallery images={project.images} />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

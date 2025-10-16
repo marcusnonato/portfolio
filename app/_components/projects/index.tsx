@@ -54,7 +54,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative flex h-full min-h-screen flex-col text-white"
+      className="top-0 flex h-full min-h-screen flex-col text-white"
     >
       <div className="flex w-full flex-col justify-center">
         {mainProjects.map((project, index) => (

@@ -80,7 +80,7 @@ export const SocialFooter = () => {
             <p className="mb-2 text-base text-gray-300 md:text-sm">
               &copy; 2025 Marcus Nonato. Full Stack Developer & Mobile Developer
             </p>
-            <span className="text-sm text-purple-400 md:text-xs">
+            <span className="text-sm text-[#8aee14] md:text-xs">
               Built with ❤️ and lots of code
             </span>
           </div>
