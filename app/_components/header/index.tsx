@@ -1,106 +1,121 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Home, User, Folder, Users } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("");
+  const { scrollY } = useScroll();
+  const [scrollInY, setScrollInY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "projects", "socialmedia"];
-      const scrollPosition = window.scrollY + 100;
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const sections = ["home", "about", "projects", "socialmedia"];
+    const scrollPosition = latest + 100;
+    setScrollInY(latest);
 
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const offsetTop = el.offsetTop;
-          const offsetHeight = el.offsetHeight;
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const offsetTop = el.offsetTop;
+        const offsetHeight = el.offsetHeight;
 
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(id);
-            break;
-          }
+        if (
+          scrollPosition >= offsetTop &&
+          scrollPosition < offsetTop + offsetHeight
+        ) {
+          setActiveSection(id);
+          break;
         }
       }
-    };
+    }
+  });
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const navItems = [
+    { href: "#home", label: "Home", section: "home" },
+    { href: "#about", label: "About", section: "about" },
+    { href: "#projects", label: "Projects", section: "projects" },
+    { href: "#socialmedia", label: "Social Media", section: "socialmedia" },
+  ];
 
   return (
-    <header className="sticky top-8 left-1/2 z-[30] flex w-fit -translate-x-1/2 items-center justify-between rounded-2xl border border-gray-600 bg-neutral-900 px-4 py-2 text-white opacity-70 shadow-lg transition-opacity duration-[400ms] ease-in-out hover:opacity-100">
-      <nav className="flex cursor-pointer items-center gap-2">
-        <div className="group relative inline-block">
-          <a
-            href="#home"
-            className={`flex items-center gap-2 rounded-t-lg p-4 transition-colors duration-200 hover:bg-zinc-600 md:p-4 ${
-              activeSection === "home"
-                ? "border-b-2 border-blue-400 bg-blue-900/70 text-blue-400"
-                : ""
-            }`}
-          >
-            <Home size={18} />
-          </a>
-          <span className="pointer-events-none invisible absolute -bottom-4 z-10 rounded bg-gray-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-            Home
-          </span>
+    <header
+      className={`sticky z-50 flex w-full items-center transition-all duration-300 ${scrollInY > 800 ? "-top-24" : "top-4"}`}
+    >
+      <div
+        className={`flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 transition-all duration-500 ${scrollInY > 100 ? "mx-4 border-zinc-800 bg-zinc-950 md:mx-20 lg:mx-96" : "mx-4 md:mx-12 lg:mx-32"}`}
+      >
+        <div className="relative h-12 w-12 md:h-16 md:w-16">
+          <Image alt="Logo" src="/logo.png" fill className="object-contain" />
         </div>
 
-        <div className="group relative inline-block">
-          <a
-            href="#about"
-            className={`flex items-center gap-2 rounded-t-lg p-4 transition-colors duration-200 hover:bg-zinc-600 md:p-4 ${
-              activeSection === "about"
-                ? "border-b-2 border-blue-400 bg-blue-900/70 text-blue-400"
-                : ""
-            }`}
-          >
-            <User size={18} />
-          </a>
-          <span className="pointer-events-none invisible absolute -bottom-4 z-10 rounded bg-gray-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-            About
-          </span>
+        {/* Desktop Navigation */}
+        <nav className="hidden gap-8 md:flex lg:gap-12">
+          {navItems.map((item) => (
+            <Link
+              key={item.section}
+              href={item.href}
+              className={`pb-1 transition-all ${
+                activeSection === item.section
+                  ? "border-b-2 border-[#8aee14]"
+                  : "border-b-2 border-transparent hover:border-gray-500"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <p className="text-sm">PT-BR</p>
         </div>
 
-        <div className="group relative inline-block">
-          <a
-            href="#projects"
-            className={`flex items-center gap-2 rounded-t-lg p-4 transition-colors duration-200 hover:bg-zinc-600 md:p-4 ${
-              activeSection === "projects"
-                ? "border-b-2 border-blue-400 bg-blue-900/70 text-blue-400"
-                : ""
-            }`}
+        {/* Mobile Menu */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <button className="rounded-lg p-2 text-white hover:bg-zinc-800">
+              <Menu size={24} />
+            </button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[300px] bg-zinc-950 text-white"
           >
-            <Folder size={18} />
-          </a>
-          <span className="pointer-events-none invisible absolute -bottom-4 z-10 rounded bg-gray-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-            Projects
-          </span>
-        </div>
-
-        <div className="group relative inline-block">
-          <a
-            href="#socialmedia"
-            className={`flex items-center gap-2 rounded-t-lg p-4 transition-colors duration-200 hover:bg-zinc-600 md:p-4 ${
-              activeSection === "socialmedia"
-                ? "border-b-2 border-blue-400 bg-blue-900/70 text-blue-400"
-                : ""
-            }`}
-          >
-            <Users size={18} />
-          </a>
-          <span className="pointer-events-none invisible absolute -bottom-4 z-10 rounded bg-gray-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-            Social media
-          </span>
-        </div>
-      </nav>
+            <SheetHeader>
+              <SheetTitle className="text-white">Menu</SheetTitle>
+            </SheetHeader>
+            <nav className="mt-8 flex flex-col gap-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.section}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-lg transition-all ${
+                    activeSection === item.section
+                      ? "border-l-4 border-[#8aee14] pl-4 font-semibold text-[#8aee14]"
+                      : "pl-4 text-gray-300 hover:border-l-4 hover:border-gray-500 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="mt-4 border-t border-zinc-800 pt-4 pl-4">
+                <p className="text-sm text-gray-400">PT-BR</p>
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   );
 }
