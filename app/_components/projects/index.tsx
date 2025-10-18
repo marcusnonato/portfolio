@@ -1,4 +1,5 @@
 import MainProject from "../MainProject";
+import MobileProjectCard from "../MobileProjectCard";
 
 const mainProjects = [
   {
@@ -56,7 +57,8 @@ const Projects = () => {
       id="projects"
       className="top-0 flex h-full min-h-screen flex-col text-white"
     >
-      <div className="flex w-full flex-col justify-center">
+      {/* Desktop Version - Parallax Effect */}
+      <div className="hidden w-full flex-col justify-center lg:flex">
         {mainProjects.map((project, index) => (
           <MainProject
             project={project}
@@ -64,19 +66,31 @@ const Projects = () => {
             inverse={index % 2 !== 0}
           />
         ))}
-
-        {/* <div className="mt-16 min-h-screen">
-          <div className="animate-fade-up mb-16 px-4 md:px-8 lg:px-36">
-            <h2 className="mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-              Side Projects
-            </h2>
-            <p className="text-lg text-gray-400">
-              Other projects throughout my career
-            </p>
-          </div>
-          <CarouselContainer2 />
-        </div> */}
       </div>
+
+      {/* Mobile Version - Simple Cards */}
+      <div className="flex w-full flex-col px-4 py-8 lg:hidden">
+        <div className="mb-8">
+          <h2 className="mb-3 text-4xl font-bold text-white">Projects</h2>
+          <p className="text-lg text-gray-400">Check out my featured work</p>
+        </div>
+
+        {mainProjects.map((project) => (
+          <MobileProjectCard project={project} key={project.id} />
+        ))}
+      </div>
+
+      {/* <div className="mt-16 min-h-screen">
+        <div className="animate-fade-up mb-16 px-4 md:px-8 lg:px-36">
+          <h2 className="mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+            Side Projects
+          </h2>
+          <p className="text-lg text-gray-400">
+            Other projects throughout my career
+          </p>
+        </div>
+        <CarouselContainer2 />
+      </div> */}
     </section>
   );
 };

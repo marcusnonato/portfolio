@@ -56,14 +56,14 @@ export const SocialFooter = () => {
               </a>
 
               <a
-                href="https://www.youtube.com/@marcusnonato5011"
+                href="https://wa.me/5592995263569"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group animate-fade-up hover:shadow-[0_20px_40px_rgba(0, 255, 34, 0.3)] relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-green-600 hover:before:left-full"
               >
                 <img
                   src="/whatsapp.png"
-                  alt="YouTube"
+                  alt="WhatsApp"
                   className="mr-5 h-12 w-12 rounded-xl transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="flex flex-1 flex-col">

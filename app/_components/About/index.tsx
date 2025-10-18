@@ -39,23 +39,24 @@ export function About() {
             transition={{ duration: 0.4, delay: 0.25 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            Hi, I&apos;m Marcus Vinicius — a Fullstack and Mobile Developer from
-            Brazil.
+            Olá, sou Marcus Vinicius — Desenvolvedor Fullstack e Mobile do
+            Brasil.
             <br />
             <span className="font-bold">
-              With 2 years of experience and strong specialization in React.js,
-              React Native, Node.js, and
+              Com 2 anos de experiência e forte especialização em React.js,
+              React Native, Node.js e
             </span>
             <br />
-            <span className="font-bold"> Kotlin with Spring Boot</span>, I blend
-            modern interface development with
+            <span className="font-bold"> Kotlin com Spring Boot</span>, eu uno o
+            desenvolvimento de interfaces modernas com
             <br />
-            high-performance back-end architecture to craft complete and
-            scalable
+            uma arquitetura de back-end de alta performance para criar soluções
+            digitais
             <br />
-            digital solutions. I specialize in building modern, responsive
+            completas e escaláveis. Sou especialista na construção de interfaces
+            modernas,
             <br />
-            interfaces and high-performance RESTful APIs.
+            responsivas e em APIs RESTful de alto desempenho.
           </motion.span>
           <br />
           <br />
@@ -65,11 +66,11 @@ export function About() {
             transition={{ duration: 0.4, delay: 0.27 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            My focus on best practices for optimization, security, and
-            scalability allows me to
+            Meu foco nas melhores práticas de otimização, segurança e
+            escalabilidade me permite
             <br />
-            transform ideas into robust and performant applications for both web
-            and mobile.
+            transformar ideias em aplicações robustas e performáticas, tanto
+            para web quanto para mobile.
           </motion.span>
           <br />
           <br />
@@ -79,14 +80,14 @@ export function About() {
             transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            By combining efficient front-end and back-end integration
+            Combinando uma integração eficiente entre front-end e back-end
             <br />
-            with a strong command of database modeling, I deliver solutions
+            com um sólido domínio em modelagem de bancos de dados, entrego
+            soluções
             <br />
-            aligned with the best practices in the market. Let&apos;s
-            collaborate to
+            alinhadas às melhores práticas do mercado. Vamos colaborar para
             <br />
-            build something exceptional.
+            construir algo excepcional.
           </motion.span>
         </div>
       </div>
