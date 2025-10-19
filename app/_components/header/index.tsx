@@ -43,9 +43,9 @@ export default function Header() {
 
   const navItems = [
     { href: "#home", label: "Home", section: "home" },
-    { href: "#about", label: "About", section: "about" },
-    { href: "#projects", label: "Projects", section: "projects" },
-    { href: "#socialmedia", label: "Social Media", section: "socialmedia" },
+    { href: "#about", label: "Sobre", section: "about" },
+    { href: "#projects", label: "Projetos", section: "projects" },
+    { href: "#socialmedia", label: "Redes Sociais", section: "socialmedia" },
   ];
 
   return (
@@ -53,13 +53,12 @@ export default function Header() {
       className={`sticky z-50 flex w-full items-center transition-all duration-300 ${scrollInY > 800 ? "-top-24" : "top-4"}`}
     >
       <div
-        className={`flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 transition-all duration-500 ${scrollInY > 100 ? "mx-4 border-zinc-800 bg-zinc-950 md:mx-20 lg:mx-96" : "mx-4 md:mx-12 lg:mx-32"}`}
+        className={`flex w-full items-center justify-between rounded-2xl border border-transparent px-4 transition-all duration-500 ${scrollInY > 100 ? "mx-4 border-zinc-800 bg-zinc-950 md:mx-20 lg:mx-96" : "mx-4 md:mx-12 lg:mx-32"}`}
       >
         <div className="relative h-12 w-12 md:h-16 md:w-16">
           <Image alt="Logo" src="/logo.png" fill className="object-contain" />
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden gap-8 md:flex lg:gap-12">
           {navItems.map((item) => (
             <Link
@@ -80,7 +79,6 @@ export default function Header() {
           <p className="text-sm">PT-BR</p>
         </div>
 
-        {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <button className="rounded-lg p-2 text-white hover:bg-zinc-800">
