@@ -18,7 +18,6 @@ export default function Main() {
         className="relative z-10 mb-0 flex min-h-[92vh] w-full flex-col items-center justify-center bg-zinc-950 px-6 text-white md:px-12 lg:px-36"
       >
         <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col pt-32 md:pt-56">
-          {/* Mobile Layout - Photo next to greeting */}
           <div className="mb-6 flex items-center gap-4 md:hidden">
             <Image
               width={60}
@@ -36,7 +35,6 @@ export default function Main() {
             </p>
           </div>
 
-          {/* Desktop Layout - Photo above */}
           <Image
             width={50}
             height={50}
@@ -46,7 +44,6 @@ export default function Main() {
           />
 
           <div className="flex flex-col gap-6 md:flex-row md:gap-24">
-            {/* Desktop greeting text */}
             <p className="mb-2 hidden text-xl text-white md:block">
               HEY, I&apos;M
               <br />
@@ -57,9 +54,9 @@ export default function Main() {
 
             <div className="flex-1">
               <h1 className="mb-4 text-3xl font-bold md:mb-2 md:text-5xl lg:text-7xl">
-                Full Stack Developer &
+                Desenvolvedor Full Stack &
                 <br />
-                Mobile Developer
+                Mobile
               </h1>
 
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
@@ -68,7 +65,7 @@ export default function Main() {
                   className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-4 py-2 text-sm font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4 md:px-6 md:py-3 md:text-base"
                   download
                 >
-                  Download Resume
+                  Baixe meu currículo
                 </a>
                 <a
                   href="https://www.linkedin.com/in/marcusnonato/"
@@ -82,7 +79,7 @@ export default function Main() {
                     className="h-4 w-4 md:h-5 md:w-5"
                   />
                   <span className="hidden sm:inline">
-                    Connect with me on LinkedIn
+                    Conecte-se comigo no LinkedIn
                   </span>
                   <span className="sm:hidden">LinkedIn</span>
                 </a>
