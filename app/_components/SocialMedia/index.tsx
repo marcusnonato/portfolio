@@ -10,10 +10,10 @@ export const SocialFooter = () => {
         <div className="mx-auto px-4 md:px-10 lg:px-36">
           <div className="mb-15">
             <h2 className="animate-fade-up mb-4 text-5xl font-bold text-white [animation-delay:0.2s] [animation-fill-mode:backwards] md:text-4xl">
-              Social Media
+              Redes Sociais
             </h2>
             <p className="animate-fade-up mb-12 text-xl text-gray-300 [animation-delay:0.4s] [animation-fill-mode:backwards] md:text-lg">
-              Find me on social networks and follow my work
+              Encontre-me nas redes sociais e acompanhe meu trabalho
             </p>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
@@ -31,7 +31,7 @@ export const SocialFooter = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">GitHub</span>
                   <span className="text-sm text-gray-300">
-                    My projects and code
+                    Meus projetos e código
                   </span>
                 </div>
               </a>
@@ -50,7 +50,7 @@ export const SocialFooter = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">LinkedIn</span>
                   <span className="text-sm text-gray-300">
-                    Career and networking
+                    Carreira e networking
                   </span>
                 </div>
               </a>
@@ -69,7 +69,7 @@ export const SocialFooter = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">Whatsapp</span>
                   <span className="text-sm text-gray-300">
-                    Let&apos;s chat directly
+                    Converse diretamente comigo!
                   </span>
                 </div>
               </a>
@@ -78,10 +78,10 @@ export const SocialFooter = () => {
 
           <div className="animate-fade-up border-t border-white/10 pt-10 text-center [animation-delay:0.8s] [animation-fill-mode:backwards]">
             <p className="mb-2 text-base text-gray-300 md:text-sm">
-              &copy; 2025 Marcus Nonato. Full Stack Developer & Mobile Developer
+              &copy; 2025 Marcus Nonato. Desenvolvedor Full Stack & Mobile
             </p>
             <span className="text-sm text-[#8aee14] md:text-xs">
-              Built with ❤️ and lots of code
+              Feito com ❤️ e muito código
             </span>
           </div>
         </div>
