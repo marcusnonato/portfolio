@@ -54,12 +54,12 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
               rel="noopener noreferrer"
             >
               <SquareDashedMousePointer size={18} />
-              View Demo
+              Ver Demo
             </a>
           ) : (
             <span className="flex cursor-not-allowed items-center justify-center gap-2 rounded-xl border-2 border-zinc-700 bg-zinc-800 px-4 py-3 text-sm font-medium text-zinc-400 opacity-70">
               <SquareDashedMousePointer size={18} />
-              No Demo Available
+              Demo Indisponível
             </span>
           )}
 
@@ -70,7 +70,7 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
             rel="noopener noreferrer"
           >
             <Code2 size={18} />
-            Repository
+            Ver Código
           </a>
         </div>
 
