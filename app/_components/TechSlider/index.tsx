@@ -20,7 +20,7 @@ export const TechSlider = () => {
         {repeatedLogos.map((logo, index) => (
           <div
             key={`${logo}-${index}`}
-            className="flex h-20 flex-shrink-0 items-center justify-center rounded-xl bg-gray-200 p-3 opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100"
+            className="flex h-20 flex-shrink-0 items-center justify-center rounded-xl p-3 opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100"
           >
             <img
               src={logo}
