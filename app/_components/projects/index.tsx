@@ -7,8 +7,8 @@ const mainProjects = [
     title: "SucessoAPP Landing",
     coverImage: "/sucesso-app.png",
     description:
-      "A digital platform designed to professionalize the music industry by connecting composers and artists. It provides secure licensing, automated contracts, and transparent royalty management, while also offering analytics for streaming performance. The solution simplifies negotiations, ensures legal protection, and centralizes career management for music professionals.",
-    note: "We are a startup with 6 developers and 2 designers (soon expanding by +2) creating a multimedia entertainment platform. The idea was born from the lack of an inclusive and complete place to track everything we enjoy. From movies to manga.",
+      "Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.",
+    note: "Somos uma startup com 6 desenvolvedores e 2 designers (em breve expandindo em +2) criando uma plataforma de entretenimento multimídia. A ideia nasceu da falta de um lugar inclusivo e completo para acompanhar tudo o que gostamos. De filmes a mangás.",
     startDate: "2025-06",
     finishDate: "Present",
     repoLink: "https://admin.dev.sucessoapp.com/",
@@ -24,7 +24,7 @@ const mainProjects = [
     title: "Moto Market",
     coverImage: "/moto-market.png",
     description:
-      "Moto Market is a platform for motorcycle dealers, allowing them to display inventory and connect customers directly to sellers via WhatsApp quickly and practically. Built with Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI, and PostgreSQL.",
+      "Moto Market é uma plataforma para concessionárias de motos, permitindo exibir inventário e conectar clientes diretamente aos vendedores via WhatsApp de forma rápida e prática. Construída com Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI e PostgreSQL.",
     startDate: "2024-01",
     finishDate: null,
     repoLink: "https://github.com/marcusnonato/Moto-market",
@@ -39,7 +39,7 @@ const mainProjects = [
     title: "FSW Foods",
     coverImage: "/fsw-foods.png",
     description:
-      "Restaurant e-commerce website, similar to iFood, where users can search for restaurants, add food to cart, and complete their orders. Built with Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI, and NextAuth.",
+      "Site de e-commerce para restaurantes, similar ao iFood, onde usuários podem buscar restaurantes, adicionar comidas ao carrinho e finalizar pedidos. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI e NextAuth.",
     startDate: "2024-01",
     finishDate: null,
     repoLink: "https://github.com/marcusnonato/FSW-Foods",
@@ -57,7 +57,6 @@ const Projects = () => {
       id="projects"
       className="top-0 flex h-full min-h-screen flex-col text-white"
     >
-      {/* Desktop Version - Parallax Effect */}
       <div className="hidden w-full flex-col justify-center lg:flex">
         {mainProjects.map((project, index) => (
           <MainProject
@@ -68,29 +67,18 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Mobile Version - Simple Cards */}
       <div className="flex w-full flex-col px-4 py-8 lg:hidden">
         <div className="mb-8">
-          <h2 className="mb-3 text-4xl font-bold text-white">Projects</h2>
-          <p className="text-lg text-gray-400">Check out my featured work</p>
+          <h2 className="mb-3 text-4xl font-bold text-white">Projetos</h2>
+          <p className="text-lg text-gray-400">
+            Confira meus trabalhos em destaque
+          </p>
         </div>
 
         {mainProjects.map((project) => (
           <MobileProjectCard project={project} key={project.id} />
         ))}
       </div>
-
-      {/* <div className="mt-16 min-h-screen">
-        <div className="animate-fade-up mb-16 px-4 md:px-8 lg:px-36">
-          <h2 className="mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-            Side Projects
-          </h2>
-          <p className="text-lg text-gray-400">
-            Other projects throughout my career
-          </p>
-        </div>
-        <CarouselContainer2 />
-      </div> */}
     </section>
   );
 };
