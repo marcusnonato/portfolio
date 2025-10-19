@@ -90,7 +90,7 @@ export default function MainProject({ project, inverse }: MainProps) {
                 rel="noopener noreferrer"
               >
                 <SquareDashedMousePointer size={18} />
-                Demonstration
+                Ver Demo
               </motion.a>
             ) : (
               <motion.span
@@ -101,7 +101,7 @@ export default function MainProject({ project, inverse }: MainProps) {
                 className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-gray-400 opacity-70"
               >
                 <SquareDashedMousePointer size={18} />
-                No Demonstration
+                Demo Indisponível
               </motion.span>
             )}
 
@@ -116,14 +116,8 @@ export default function MainProject({ project, inverse }: MainProps) {
               rel="noopener noreferrer"
             >
               <Code2 size={18} />
-              Repository
+              Ver código
             </motion.a>
-          </div>
-
-          <div
-            className={`mt-6 flex flex-col ${inverse ? "self-end" : ""} text-xs text-gray-500 md:flex-row md:justify-between`}
-          >
-            <span>Recent project created +2 months ago</span>
           </div>
         </div>
 
