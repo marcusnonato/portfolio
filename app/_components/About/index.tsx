@@ -11,7 +11,7 @@ export function About() {
         viewport={{ once: true, amount: 0.5 }}
         className="text-2xl font-bold md:text-4xl"
       >
-        ABOUT
+        SOBRE
       </motion.h1>
       <motion.p
         initial={{ transform: "translateY(20px)", opacity: 0 }}
@@ -20,7 +20,7 @@ export function About() {
         viewport={{ once: true, amount: 0.5 }}
         className="mt-4 text-center text-2xl font-semibold md:text-5xl"
       >
-        Passion, Creativity and Code
+        Paixão, Criatividade e Código
       </motion.p>
       <div className="mt-12 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row md:gap-18">
         <motion.div
