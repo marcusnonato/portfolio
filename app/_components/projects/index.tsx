@@ -49,6 +49,21 @@ const mainProjects = [
     updatedAt: "2024-12-01",
     isInDevelopment: false,
   },
+  {
+    id: "4",
+    title: "FSW Barber",
+    coverImage: "/fsw-barber.png",
+    description:
+      "Site de e-commerce para barbearias, onde usuários podem buscar serviços como: cortes de cabelo, barba e outros. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI e NextAuth.",
+    startDate: "2024-01",
+    finishDate: null,
+    repoLink: "https://github.com/marcusnonato/mv-barber",
+    demoLink: "https://mv-barber-blond.vercel.app/",
+    images: ["barber-1.png", "barber-2.png", "barber-3.png", "barber-4.png"],
+    createdAt: "2024-01-01",
+    updatedAt: "2024-12-01",
+    isInDevelopment: false,
+  },
 ];
 
 const Projects = () => {
