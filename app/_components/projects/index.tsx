@@ -69,6 +69,26 @@ const mainProjects = [
     updatedAt: "2024-12-01",
     isInDevelopment: false,
   },
+  {
+    id: "5",
+    title: "BEWEAR",
+    coverImage: "/beware.png",
+    description:
+      "E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos, adicionar ao carrinho e finalizar pedidos. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Drizzle, Shadcn/UI e Better Auth.",
+    startDate: "2024-01",
+    finishDate: null,
+    repoLink: "https://github.com/marcusnonato/bewear",
+    demoLink: "https://bewear-brown.vercel.app/",
+    images: [
+      "beware-01.png",
+      "beware-02.png",
+      "beware-03.png",
+      "beware-04.png",
+    ],
+    createdAt: "2024-01-01",
+    updatedAt: "2024-12-01",
+    isInDevelopment: false,
+  },
 ];
 
 const Projects = () => {
