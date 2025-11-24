@@ -1,15 +1,6 @@
 import React from "react";
 import { Code2, SquareDashedMousePointer } from "lucide-react";
-
-type CardProjectProps = {
-  cover: string;
-  category: string;
-  title: string;
-  description?: string;
-  repoLink?: string;
-  liveLink?: string;
-  isFavorite?: boolean;
-};
+import { CardProjectProps } from "@/app/_types";
 
 export const Project: React.FC<CardProjectProps> = ({
   cover,
@@ -61,6 +52,7 @@ export const Project: React.FC<CardProjectProps> = ({
               <button
                 className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-gray-700 px-5 py-3 text-sm font-semibold text-gray-400"
                 disabled
+                aria-label="Demo não disponível"
               >
                 <SquareDashedMousePointer size={16} />
                 No Demo

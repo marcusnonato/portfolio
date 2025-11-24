@@ -81,7 +81,10 @@ export default function Header() {
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <button className="rounded-lg p-2 text-white hover:bg-zinc-800">
+            <button
+              className="rounded-lg p-2 text-white hover:bg-zinc-800"
+              aria-label="Abrir menu de navegação"
+            >
               <Menu size={24} />
             </button>
           </SheetTrigger>

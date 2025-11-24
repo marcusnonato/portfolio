@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const SocialFooter = () => {
   return (
     <>
@@ -23,9 +25,11 @@ export const SocialFooter = () => {
                 rel="noopener noreferrer"
                 className="group animate-fade-up relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-gray-700 hover:shadow-[0_20px_40px_rgba(51,51,51,0.3)] hover:before:left-full"
               >
-                <img
+                <Image
                   src="/github.png"
-                  alt="GitHub"
+                  alt="Logo do GitHub"
+                  width={48}
+                  height={48}
                   className="mr-5 h-12 w-12 rounded-xl transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="flex flex-1 flex-col">
@@ -42,9 +46,11 @@ export const SocialFooter = () => {
                 rel="noopener noreferrer"
                 className="group animate-fade-up relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-blue-600 hover:shadow-[0_20px_40px_rgba(0,119,181,0.3)] hover:before:left-full"
               >
-                <img
+                <Image
                   src="/linkedin.png"
-                  alt="LinkedIn"
+                  alt="Logo do LinkedIn"
+                  width={48}
+                  height={48}
                   className="mr-5 h-12 w-12 rounded-xl transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="flex flex-1 flex-col">
@@ -61,9 +67,11 @@ export const SocialFooter = () => {
                 rel="noopener noreferrer"
                 className="group animate-fade-up hover:shadow-[0_20px_40px_rgba(0, 255, 34, 0.3)] relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-green-600 hover:before:left-full"
               >
-                <img
+                <Image
                   src="/whatsapp.png"
-                  alt="WhatsApp"
+                  alt="Logo do WhatsApp"
+                  width={48}
+                  height={48}
                   className="mr-5 h-12 w-12 rounded-xl transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="flex flex-1 flex-col">

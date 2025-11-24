@@ -42,52 +42,19 @@ export function About() {
             Olá, sou Marcus Vinicius — Desenvolvedor Fullstack e Mobile do
             Brasil.
             <br />
+            <br />
             <span className="font-bold">
-              Com 2 anos de experiência e forte especialização em React.js,
-              React Native, Node.js e
-            </span>
+              Com 2 anos de experiência, sou especializado em React.js, React
+              Native, Node.js e Kotlin com Spring Boot.
+            </span>{" "}
+            Construo interfaces modernas e responsivas integradas com
+            arquiteturas de back-end escaláveis e APIs RESTful de alto
+            desempenho.
             <br />
-            <span className="font-bold"> Kotlin com Spring Boot</span>, eu uno o
-            desenvolvimento de interfaces modernas com
             <br />
-            uma arquitetura de back-end de alta performance para criar soluções
-            digitais
-            <br />
-            completas e escaláveis. Sou especialista na construção de interfaces
-            modernas,
-            <br />
-            responsivas e em APIs RESTful de alto desempenho.
-          </motion.span>
-          <br />
-          <br />
-          <motion.span
-            initial={{ transform: "translateY(20px)", opacity: 0 }}
-            whileInView={{ transform: "translateY(0)", opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.27 }}
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            Meu foco nas melhores práticas de otimização, segurança e
-            escalabilidade me permite
-            <br />
-            transformar ideias em aplicações robustas e performáticas, tanto
-            para web quanto para mobile.
-          </motion.span>
-          <br />
-          <br />
-          <motion.span
-            initial={{ transform: "translateY(20px)", opacity: 0 }}
-            whileInView={{ transform: "translateY(0)", opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            Combinando uma integração eficiente entre front-end e back-end
-            <br />
-            com um sólido domínio em modelagem de bancos de dados, entrego
-            soluções
-            <br />
-            alinhadas às melhores práticas do mercado. Vamos colaborar para
-            <br />
-            construir algo excepcional.
+            Meu foco em otimização, segurança e boas práticas me permite
+            transformar ideias em aplicações robustas. Pronto para criar seu
+            próximo projeto de sucesso?
           </motion.span>
         </div>
       </div>

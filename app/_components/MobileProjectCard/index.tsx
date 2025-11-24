@@ -1,21 +1,6 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import { motion } from "motion/react";
-
-interface MainProjectProps {
-  id: string;
-  title: string;
-  coverImage: string;
-  description: string;
-  note?: string;
-  startDate: string;
-  finishDate?: string | null;
-  repoLink: string;
-  demoLink?: string | null;
-  images: string[];
-  createdAt: string;
-  updatedAt: string;
-  isInDevelopment?: boolean;
-}
+import { MainProjectProps } from "@/app/_types";
 
 interface MobileProjectCardProps {
   project: MainProjectProps;

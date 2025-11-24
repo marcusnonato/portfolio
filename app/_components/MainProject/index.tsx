@@ -2,22 +2,7 @@ import { Code2, SquareDashedMousePointer } from "lucide-react";
 import MediaGallery from "../MediaGallery";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-
-interface MainProjectProps {
-  id: string;
-  title: string;
-  coverImage: string;
-  description: string;
-  note?: string;
-  startDate: string;
-  finishDate?: string | null;
-  repoLink: string;
-  demoLink?: string | null;
-  images: string[];
-  createdAt: string;
-  updatedAt: string;
-  isInDevelopment?: boolean;
-}
+import { MainProjectProps } from "@/app/_types";
 
 interface MainProps {
   project: MainProjectProps;
@@ -66,7 +51,7 @@ export default function MainProject({ project, inverse }: MainProps) {
           {project.description && (
             <motion.p
               initial={{ transform: "translateY(20px)", opacity: 0 }}
-              whileInView={{ transform: "translateY(0)", opacity: 1.2 }}
+              whileInView={{ transform: "translateY(0)", opacity: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true, amount: 0.7 }}
               className={`mb-6 max-w-2xl ${inverse ? "self-end text-end" : ""} text-xl leading-relaxed text-gray-300`}

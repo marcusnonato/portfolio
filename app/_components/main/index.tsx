@@ -73,9 +73,11 @@ export default function Main() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/linkedin.png"
-                    alt="Icon Linkedin"
+                    alt="Ícone do LinkedIn"
+                    width={20}
+                    height={20}
                     className="h-4 w-4 md:h-5 md:w-5"
                   />
                   <span className="hidden sm:inline">
