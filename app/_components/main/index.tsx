@@ -5,8 +5,8 @@ import { SocialFooter } from "../social-media";
 import Projects from "../projects";
 import Image from "next/image";
 import Header from "../header";
-import Carrer from "../carrer";
 import { About } from "../about";
+import Carrer from "../carrer";
 
 export default function Main() {
   return (
