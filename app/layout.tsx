@@ -2,6 +2,7 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
+import { SmoothScroll } from "./_components/smooth-scroll";
 
 const exo = Exo_2({
   variable: "--font-exo",
@@ -85,8 +86,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${exo.className} dark antialiased`}>
-        <Toaster />
-        {children}
+        <SmoothScroll>
+          <Toaster />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
