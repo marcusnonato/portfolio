@@ -1,12 +1,12 @@
 "use client";
 
-import { TechSlider } from "../TechSlider";
-import { SocialFooter } from "../SocialMedia";
+import { TechSlider } from "../tech-slider";
+import { SocialFooter } from "../social-media";
 import Projects from "../projects";
 import Image from "next/image";
 import Header from "../header";
-import Carrer from "../Carrer";
-import { About } from "../About";
+import Carrer from "../carrer";
+import { About } from "../about";
 
 export default function Main() {
   return (
