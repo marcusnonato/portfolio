@@ -1,5 +1,5 @@
-import MainProject from "../MainProject";
-import MobileProjectCard from "../MobileProjectCard";
+import MainProject from "../main-project";
+import MobileProjectCard from "../mobile-project-card";
 
 const mainProjects = [
   {
