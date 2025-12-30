@@ -1,5 +1,5 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
-import MediaGallery from "../MediaGallery";
+import MediaGallery from "../media-gallery";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { MainProjectProps } from "@/app/_types";
