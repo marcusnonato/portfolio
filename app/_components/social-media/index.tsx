@@ -88,9 +88,6 @@ export const SocialFooter = () => {
             <p className="mb-2 text-base text-gray-300 md:text-sm">
               &copy; 2025 Marcus Nonato. Desenvolvedor Full Stack & Mobile
             </p>
-            <span className="text-sm text-[#8aee14] md:text-xs">
-              Feito com ❤️ e muito código
-            </span>
           </div>
         </div>
       </footer>
