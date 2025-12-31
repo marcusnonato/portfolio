@@ -3,7 +3,10 @@ import { motion } from "motion/react";
 
 export function About() {
   return (
-    <div id="about" className="mt-20 flex flex-col items-center px-4 md:px-8">
+    <div
+      id="about"
+      className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8"
+    >
       <motion.h1
         initial={{ transform: "translateY(20px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
