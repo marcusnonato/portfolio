@@ -28,7 +28,7 @@ export const TechSlider = () => {
             <TooltipTrigger>
               <div
                 key={`${logo.src}-${index}`}
-                className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-xl p-3 opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100"
+                className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl p-3 opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100"
               >
                 <Image
                   src={logo.src}
