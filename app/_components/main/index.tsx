@@ -7,10 +7,13 @@ import Image from "next/image";
 import Header from "../header";
 import { About } from "../about";
 import Carrer from "../carrer";
+import { Particles } from "../ui/particles";
 
 export default function Main() {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen">
+      <Particles className="absolute inset-0 z-15" />
+
       <Header />
 
       <section
@@ -93,7 +96,9 @@ export default function Main() {
 
       <TechSlider />
       <About />
-      <Projects />
+      <div className="relative z-20">
+        <Projects />
+      </div>
       <Carrer />
       <SocialFooter />
     </main>
