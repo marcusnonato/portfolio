@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { createPortal } from "react-dom";
-import { motion } from "motion/react";
 import Image from "next/image";
 import { MediaGalleryProps } from "@/app/_types";
 
@@ -73,11 +72,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
       <div className="relative w-full py-2">
         <div className="hidden lg:grid lg:grid-cols-2 lg:gap-4">
           {images.map((img, index) => (
-            <motion.div
-              initial={{ transform: "scale(0.5)", opacity: 0 }}
-              whileInView={{ transform: "scale(1)", opacity: 1 }}
-              transition={{ duration: index * 0.1 + 0.3 }}
-              viewport={{ once: true }}
+            <div
               key={index}
               className="cursor-pointer transition-transform duration-300 hover:scale-95"
               onClick={() => setSelectedImage(img)}
@@ -91,7 +86,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
                   className="rounded-lg object-cover"
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -144,13 +139,13 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
             className="pointer-events-auto fixed inset-0 z-[2147483646] flex animate-[fadeIn_0.3s_ease] cursor-zoom-out items-center justify-center bg-black/95 [&[data-state=open]]:animate-[fadeIn_0.3s_ease]"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative max-h-[90vh] max-w-[90vw] z-[2147483647]">
+            <div className="relative z-[2147483647] max-h-[90vh] max-w-[90vw]">
               <Image
                 src={selectedImage}
                 alt="Imagem expandida do projeto"
                 width={1200}
                 height={800}
-                className="rounded-xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] object-contain max-h-[90vh]"
+                className="max-h-[90vh] rounded-xl object-contain shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
               />
             </div>
           </div>,

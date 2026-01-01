@@ -64,11 +64,7 @@ export default function MainProject({ project, inverse }: MainProps) {
             className={`mt-6 flex w-fit flex-col gap-2 ${inverse ? "self-end" : ""} sm:flex-row`}
           >
             {project.demoLink ? (
-              <motion.a
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true, amount: 0.7 }}
+              <a
                 href={project.demoLink}
                 className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
                 target="_blank"
@@ -76,7 +72,7 @@ export default function MainProject({ project, inverse }: MainProps) {
               >
                 <SquareDashedMousePointer size={18} />
                 Ver Demo
-              </motion.a>
+              </a>
             ) : (
               <motion.span
                 initial={{ opacity: 0 }}
@@ -90,11 +86,7 @@ export default function MainProject({ project, inverse }: MainProps) {
               </motion.span>
             )}
 
-            <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.9 }}
+            <a
               href={project.repoLink}
               className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
               target="_blank"
@@ -102,7 +94,7 @@ export default function MainProject({ project, inverse }: MainProps) {
             >
               <Code2 size={18} />
               Ver código
-            </motion.a>
+            </a>
           </div>
         </div>
 
