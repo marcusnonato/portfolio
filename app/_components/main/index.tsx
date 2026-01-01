@@ -12,7 +12,12 @@ import { Particles } from "../ui/particles";
 export default function Main() {
   return (
     <main className="relative min-h-screen">
-      <Particles className="absolute inset-0 z-15" />
+      <Particles
+        vy={0.2}
+        vx={0.2}
+        quantity={150}
+        className="absolute inset-0 z-15"
+      />
 
       <Header />
 
