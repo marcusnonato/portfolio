@@ -76,6 +76,26 @@ const mainProjects = [
     isInDevelopment: false,
   },
   {
+    id: "6",
+    title: "Finance AI",
+    coverImage: "/finance-01.png",
+    description:
+      "Plataforma de gestão financeira pessoal com inteligência artificial, onde usuários podem monitorar receitas, despesas e investimentos, visualizar análises por categoria através de gráficos interativos e gerar relatórios financeiros com IA. Possui sistema de assinatura freemium (gratuito com limite de 10 transações/mês ou premium ilimitado). Construído com Next.js 16, TypeScript, Prisma, PostgreSQL, Tailwind CSS, Shadcn/UI, Clerk e Stripe.",
+    startDate: "2024-01",
+    finishDate: null,
+    repoLink: "https://github.com/marcusnonato/finance-ai",
+    demoLink: "https://finance-ai-beta-five.vercel.app/",
+    images: [
+      "/finance-01.png",
+      "/finance-02.png",
+      "/finance-03.png",
+      "/finance-04.png",
+    ],
+    createdAt: "2024-01-01",
+    updatedAt: "2024-12-01",
+    isInDevelopment: false,
+  },
+  {
     id: "2",
     title: "Moto Market",
     coverImage: "/moto-market.png",
