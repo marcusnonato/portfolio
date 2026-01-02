@@ -16,7 +16,7 @@ import {
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("");
   const { scrollY } = useScroll();
-  const [scrollInY, setScrollInY] = useState(0);
+  const [scrollInY, setScrollInY] = useState<any>(0);
   const [isOpen, setIsOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
