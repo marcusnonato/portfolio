@@ -1,13 +1,15 @@
 "use client";
 
 import { TechSlider } from "../tech-slider";
-import { SocialFooter } from "../social-media";
+import { SocialMedia } from "../social-media";
 import Projects from "../projects";
 import Image from "next/image";
 import Header from "../header";
 import { About } from "../about";
 import Carrer from "../carrer";
 import { Particles } from "../ui/particles";
+import { ScrollCta } from "../scroll-cta";
+import { Footer } from "../footer";
 
 export default function Main() {
   return (
@@ -101,11 +103,14 @@ export default function Main() {
 
       <TechSlider />
       <About />
-      <div className="relative z-20">
+      <ScrollCta />
+
+      <div className="relative z-20 -mt-64">
         <Projects />
       </div>
       <Carrer />
-      <SocialFooter />
+      <SocialMedia />
+      <Footer />
     </main>
   );
 }

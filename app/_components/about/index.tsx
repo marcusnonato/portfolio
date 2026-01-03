@@ -12,7 +12,7 @@ export function About() {
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-2xl font-bold md:text-4xl"
+        className="text-3xl font-bold md:text-5xl"
       >
         SOBRE
       </motion.h1>
@@ -21,7 +21,7 @@ export function About() {
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.1 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="mt-4 text-center text-2xl font-semibold md:text-5xl"
+        className="mt-4 text-center text-3xl font-semibold md:text-6xl"
       >
         Paixão, Criatividade e Código
       </motion.p>
@@ -35,7 +35,7 @@ export function About() {
         >
           <Image fill src="/me-pixel.png" alt="About Image" />
         </motion.div>
-        <div className="max-w-xl text-base leading-7 font-light text-white md:text-lg">
+        <div className="max-w-xl text-lg leading-8 font-light text-white md:text-xl">
           <motion.span
             initial={{ transform: "translateY(20px)", opacity: 0 }}
             whileInView={{ transform: "translateY(0)", opacity: 1 }}

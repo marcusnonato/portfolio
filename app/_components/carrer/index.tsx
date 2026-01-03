@@ -56,7 +56,7 @@ const Carrer = () => {
           whileInView={{ transform: "translateY(0)", opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true, amount: 0.7 }}
-          className="mb-2 text-5xl font-bold text-white md:text-3xl"
+          className="mb-2 text-5xl font-bold text-white md:text-6xl"
         >
           Carreira
         </motion.h2>
@@ -65,7 +65,7 @@ const Carrer = () => {
           whileInView={{ transform: "translateY(0)", opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
           viewport={{ once: true, amount: 0.7 }}
-          className="m-0 text-lg text-white"
+          className="m-0 text-xl text-white"
         >
           Desenvolvedor Full Stack & Mobile
         </motion.p>
@@ -89,7 +89,7 @@ const Carrer = () => {
                     whileInView={{ transform: "translateY(0)", opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
                     viewport={{ once: true, amount: 0.7 }}
-                    className="m-0 text-3xl font-semibold text-white"
+                    className="m-0 text-3xl font-semibold text-white md:text-4xl"
                   >
                     {currentExp.title}
                   </motion.h3>
@@ -98,7 +98,7 @@ const Carrer = () => {
                     whileInView={{ transform: "translateY(0)", opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.3 }}
                     viewport={{ once: true, amount: 0.7 }}
-                    className="mt-2 flex items-center gap-2 text-base text-gray-400"
+                    className="mt-2 flex items-center gap-2 text-lg text-gray-400"
                   >
                     <Calendar size={20} />
                     {currentExp.date}
@@ -111,7 +111,7 @@ const Carrer = () => {
                 whileInView={{ transform: "translateY(0)", opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.34 }}
                 viewport={{ once: true, amount: 0.7 }}
-                className="mb-8 text-xl leading-relaxed text-gray-200"
+                className="mb-8 text-xl leading-relaxed text-gray-200 md:text-2xl"
               >
                 {currentExperience}
               </motion.p>
@@ -125,7 +125,7 @@ const Carrer = () => {
                       transition={{ duration: 0.4, delay: 0.35 + index * 0.05 }}
                       viewport={{ once: true, amount: 0.7 }}
                       key={index}
-                      className="origin-bottom rounded-xl border border-b-4 px-4 py-2 text-sm font-medium text-white transition-all duration-300 select-none hover:scale-y-95 hover:border-b-2"
+                      className="origin-bottom rounded-xl border border-b-4 px-4 py-2 text-base font-medium text-white transition-all duration-300 select-none hover:scale-y-95 hover:border-b-2"
                     >
                       {tag}
                     </motion.span>
@@ -136,8 +136,8 @@ const Carrer = () => {
           </AnimatePresence>
         )}
         <div className="flex flex-1 flex-col">
-          <h3 className="mb-5 text-2xl font-semibold text-white">
-            Experiences
+          <h3 className="mb-5 text-2xl font-semibold text-white md:text-3xl">
+            Experiências Profissionais
           </h3>
 
           {experiences.map((experience, index) => (
@@ -151,11 +151,11 @@ const Carrer = () => {
               }`}
             >
               <div className="mb-4 flex items-center gap-4">
-                <h4 className="m-0 text-lg font-semibold text-white">
+                <h4 className="m-0 text-lg font-semibold text-white md:text-xl">
                   {experience.title}
                 </h4>
               </div>
-              <span className="text-xs font-medium text-gray-300">
+              <span className="text-sm font-medium text-gray-300">
                 {experience.date.split(" - ")[0]}
               </span>
             </div>

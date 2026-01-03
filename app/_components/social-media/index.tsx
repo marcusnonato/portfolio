@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-export const SocialFooter = () => {
+export const SocialMedia = () => {
   return (
     <>
       <div className="relative z-10 -mt-px h-0 w-full bg-gradient-to-b from-black/60 to-transparent" />
 
-      <footer
+      <section
         id="socialmedia"
-        className="relative bg-gradient-to-br from-zinc-950 to-black py-20 pb-10 text-white before:absolute before:top-0 before:left-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:content-['']"
+        className="relative bg-zinc-950 py-20 text-white before:absolute before:top-0 before:left-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:content-['']"
       >
         <div className="mx-auto px-4 md:px-10 lg:px-36">
           <div className="mb-15">
@@ -83,14 +83,8 @@ export const SocialFooter = () => {
               </a>
             </div>
           </div>
-
-          <div className="animate-fade-up border-t border-white/10 pt-10 text-center [animation-delay:0.8s] [animation-fill-mode:backwards]">
-            <p className="mb-2 text-base text-gray-300 md:text-sm">
-              &copy; 2025 Marcus Nonato. Desenvolvedor Full Stack & Mobile
-            </p>
-          </div>
         </div>
-      </footer>
+      </section>
     </>
   );
 };
