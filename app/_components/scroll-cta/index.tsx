@@ -85,7 +85,7 @@ export function ScrollCta() {
             style={{
               opacity: text1Opacity,
               scale: text1Scale,
-              color: textColor as any,
+              color: textColor,
             }}
             className="absolute inset-0 flex select-none items-center justify-center text-center text-5xl font-bold md:text-7xl lg:text-[9rem]"
           >
@@ -96,7 +96,7 @@ export function ScrollCta() {
             style={{
               opacity: text2Opacity,
               scale: text2Scale,
-              color: textColor as any,
+              color: textColor,
             }}
             className="absolute inset-0 flex select-none items-center justify-center text-center text-4xl font-bold md:text-6xl lg:text-[8rem]"
           >
@@ -109,7 +109,7 @@ export function ScrollCta() {
               style={{
                 opacity: text3Opacity,
                 scale: text3Scale,
-                color: lastTextColor as any,
+                color: lastTextColor,
               }}
               className="select-none text-center text-5xl font-bold md:text-7xl lg:text-[9rem]"
             >
