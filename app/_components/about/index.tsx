@@ -1,20 +1,31 @@
+"use client";
+
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 export function About() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["-200px", "-70px"]);
+
   return (
     <div
+      ref={ref}
       id="about"
       className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8"
     >
       <motion.h1
-        initial={{ transform: "translateY(20px)", opacity: 0 }}
-        whileInView={{ transform: "translateY(0)", opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        style={{
+          x,
+        }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-3xl font-bold md:text-5xl"
+        className="-mb-28 text-3xl font-bold text-white/5 md:text-[10rem]"
       >
-        SOBRE
+        SOBRE MIM
       </motion.h1>
       <motion.p
         initial={{ transform: "translateY(20px)", opacity: 0 }}
