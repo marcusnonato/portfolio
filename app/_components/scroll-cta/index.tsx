@@ -69,10 +69,6 @@ export function ScrollCta() {
     [0, 1, 1, 100],
   );
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Scroll:", latest);
-  });
-
   return (
     <motion.div
       ref={ref}
@@ -87,7 +83,7 @@ export function ScrollCta() {
               scale: text1Scale,
               color: textColor,
             }}
-            className="absolute inset-0 flex select-none items-center justify-center text-center text-5xl font-bold md:text-7xl lg:text-[9rem]"
+            className="absolute inset-0 flex items-center justify-center text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
           >
             QUER TRANSFORMAR IDEIAS?
           </motion.h1>
@@ -98,7 +94,7 @@ export function ScrollCta() {
               scale: text2Scale,
               color: textColor,
             }}
-            className="absolute inset-0 flex select-none items-center justify-center text-center text-4xl font-bold md:text-6xl lg:text-[8rem]"
+            className="absolute inset-0 flex items-center justify-center text-center text-4xl font-bold select-none md:text-6xl lg:text-[8rem]"
           >
             CONHEÇA MEUS
             <br /> TRABALHOS E
@@ -111,7 +107,7 @@ export function ScrollCta() {
                 scale: text3Scale,
                 color: lastTextColor,
               }}
-              className="select-none text-center text-5xl font-bold md:text-7xl lg:text-[9rem]"
+              className="text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
             >
               TRANSFORME EM REALIDADE!
             </motion.h1>

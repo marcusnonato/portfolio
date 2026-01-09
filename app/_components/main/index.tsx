@@ -102,10 +102,12 @@ export default function Main() {
       </section>
 
       <TechSlider />
-      <About />
+      <div className="mt-6 md:mt-0">
+        <About />
+      </div>
       <ScrollCta />
 
-      <div className="relative z-20 -mt-64">
+      <div className="relative z-20 -mt-[500px] md:-mt-64">
         <Projects />
       </div>
       <Carrer />

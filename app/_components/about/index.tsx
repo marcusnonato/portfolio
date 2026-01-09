@@ -11,6 +11,7 @@ export function About() {
     offset: ["start end", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], ["-200px", "-70px"]);
+  const xMobile = useTransform(scrollYProgress, [0, 1], ["-70px", "0px"]);
 
   return (
     <div
@@ -22,8 +23,15 @@ export function About() {
         style={{
           x,
         }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="-mb-28 text-3xl font-bold text-white/5 md:text-[10rem]"
+        className="-mb-28 hidden text-3xl font-bold text-white/5 md:block md:text-[10rem]"
+      >
+        SOBRE MIM
+      </motion.h1>
+      <motion.h1
+        style={{
+          x: xMobile,
+        }}
+        className="-mb-8 block text-7xl font-bold text-white/5 md:hidden md:text-[10rem]"
       >
         SOBRE MIM
       </motion.h1>
