@@ -18,7 +18,7 @@ export default function Error({
     <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 px-4 text-white">
       <div className="max-w-md text-center">
         <h2 className="mb-4 text-4xl font-bold text-red-500">
-          Algo deu errado!
+          Algo deu errado!!
         </h2>
         <p className="mb-6 text-lg text-gray-300">
           Desculpe, ocorreu um erro inesperado. Tente novamente.
