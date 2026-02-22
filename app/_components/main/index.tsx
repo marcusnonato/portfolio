@@ -7,20 +7,12 @@ import Image from "next/image";
 import Header from "../header";
 import { About } from "../about";
 import Carrer from "../carrer";
-import { Particles } from "../ui/particles";
 import { ScrollCta } from "../scroll-cta";
 import { Footer } from "../footer";
 
 export default function Main() {
   return (
     <main className="relative min-h-screen">
-      <Particles
-        vy={0.2}
-        vx={0.2}
-        quantity={150}
-        className="absolute inset-0 z-15"
-      />
-
       <Header />
 
       <section
