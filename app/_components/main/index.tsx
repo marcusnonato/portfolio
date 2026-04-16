@@ -9,6 +9,7 @@ import { About } from "../about";
 import Carrer from "../carrer";
 import { ScrollCta } from "../scroll-cta";
 import { Footer } from "../footer";
+import { LightRays } from "../ui/light-rays";
 
 export default function Main() {
   return (
@@ -17,8 +18,9 @@ export default function Main() {
 
       <section
         id="home"
-        className="relative z-10 mb-0 flex min-h-[92vh] w-full flex-col items-center justify-center bg-zinc-950 px-6 text-white md:px-12 lg:px-36"
+        className="relative z-10 mb-0 flex min-h-[100vh] w-full flex-col items-center justify-center bg-zinc-950 px-6 text-white md:px-12 lg:px-36"
       >
+        <LightRays color="rgba(255, 255, 255, 0.089)" />
         <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col pt-32 md:pt-56">
           <div className="mb-6 flex items-center gap-4 md:hidden">
             <Image

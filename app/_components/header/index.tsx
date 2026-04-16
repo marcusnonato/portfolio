@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky z-50 flex w-full items-center transition-all duration-300 ${scrollInY > 800 ? "-top-24" : "top-4"}`}
+      className={`fixed z-50 flex w-full items-center transition-all duration-300 ${scrollInY > 800 ? "-top-24" : "top-4"}`}
     >
       <div
         className={`flex w-full items-center justify-between rounded-2xl border border-transparent px-4 transition-all duration-500 ${scrollInY > 100 ? "mx-4 border-zinc-800 bg-zinc-950 md:mx-20 lg:mx-96" : "mx-4 md:mx-12 lg:mx-32"}`}

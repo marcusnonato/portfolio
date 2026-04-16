@@ -5,25 +5,40 @@ import { AnimatePresence, motion } from "motion/react";
 const Carrer = () => {
   const experiences = [
     {
-      title: "Desenvolvedor Full Stack - Sucesso.APP",
+      title: "Desenvolvedor de Software - Sidia",
       description:
-        "Desenvolvedor full stack trabalhando com Next.js e Kotlin/Springboot. Participei do desenvolvimento de uma plataforma de marketplace musical. Integração com bancos de dados SQL/NoSQL. Refatoração completa do site de Angular para NextJS. Trabalhando em ambiente ágil.",
-      date: "Jan 2025 - Presente",
+        "Desenvolvimento full stack de aplicações web internas com ReactJS no front-end e Python com FastAPI no back-end, otimizando fluxos de trabalho corporativos. Criação de scripts de automação em Python para diferentes setores, reduzindo tarefas manuais. Integração de sistemas com bancos de dados SQL e NoSQL, garantindo escalabilidade e alta performance.",
+      date: "Jan 2026 - Atualmente",
+      highlight: "Full Stack",
+      tags: [
+        "ReactJS",
+        "Python",
+        "FastAPI",
+        "Automação",
+        "SQL",
+        "NoSQL",
+      ],
+    },
+    {
+      title: "Desenvolvedor de Software - Sucesso.APP",
+      description:
+        "Construção de uma plataforma de marketplace musical escalável e de alta performance, atuando no front-end com Next.js e TypeScript e no back-end com Kotlin e Spring Boot. Liderança técnica na migração completa da aplicação web de Angular para Next.js, resultando em ganhos expressivos de velocidade, estrutura de código e manutenibilidade. Modelagem e integração de sistemas com PostgreSQL utilizando Prisma como ORM, garantindo transações seguras e arquitetura limpa.",
+      date: "Jan 2025 - Jan 2026",
       highlight: "Full Stack",
       tags: [
         "Next.js",
         "TypeScript",
         "Kotlin",
         "Spring Boot",
-        "SQL",
         "PostgreSQL",
+        "Prisma",
         "Docker",
       ],
     },
     {
       title: "Estagiário Dev Web/Mobile - Feira da Tecnologia e Inovação",
       description:
-        "Criação do site/app Smarteduca. Aplicativo de gestão parental. Desenvolvido usando React, React Native, Vite, NextJS e Firebase para criar soluções inovadoras na área educacional.",
+        "Criação do ecossistema Smarteduca, desenvolvendo do zero uma solução completa de gestão parental tanto para ambiente web quanto para dispositivos móveis. Atuação no front-end com React.js (Vite e Next.js) para interfaces web rápidas e responsivas, além de React Native para o app mobile. Implementação e consumo de serviços na nuvem com Firebase para banco de dados em tempo real, autenticação e regras de negócio.",
       date: "Jun 2024 - Nov 2024",
       highlight: "Mobile",
       tags: ["React", "React Native", "Vite", "Next.js", "Firebase"],
@@ -156,7 +171,7 @@ const Carrer = () => {
                 </h4>
               </div>
               <span className="text-sm font-medium text-gray-300">
-                {experience.date.split(" - ")[0]}
+                {experience.date}
               </span>
             </div>
           ))}

@@ -21,7 +21,7 @@ export const TechSlider = () => {
   const repeatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="relative bottom-0 z-0 w-full overflow-hidden py-10 select-none">
+    <div className="relative bottom-0 z-0 w-full overflow-hidden border-t-2 py-10 select-none">
       <div className="animate-tech-scroll flex gap-8">
         {repeatedLogos.map((logo, index) => (
           <Tooltip key={index}>
