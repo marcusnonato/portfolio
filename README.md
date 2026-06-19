@@ -14,6 +14,11 @@ pnpm dev
 bun dev
 ```
 
+1. Anthropic: criar API key em https://console.anthropic.com, adicionar $5 de crédito → setar ANTHROPIC_API_KEY
+2. Upstash: criar DB grátis em https://console.upstash.com → setar UPSTASH_REDIS_REST_URL e UPSTASH_REDIS_REST_TOKEN
+3. Adicionar as 3 vars na Vercel (Settings → Environment Variables) pra produção
+4. npm run dev e testar
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
