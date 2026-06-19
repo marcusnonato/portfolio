@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Marcus Nonato",
   },
   description:
-    "Desenvolvedor Full Stack & Mobile com 2 anos de experiência especializado em React.js, React Native, Node.js e Kotlin com Spring Boot. Construo aplicações modernas, escaláveis e de alta performance.",
+    "Desenvolvedor Full Stack & Mobile com 4 anos de experiência especializado em React.js, React Native, Node.js e Kotlin com Spring Boot. Construo aplicações modernas, escaláveis e de alta performance.",
   keywords: [
     "Marcus Nonato",
     "Desenvolvedor Full Stack",

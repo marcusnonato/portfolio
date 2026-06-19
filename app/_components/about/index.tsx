@@ -66,7 +66,7 @@ export function About() {
             <br />
             <br />
             <span className="font-bold">
-              Com 2 anos de experiência, sou especializado em React.js, React
+              Com 4 anos de experiência, sou especializado em React.js, React
               Native, Node.js e Kotlin com Spring Boot.
             </span>{" "}
             Construo interfaces modernas e responsivas integradas com
