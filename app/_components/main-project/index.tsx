@@ -3,6 +3,7 @@ import MediaGallery from "../media-gallery";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { MainProjectProps } from "@/app/_types";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 interface MainProps {
   project: MainProjectProps;
@@ -10,6 +11,7 @@ interface MainProps {
 }
 
 export default function MainProject({ project, inverse }: MainProps) {
+  const { t } = useLanguage();
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -71,7 +73,7 @@ export default function MainProject({ project, inverse }: MainProps) {
                 rel="noopener noreferrer"
               >
                 <SquareDashedMousePointer size={18} />
-                Ver Demo
+                {t.projects.viewDemo}
               </a>
             ) : (
               <motion.span
@@ -82,7 +84,7 @@ export default function MainProject({ project, inverse }: MainProps) {
                 className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-gray-400 opacity-70"
               >
                 <SquareDashedMousePointer size={18} />
-                Demo Indisponível
+                {t.projects.demoUnavailable}
               </motion.span>
             )}
 
@@ -93,7 +95,7 @@ export default function MainProject({ project, inverse }: MainProps) {
               rel="noopener noreferrer"
             >
               <Code2 size={18} />
-              Ver código
+              {t.projects.viewCode}
             </a>
           </div>
         </div>

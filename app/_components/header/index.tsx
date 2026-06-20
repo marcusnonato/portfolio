@@ -12,12 +12,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("");
   const { scrollY } = useScroll();
   const [scrollInY, setScrollInY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const { t, locale, toggleLocale } = useLanguage();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const sections = ["home", "about", "projects", "socialmedia"];
@@ -42,11 +44,27 @@ export default function Header() {
   });
 
   const navItems = [
-    { href: "#home", label: "Home", section: "home" },
-    { href: "#about", label: "Sobre", section: "about" },
-    { href: "#projects", label: "Projetos", section: "projects" },
-    { href: "#socialmedia", label: "Redes Sociais", section: "socialmedia" },
+    { href: "#home", label: t.nav.home, section: "home" },
+    { href: "#about", label: t.nav.about, section: "about" },
+    { href: "#projects", label: t.nav.projects, section: "projects" },
+    { href: "#socialmedia", label: t.nav.social, section: "socialmedia" },
   ];
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={toggleLocale}
+      aria-label="Mudar idioma"
+      className={`flex items-center gap-1 text-sm font-medium ${className}`}
+    >
+      <span className={locale === "pt" ? "text-[#8aee14]" : "text-gray-400"}>
+        PT
+      </span>
+      <span className="text-gray-600">/</span>
+      <span className={locale === "en" ? "text-[#8aee14]" : "text-gray-400"}>
+        EN
+      </span>
+    </button>
+  );
 
   return (
     <header
@@ -76,7 +94,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <p className="text-sm">PT-BR</p>
+          <LanguageToggle />
         </div>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -111,7 +129,7 @@ export default function Header() {
                 </Link>
               ))}
               <div className="mt-4 border-t border-zinc-800 pt-4 pl-4">
-                <p className="text-sm text-gray-400">PT-BR</p>
+                <LanguageToggle />
               </div>
             </nav>
           </SheetContent>

@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 export const SocialMedia = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <div className="relative z-10 -mt-px h-0 w-full bg-gradient-to-b from-black/60 to-transparent" />
@@ -12,10 +17,10 @@ export const SocialMedia = () => {
         <div className="mx-auto px-4 md:px-10 lg:px-36">
           <div className="mb-15">
             <h2 className="animate-fade-up mb-4 text-5xl font-bold text-white [animation-delay:0.2s] [animation-fill-mode:backwards] md:text-4xl">
-              Redes Sociais
+              {t.social.heading}
             </h2>
             <p className="animate-fade-up mb-12 text-xl text-gray-300 [animation-delay:0.4s] [animation-fill-mode:backwards] md:text-lg">
-              Encontre-me nas redes sociais e acompanhe meu trabalho
+              {t.social.subtitle}
             </p>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
@@ -35,7 +40,7 @@ export const SocialMedia = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">GitHub</span>
                   <span className="text-sm text-gray-300">
-                    Meus projetos e código
+                    {t.social.githubDesc}
                   </span>
                 </div>
               </a>
@@ -56,7 +61,7 @@ export const SocialMedia = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">LinkedIn</span>
                   <span className="text-sm text-gray-300">
-                    Carreira e networking
+                    {t.social.linkedinDesc}
                   </span>
                 </div>
               </a>
@@ -77,7 +82,7 @@ export const SocialMedia = () => {
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">Whatsapp</span>
                   <span className="text-sm text-gray-300">
-                    Converse diretamente comigo!
+                    {t.social.whatsappDesc}
                   </span>
                 </div>
               </a>

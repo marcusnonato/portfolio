@@ -1,13 +1,16 @@
+"use client";
+
 import {
   easeInOut,
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 export function ScrollCta() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -85,7 +88,7 @@ export function ScrollCta() {
             }}
             className="absolute inset-0 flex items-center justify-center text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
           >
-            QUER TRANSFORMAR IDEIAS?
+            {t.scrollCta.text1}
           </motion.h1>
 
           <motion.h1
@@ -96,8 +99,8 @@ export function ScrollCta() {
             }}
             className="absolute inset-0 flex items-center justify-center text-center text-4xl font-bold select-none md:text-6xl lg:text-[8rem]"
           >
-            CONHEÇA MEUS
-            <br /> TRABALHOS E
+            {t.scrollCta.text2[0]}
+            <br /> {t.scrollCta.text2[1]}
           </motion.h1>
 
           <motion.div className="relative">
@@ -109,7 +112,7 @@ export function ScrollCta() {
               }}
               className="text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
             >
-              TRANSFORME EM REALIDADE!
+              {t.scrollCta.text3}
             </motion.h1>
           </motion.div>
         </div>
