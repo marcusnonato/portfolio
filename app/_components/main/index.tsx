@@ -11,6 +11,7 @@ import { Footer } from "../footer";
 import { Hero } from "../hero";
 import { Preloader } from "../preloader";
 import { LightRays } from "../ui/light-rays";
+import { BackToTop } from "../back-to-top";
 
 export default function Main() {
   return (
@@ -38,6 +39,8 @@ export default function Main() {
       <Carrer />
       <SocialMedia />
       <Footer />
+
+      <BackToTop />
     </main>
   );
 }
