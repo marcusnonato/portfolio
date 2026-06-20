@@ -40,7 +40,10 @@ export function Hero() {
   const { t } = useLanguage();
 
   const codeLines: { key: string; value: CodeValue }[] = [
-    { key: t.hero.code.name, value: { kind: "string", items: ["Marcus Vinicius"] } },
+    {
+      key: t.hero.code.name,
+      value: { kind: "string", items: ["Marcus Vinicius"] },
+    },
     {
       key: t.hero.code.focus,
       value: { kind: "array", items: ["web", "mobile", "backend"] },
@@ -62,7 +65,7 @@ export function Hero() {
   ];
 
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 pt-28 pb-16 font-[family-name:var(--font-display)] md:gap-12 md:pt-0 md:pb-0 lg:grid lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-11">
+    <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-8 pt-28 pb-16 font-[family-name:var(--font-display)] md:gap-12 md:pt-0 md:pb-0 lg:grid lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-11">
       {/* ===== Coluna esquerda ===== */}
       <div>
         {/* avatar + nome (mobile/contexto) */}
@@ -91,24 +94,14 @@ export function Hero() {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.45, delay: 0.12 }}
-          className="text-4xl leading-[1.03] font-bold tracking-tight md:text-5xl lg:text-[3.4rem]"
+          className="text-4xl leading-[1.03] font-bold tracking-tight md:text-5xl lg:text-[4.4rem]"
         >
           {t.hero.titleA}
           <br />
-          {t.hero.titleB}{" "}
-          <span className="text-[#8aee14]">{t.hero.titleAccent}</span>
+          {t.hero.titleB} {t.hero.titleAccent}
         </motion.h1>
 
         {/* tagline */}
-        <motion.p
-          variants={fadeUp}
-          initial="initial"
-          animate="animate"
-          transition={{ duration: 0.45, delay: 0.2 }}
-          className="mt-5 max-w-[44ch] text-base leading-relaxed text-zinc-400 md:text-lg"
-        >
-          {t.hero.tagline}
-        </motion.p>
 
         {/* CTAs */}
         <motion.div
@@ -132,7 +125,6 @@ export function Hero() {
             {t.hero.ctaCv}
           </a>
         </motion.div>
-
       </div>
 
       {/* ===== Coluna direita: janela de código ===== */}
@@ -159,7 +151,8 @@ export function Hero() {
                   <span className="text-zinc-600">{`${i + 2} `}</span>
                   {"  "}
                   {line.key}
-                  <span className="text-zinc-500">:</span> {renderValue(line.value)},
+                  <span className="text-zinc-500">:</span>{" "}
+                  {renderValue(line.value)},
                 </Fragment>
               ))}
               {"\n"}

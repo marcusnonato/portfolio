@@ -1,4 +1,4 @@
-import { Exo_2, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Exo_2, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
@@ -7,13 +7,6 @@ import { LanguageProvider } from "./_i18n/LanguageProvider";
 
 const exo = Exo_2({
   variable: "--font-exo",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-// Fontes usadas exclusivamente no Hero
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -100,7 +93,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${exo.className} ${spaceGrotesk.variable} ${jetbrainsMono.variable} dark antialiased`}
+        className={`${exo.className} ${jetbrainsMono.variable} dark antialiased`}
       >
         <LanguageProvider>
           <SmoothScroll>
