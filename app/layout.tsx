@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { SmoothScroll } from "./_components/smooth-scroll";
+import ChatBot from "./_components/chat-bot";
 import { LanguageProvider } from "./_i18n/LanguageProvider";
 
 const exo = Exo_2({
@@ -100,6 +101,7 @@ export default function RootLayout({
             <Toaster />
             {children}
           </SmoothScroll>
+          <ChatBot />
         </LanguageProvider>
       </body>
     </html>
