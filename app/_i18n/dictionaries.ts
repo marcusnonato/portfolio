@@ -123,7 +123,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Desenvolvedor de Software - Sucesso.APP",
           description:
             "Construção de uma plataforma de marketplace musical escalável e de alta performance, atuando no front-end com Next.js e TypeScript e no back-end com Kotlin e Spring Boot. Liderança técnica na migração completa da aplicação web de Angular para Next.js, resultando em ganhos expressivos de velocidade, estrutura de código e manutenibilidade. Modelagem e integração de sistemas com PostgreSQL utilizando Prisma como ORM, garantindo transações seguras e arquitetura limpa.",
-          date: "Jan 2025 - Jan 2026",
+          date: "Jan 2024 - Jan 2026",
           tags: [
             "Next.js",
             "TypeScript",
@@ -234,7 +234,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Software Developer - Sucesso.APP",
           description:
             "Built a scalable, high-performance music marketplace platform, working on the front-end with Next.js and TypeScript and on the back-end with Kotlin and Spring Boot. Technical lead on the full migration of the web app from Angular to Next.js, resulting in major gains in speed, code structure and maintainability. Modeled and integrated systems with PostgreSQL using Prisma as ORM, ensuring secure transactions and clean architecture.",
-          date: "Jan 2025 - Jan 2026",
+          date: "Jan 2024 - Jan 2026",
           tags: [
             "Next.js",
             "TypeScript",
