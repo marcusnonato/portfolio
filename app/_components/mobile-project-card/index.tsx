@@ -1,12 +1,15 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import { motion } from "motion/react";
 import { MainProjectProps } from "@/app/_types";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 interface MobileProjectCardProps {
   project: MainProjectProps;
 }
 
 export default function MobileProjectCard({ project }: MobileProjectCardProps) {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -39,12 +42,12 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
               rel="noopener noreferrer"
             >
               <SquareDashedMousePointer size={18} />
-              Ver Demo
+              {t.projects.viewDemo}
             </a>
           ) : (
             <span className="flex cursor-not-allowed items-center justify-center gap-2 rounded-xl border-2 border-zinc-700 bg-zinc-800 px-4 py-3 text-sm font-medium text-zinc-400 opacity-70">
               <SquareDashedMousePointer size={18} />
-              Demo Indisponível
+              {t.projects.demoUnavailable}
             </span>
           )}
 
@@ -55,7 +58,7 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
             rel="noopener noreferrer"
           >
             <Code2 size={18} />
-            Ver Código
+            {t.projects.viewCode}
           </a>
         </div>
 

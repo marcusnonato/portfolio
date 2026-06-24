@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 export function About() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -25,7 +27,7 @@ export function About() {
         }}
         className="-mb-28 hidden text-3xl font-bold text-white/5 md:block md:text-[10rem]"
       >
-        SOBRE MIM
+        {t.about.watermark}
       </motion.h1>
       <motion.h1
         style={{
@@ -33,7 +35,7 @@ export function About() {
         }}
         className="-mb-8 block text-7xl font-bold text-white/5 md:hidden md:text-[10rem]"
       >
-        SOBRE MIM
+        {t.about.watermark}
       </motion.h1>
       <motion.p
         initial={{ transform: "translateY(20px)", opacity: 0 }}
@@ -42,7 +44,7 @@ export function About() {
         viewport={{ once: true, amount: 0.5 }}
         className="mt-4 text-center text-3xl font-semibold md:text-6xl"
       >
-        Paixão, Criatividade e Código
+        {t.about.heading}
       </motion.p>
       <div className="mt-12 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row md:gap-18">
         <motion.div
@@ -61,22 +63,14 @@ export function About() {
             transition={{ duration: 0.4, delay: 0.25 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            Olá, sou Marcus Vinicius — Desenvolvedor Fullstack e Mobile do
-            Brasil.
+            {t.about.intro}
             <br />
             <br />
-            <span className="font-bold">
-              Com 2 anos de experiência, sou especializado em React.js, React
-              Native, Node.js e Kotlin com Spring Boot.
-            </span>{" "}
-            Construo interfaces modernas e responsivas integradas com
-            arquiteturas de back-end escaláveis e APIs RESTful de alto
-            desempenho.
+            <span className="font-bold">{t.about.bold}</span>{" "}
+            {t.about.afterBold}
             <br />
             <br />
-            Meu foco em otimização, segurança e boas práticas me permite
-            transformar ideias em aplicações robustas. Pronto para criar seu
-            próximo projeto de sucesso?
+            {t.about.outro}
           </motion.span>
         </div>
       </div>

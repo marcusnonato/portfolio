@@ -1,5 +1,8 @@
+"use client";
+
 import MainProject from "../main-project";
 import MobileProjectCard from "../mobile-project-card";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 const mainProjects = [
   {
@@ -113,13 +116,21 @@ const mainProjects = [
 ];
 
 const Projects = () => {
+  const { t } = useLanguage();
+
+  // usa a descrição traduzida (por id), mantendo o restante dos dados
+  const localizedProjects = mainProjects.map((project) => ({
+    ...project,
+    description: t.projects.descriptions[project.id] ?? project.description,
+  }));
+
   return (
     <section
       id="projects"
       className="top-0 flex h-full min-h-screen flex-col text-white"
     >
       <div className="hidden w-full flex-col justify-center lg:flex">
-        {mainProjects.map((project, index) => (
+        {localizedProjects.map((project, index) => (
           <MainProject
             project={project}
             key={project.id}
@@ -130,13 +141,13 @@ const Projects = () => {
 
       <div className="flex w-full flex-col px-4 py-8 lg:hidden">
         <div className="mb-8">
-          <h2 className="mb-3 text-4xl font-bold text-white">Projetos</h2>
-          <p className="text-lg text-gray-400">
-            Confira meus trabalhos em destaque
-          </p>
+          <h2 className="mb-3 text-4xl font-bold text-white">
+            {t.projects.heading}
+          </h2>
+          <p className="text-lg text-gray-400">{t.projects.subtitle}</p>
         </div>
 
-        {mainProjects.map((project) => (
+        {localizedProjects.map((project) => (
           <MobileProjectCard project={project} key={project.id} />
         ))}
       </div>

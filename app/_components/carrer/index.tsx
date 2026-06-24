@@ -1,180 +1,175 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { Calendar } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
+import { useLenis } from "lenis/react";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
+
+// vh de scroll reservado para cada experiência no modo pinado (desktop)
+const SEGMENT_VH = 100;
 
 const Carrer = () => {
-  const experiences = [
-    {
-      title: "Desenvolvedor de Software - Sidia",
-      description:
-        "Desenvolvimento full stack de aplicações web internas com ReactJS no front-end e Python com FastAPI no back-end, otimizando fluxos de trabalho corporativos. Criação de scripts de automação em Python para diferentes setores, reduzindo tarefas manuais. Integração de sistemas com bancos de dados SQL e NoSQL, garantindo escalabilidade e alta performance.",
-      date: "Jan 2026 - Atualmente",
-      highlight: "Full Stack",
-      tags: [
-        "ReactJS",
-        "Python",
-        "FastAPI",
-        "Automação",
-        "SQL",
-        "NoSQL",
-      ],
-    },
-    {
-      title: "Desenvolvedor de Software - Sucesso.APP",
-      description:
-        "Construção de uma plataforma de marketplace musical escalável e de alta performance, atuando no front-end com Next.js e TypeScript e no back-end com Kotlin e Spring Boot. Liderança técnica na migração completa da aplicação web de Angular para Next.js, resultando em ganhos expressivos de velocidade, estrutura de código e manutenibilidade. Modelagem e integração de sistemas com PostgreSQL utilizando Prisma como ORM, garantindo transações seguras e arquitetura limpa.",
-      date: "Jan 2025 - Jan 2026",
-      highlight: "Full Stack",
-      tags: [
-        "Next.js",
-        "TypeScript",
-        "Kotlin",
-        "Spring Boot",
-        "PostgreSQL",
-        "Prisma",
-        "Docker",
-      ],
-    },
-    {
-      title: "Estagiário Dev Web/Mobile - Feira da Tecnologia e Inovação",
-      description:
-        "Criação do ecossistema Smarteduca, desenvolvendo do zero uma solução completa de gestão parental tanto para ambiente web quanto para dispositivos móveis. Atuação no front-end com React.js (Vite e Next.js) para interfaces web rápidas e responsivas, além de React Native para o app mobile. Implementação e consumo de serviços na nuvem com Firebase para banco de dados em tempo real, autenticação e regras de negócio.",
-      date: "Jun 2024 - Nov 2024",
-      highlight: "Mobile",
-      tags: ["React", "React Native", "Vite", "Next.js", "Firebase"],
-    },
-    {
-      title: "Estagiário Dev Web/Mobile - Uninorte",
-      description:
-        "Criação de protótipo web e mobile feito no Figma. Criação da estrutura e arquitetura base do projeto (HTML, CSS e JavaScript para web). Android Studio para desenvolvimento de App Mobile.",
-      date: "Ago 2023 - Dez 2023",
-      highlight: "Mobile",
-      tags: ["HTML", "CSS", "JavaScript", "Android Studio", "Figma"],
-    },
-  ];
+  const { t } = useLanguage();
+  const experiences = t.career.experiences;
+  const sectionRef = useRef<HTMLElement>(null);
+  const lenis = useLenis();
+  const [active, setActive] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  const [currentExperience, setCurrentExperience] = useState<string>(
-    experiences[0].description,
-  );
-  const currentExp = experiences.find(
-    (exp) => exp.description === currentExperience,
-  );
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  // No desktop, o scroll controla qual experiência está ativa
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    if (!isDesktop) return;
+    const idx = Math.min(
+      experiences.length - 1,
+      Math.max(0, Math.floor(p * experiences.length)),
+    );
+    setActive(idx);
+  });
+
+  const handleSelect = (i: number) => {
+    if (isDesktop && sectionRef.current) {
+      // rola até o segmento correspondente da experiência clicada
+      const section = sectionRef.current;
+      const scrollRange = section.offsetHeight - window.innerHeight;
+      const target =
+        section.offsetTop +
+        ((i + 0.5) / experiences.length) * scrollRange;
+      if (lenis) lenis.scrollTo(target, { duration: 1 });
+      else window.scrollTo({ top: target, behavior: "smooth" });
+    } else {
+      setActive(i);
+    }
+  };
+
+  const currentExp = experiences[active];
 
   return (
     <section
       id="carrer"
-      className="relative flex min-h-screen flex-col overflow-hidden bg-zinc-950 px-4 pt-36 text-white lg:px-36 lg:pt-36 [&>*]:relative [&>*]:z-30"
+      ref={sectionRef}
+      className="relative bg-zinc-950 text-white"
+      style={isDesktop ? { height: `${experiences.length * SEGMENT_VH}vh` } : undefined}
     >
-      <div className="mb-15">
-        <motion.h2
-          initial={{ transform: "translateY(20px)", opacity: 0 }}
-          whileInView={{ transform: "translateY(0)", opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true, amount: 0.7 }}
-          className="mb-2 text-5xl font-bold text-white md:text-6xl"
-        >
-          Carreira
-        </motion.h2>
-        <motion.p
-          initial={{ transform: "translateY(20px)", opacity: 0 }}
-          whileInView={{ transform: "translateY(0)", opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          viewport={{ once: true, amount: 0.7 }}
-          className="m-0 text-xl text-white"
-        >
-          Desenvolvedor Full Stack & Mobile
-        </motion.p>
-      </div>
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-36 pb-16 lg:sticky lg:top-0 lg:h-screen lg:px-36 lg:pt-0 lg:pb-0">
+        {/* indicador de progresso do scroll da seção (desktop) */}
+        <div className="absolute inset-x-0 top-0 hidden h-1 bg-zinc-800/60 lg:block">
+          <motion.div
+            style={{ scaleX: scrollYProgress }}
+            className="h-full w-full origin-left bg-[#8aee14]"
+          />
+        </div>
 
-      <div className="flex w-full max-w-screen-2xl flex-col items-start justify-between gap-20 lg:flex-row lg:gap-20">
-        {currentExp && (
+        <div className="mb-10 lg:mb-14">
+          <motion.h2
+            initial={{ transform: "translateY(20px)", opacity: 0 }}
+            whileInView={{ transform: "translateY(0)", opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, amount: 0.7 }}
+            className="mb-2 text-5xl font-bold text-white md:text-6xl"
+          >
+            {t.career.heading}
+          </motion.h2>
+          <motion.p
+            initial={{ transform: "translateY(20px)", opacity: 0 }}
+            whileInView={{ transform: "translateY(0)", opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            viewport={{ once: true, amount: 0.7 }}
+            className="m-0 text-xl text-white"
+          >
+            {t.career.subtitle}
+          </motion.p>
+        </div>
+
+        <div className="flex w-full max-w-screen-2xl flex-col items-start justify-between gap-14 lg:flex-row lg:gap-20">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentExp.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
               className="flex-1"
             >
-              <div className="mb-8 flex items-center gap-5">
+              <div className="mb-6 flex items-center gap-5">
                 <div>
-                  <motion.h3
-                    initial={{ transform: "translateY(20px)", opacity: 0 }}
-                    whileInView={{ transform: "translateY(0)", opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.2 }}
-                    viewport={{ once: true, amount: 0.7 }}
-                    className="m-0 text-3xl font-semibold text-white md:text-4xl"
-                  >
+                  <h3 className="m-0 text-3xl font-semibold text-white md:text-4xl">
                     {currentExp.title}
-                  </motion.h3>
-                  <motion.span
-                    initial={{ transform: "translateY(20px)", opacity: 0 }}
-                    whileInView={{ transform: "translateY(0)", opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
-                    viewport={{ once: true, amount: 0.7 }}
-                    className="mt-2 flex items-center gap-2 text-lg text-gray-400"
-                  >
+                  </h3>
+                  <span className="mt-2 flex items-center gap-2 text-lg text-gray-400">
                     <Calendar size={20} />
                     {currentExp.date}
-                  </motion.span>
+                  </span>
                 </div>
               </div>
 
-              <motion.p
-                initial={{ transform: "translateY(13px)", opacity: 0 }}
-                whileInView={{ transform: "translateY(0)", opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.34 }}
-                viewport={{ once: true, amount: 0.7 }}
-                className="mb-8 text-xl leading-relaxed text-gray-200 md:text-2xl"
-              >
-                {currentExperience}
-              </motion.p>
+              <p className="mb-8 text-lg leading-relaxed text-gray-200 md:text-xl">
+                {currentExp.description}
+              </p>
 
               {currentExp.tags && (
-                <div className="mb-10 flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3">
                   {currentExp.tags.map((tag, index) => (
-                    <motion.span
-                      initial={{ transform: "translateY(20px)", opacity: 0 }}
-                      whileInView={{ transform: "translateY(0)", opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.35 + index * 0.05 }}
-                      viewport={{ once: true, amount: 0.7 }}
+                    <span
                       key={index}
                       className="origin-bottom rounded-xl border border-b-4 px-4 py-2 text-base font-medium text-white transition-all duration-300 select-none hover:scale-y-95 hover:border-b-2"
                     >
                       {tag}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
               )}
             </motion.div>
           </AnimatePresence>
-        )}
-        <div className="flex flex-1 flex-col">
-          <h3 className="mb-5 text-2xl font-semibold text-white md:text-3xl">
-            Experiências Profissionais
-          </h3>
 
-          {experiences.map((experience, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentExperience(experience.description)}
-              className={`relative cursor-pointer overflow-hidden border-l-2 px-6 py-6 transition-all duration-500 before:absolute before:top-0 before:left-0 before:h-full before:w-0.5 before:transition-all before:duration-500 before:content-[''] ${
-                currentExperience === experience.description
-                  ? "border-l border-white bg-gradient-to-br from-transparent to-gray-600/10"
-                  : "border-l border-gray-400/40 bg-transparent"
-              }`}
-            >
-              <div className="mb-4 flex items-center gap-4">
-                <h4 className="m-0 text-lg font-semibold text-white md:text-xl">
-                  {experience.title}
-                </h4>
-              </div>
-              <span className="text-sm font-medium text-gray-300">
-                {experience.date}
-              </span>
-            </div>
-          ))}
+          <div className="flex w-full flex-1 flex-col lg:w-auto">
+            <h3 className="mb-5 text-2xl font-semibold text-white md:text-3xl">
+              {t.career.listHeading}
+            </h3>
+
+            {experiences.map((experience, index) => (
+              <button
+                key={index}
+                onClick={() => handleSelect(index)}
+                className={`relative cursor-pointer overflow-hidden border-l px-6 py-6 text-left transition-all duration-500 ${
+                  active === index
+                    ? "border-[#8aee14] bg-gradient-to-br from-transparent to-gray-600/10"
+                    : "border-gray-400/40 bg-transparent hover:border-gray-300/70"
+                }`}
+              >
+                <div className="mb-3 flex items-center gap-4">
+                  <h4
+                    className={`m-0 text-lg font-semibold transition-colors md:text-xl ${
+                      active === index ? "text-white" : "text-gray-300"
+                    }`}
+                  >
+                    {experience.title}
+                  </h4>
+                </div>
+                <span className="text-sm font-medium text-gray-400">
+                  {experience.date}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>

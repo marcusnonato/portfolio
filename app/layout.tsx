@@ -1,14 +1,21 @@
-import { Exo_2 } from "next/font/google";
+import { Exo_2, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { SmoothScroll } from "./_components/smooth-scroll";
 import ChatBot from "./_components/chat-bot";
+import { LanguageProvider } from "./_i18n/LanguageProvider";
 
 const exo = Exo_2({
   variable: "--font-exo",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -18,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Marcus Nonato",
   },
   description:
-    "Desenvolvedor Full Stack & Mobile com 2 anos de experiência especializado em React.js, React Native, Node.js e Kotlin com Spring Boot. Construo aplicações modernas, escaláveis e de alta performance.",
+    "Desenvolvedor Full Stack & Mobile com 4 anos de experiência especializado em React.js, React Native, Node.js e Kotlin com Spring Boot. Construo aplicações modernas, escaláveis e de alta performance.",
   keywords: [
     "Marcus Nonato",
     "Desenvolvedor Full Stack",
@@ -86,12 +93,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${exo.className} dark antialiased`}>
-        <SmoothScroll>
-          <Toaster />
-          {children}
-        </SmoothScroll>
-        <ChatBot />
+      <body
+        className={`${exo.className} ${jetbrainsMono.variable} dark antialiased`}
+      >
+        <LanguageProvider>
+          <SmoothScroll>
+            <Toaster />
+            {children}
+          </SmoothScroll>
+          <ChatBot />
+        </LanguageProvider>
       </body>
     </html>
   );
