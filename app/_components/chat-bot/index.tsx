@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
-import { Bot, Loader2, Send, Sparkles } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
+import Markdown from "react-markdown";
 
 import {
   Sheet,
@@ -39,6 +40,53 @@ function getMessageText(message: UIMessage): string {
     .join("");
 }
 
+const HINT_TEXT = "Ficou com alguma dúvida? Converse com a minha versão IA!!";
+
+// Quanto tempo (ms) o balão fica visível antes de sumir sozinho.
+const HINT_DURATION = 8000;
+
+function TypingHint({ text }: { text: string }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let i = 0;
+    setCount(0);
+    const id = setInterval(() => {
+      i += 1;
+      setCount(i);
+      if (i >= text.length) clearInterval(id);
+    }, 35);
+    return () => clearInterval(id);
+  }, [text]);
+
+  const done = count >= text.length;
+
+  return (
+    <>
+      {text.slice(0, count)}
+      {!done && (
+        <span className="ml-px inline-block h-4 w-px translate-y-0.5 animate-pulse bg-gray-300" />
+      )}
+    </>
+  );
+}
+
+function MarkdownMessage({ text }: { text: string }) {
+  return (
+    <div className="flex flex-col gap-2 [&_a]:text-emerald-400 [&_a]:underline [&_li]:ml-1 [&_ol]:list-decimal [&_ol]:pl-5 [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-5">
+      <Markdown
+        components={{
+          a: ({ ...props }) => (
+            <a target="_blank" rel="noopener noreferrer" {...props} />
+          ),
+        }}
+      >
+        {text}
+      </Markdown>
+    </div>
+  );
+}
+
 function AssistantAvatar() {
   return (
     <div className="relative h-8 w-8 shrink-0 self-end">
@@ -59,7 +107,15 @@ function AssistantAvatar() {
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [hintActive, setHintActive] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const id = setTimeout(() => setHintActive(false), HINT_DURATION);
+    return () => clearTimeout(id);
+  }, []);
+
+  const hintVisible = hintActive && !open;
 
   const { messages, sendMessage, status, error } = useChat({
     transport: new DefaultChatTransport({ api: "/api/chat" }),
@@ -86,23 +142,54 @@ export default function ChatBot() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Abrir chat com assistente virtual"
-          className="group fixed right-5 bottom-5 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-zinc-800 to-zinc-950 shadow-lg shadow-black/40 transition-colors hover:border-white/40 md:right-8 md:bottom-8 md:h-16 md:w-16"
-        >
-          <Sparkles className="absolute h-3 w-3 -translate-x-4 -translate-y-4 text-white/70 transition-all group-hover:-translate-x-5 group-hover:-translate-y-5 group-hover:text-white" />
-          <Bot className="h-6 w-6 text-white md:h-7 md:w-7" />
-          <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-emerald-400">
-            <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75" />
-          </span>
-        </motion.button>
-      </SheetTrigger>
+      <div className="fixed top-20 right-5 z-40 flex items-start gap-2.5 md:top-24 md:right-8">
+        <AnimatePresence>
+          {hintVisible && (
+            <motion.button
+              key="hint"
+              type="button"
+              onClick={() => setOpen(true)}
+              initial={{ opacity: 0, scale: 0.8, x: 16 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 16 }}
+              transition={{ type: "spring", stiffness: 260, damping: 22 }}
+              className="max-w-[15rem] rounded-2xl rounded-tr-sm border border-white/10 bg-zinc-900 px-4 py-3 text-left text-sm leading-snug text-gray-100 shadow-lg shadow-black/40"
+            >
+              <TypingHint text={HINT_TEXT} />
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        <SheetTrigger asChild>
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 1,
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Abrir chat com assistente virtual"
+            className="group relative h-9 w-9 shrink-0 rounded-full border border-white/20 shadow-lg shadow-black/40 transition-colors hover:border-white/40 md:h-10 md:w-10"
+          >
+            <span className="absolute inset-0 overflow-hidden rounded-full">
+              <Image
+                src="/me.jpg"
+                alt="Foto do Marcus"
+                fill
+                sizes="48px"
+                className="object-cover"
+              />
+            </span>
+            <span className="absolute -top-0.5 -right-0.5 z-10 h-3 w-3 rounded-full border-2 border-zinc-950 bg-emerald-400">
+              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75" />
+            </span>
+          </motion.button>
+        </SheetTrigger>
+      </div>
 
       <SheetContent
         side="right"
@@ -134,13 +221,19 @@ export default function ChatBot() {
                   >
                     {!isUser && <AssistantAvatar />}
                     <div
-                      className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
+                      className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                         isUser
-                          ? "rounded-br-sm bg-white text-zinc-950"
+                          ? "rounded-br-sm bg-white whitespace-pre-wrap text-zinc-950"
                           : "rounded-bl-sm border border-white/10 bg-zinc-900 text-gray-100"
                       }`}
                     >
-                      {text || (
+                      {text ? (
+                        isUser ? (
+                          text
+                        ) : (
+                          <MarkdownMessage text={text} />
+                        )
+                      ) : (
                         <span className="inline-flex items-center gap-1 text-gray-400">
                           <Loader2 className="h-3 w-3 animate-spin" />
                           pensando...

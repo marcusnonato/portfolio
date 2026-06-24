@@ -1,4 +1,4 @@
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { streamText, convertToModelMessages, UIMessage } from "ai";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
@@ -30,7 +30,7 @@ function getClientIp(req: Request): string {
 }
 
 export async function POST(req: Request) {
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
     return Response.json(
       { error: "Chat indisponível no momento." },
       { status: 503 },
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: anthropic("claude-haiku-4-5"),
+    model: google("gemini-2.5-flash"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     temperature: 0.4,

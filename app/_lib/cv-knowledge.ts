@@ -24,7 +24,7 @@ JavaScript, TypeScript, ReactJS, React Native, Node.js, Kotlin, Spring Boot, JPA
 - Automação de Processos: criação de scripts de automação em Python para atender necessidades específicas de diversos setores, reduzindo tarefas manuais e aumentando a eficiência.
 - Gestão de Dados e APIs: integração de sistemas com bancos de dados SQL e NoSQL, garantindo soluções escaláveis e de alta performance.
 
-### Sucesso.APP — Desenvolvedor de Software (Jan 2025 - Jan 2026)
+### Sucesso.APP — Desenvolvedor de Software (Jan 2024 - Jan 2026)
 - Desenvolvimento de Produto: construção de uma plataforma de marketplace musical escalável e de alta performance, atuando no front-end com Next.js e TypeScript e no back-end com Kotlin e Spring Boot.
 - Refatoração Estratégica: liderança técnica na migração completa da aplicação web de Angular para Next.js, resultando em ganhos expressivos de velocidade, estrutura de código e manutenibilidade.
 - Engenharia de Dados e APIs: modelagem e integração de sistemas com banco de dados relacional PostgreSQL utilizando Prisma como ORM, garantindo transações seguras e arquitetura limpa.
@@ -50,29 +50,29 @@ JavaScript, TypeScript, ReactJS, React Native, Node.js, Kotlin, Spring Boot, JPA
 
 ## Projetos
 
-### SucessoAPP Landing Page
-Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming.
+### SucessoAPP Landing
+Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.
 Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Docker, Shadcn/UI.
 
 ### FSW Foods
-Site de e-commerce de restaurante, semelhante ao iFood, onde o usuário pode pesquisar por restaurantes, adicionar alimentos ao carrinho e finalizar seu pedido.
+Site de e-commerce para restaurantes, similar ao iFood, onde usuários podem buscar restaurantes, adicionar comidas ao carrinho e finalizar pedidos.
 Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI, NextAuth.
 
-### EWEAR
-E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos, adicionar ao carrinho e finalizar pedidos.
-Tecnologias: Next.js, Tailwind CSS, TypeScript, Stripe, PostgreSQL, Docker, Shadcn/UI, Drizzle ORM, Better Auth.
-
-### Barbershop MV
+### MV Barber
 Site de e-commerce para barbearias, onde usuários podem buscar serviços como cortes de cabelo, barba e outros.
-Tecnologias: Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI, PostgreSQL, Clerk Auth.
+Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI, NextAuth.
 
-### Preço Justo (Teste Técnico)
-Aplicativo para compras de eletrônicos, interface simples e intuitiva.
-Tecnologias: React Native CLI, TypeScript, Firebase, Zod, React Hook Form, React Native Reanimated.
+### BEWEAR
+E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos, adicionar ao carrinho e finalizar pedidos.
+Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Drizzle, Shadcn/UI, Better Auth.
 
-### Marketspace
-Aplicativo de compras e vendas online, semelhante ao OLX, permitindo os usuários publicarem itens para vendas e comprarem produtos de outros.
-Tecnologias: React Native, TypeScript, GluestackUI, Expo, EAS, Firebase, Zod, React Hook Form.
+### Finance AI
+Plataforma de gestão financeira pessoal com inteligência artificial, onde usuários podem monitorar receitas, despesas e investimentos, visualizar análises por categoria através de gráficos interativos e gerar relatórios financeiros com IA. Possui sistema de assinatura freemium (gratuito com limite de 10 transações/mês ou premium ilimitado).
+Tecnologias: Next.js 16, TypeScript, Prisma, PostgreSQL, Tailwind CSS, Shadcn/UI, Clerk, Stripe.
+
+### Moto Market
+Plataforma para concessionárias de motos, permitindo exibir inventário e conectar clientes diretamente aos vendedores via WhatsApp de forma rápida e prática.
+Tecnologias: Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI, PostgreSQL.
 `.trim();
 
 export const SYSTEM_PROMPT = `Você é o assistente virtual do portfólio do Marcus Nonato, um desenvolvedor Full Stack & Mobile brasileiro. Seu papel é responder perguntas de visitantes do portfólio sobre o Marcus — sua experiência profissional, habilidades técnicas, projetos, formação e contato.
