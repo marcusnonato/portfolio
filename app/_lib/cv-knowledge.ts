@@ -50,9 +50,12 @@ JavaScript, TypeScript, ReactJS, React Native, Node.js, Kotlin, Spring Boot, JPA
 
 ## Projetos
 
-### SucessoAPP Landing
-Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.
-Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Docker, Shadcn/UI.
+### SucessoAPP
+Marketplace musical que conecta compositores, artistas, editoras e gravadoras para licenciar músicas inéditas ("guias"). Marcus atua como full stack, com mais de 1.400 commits entre o painel web e o backend.
+O que ele construiu:
+- Backend (Kotlin + Spring Boot, JPA, PostgreSQL): APIs de guias (upload, curtidas, histórico de reprodução, exclusão colaborativa com aprovação dos coautores), audições com submissões e encerramento automático por agendador, playlists colaborativas, editoras (contratos, dados bancários e Pix, participação nas vendas), gêneros e subgêneros, banners, indicações (referral), captação de leads, assinaturas e benefícios, relatórios financeiros em PDF, endpoints do BI gerencial e do questionário de qualificação, notificações e documentação Swagger.
+- Painel web (Next.js, TypeScript, React Query, Tailwind CSS, Shadcn/UI): painel administrativo (conteúdos, financeiro, guias, usuários, editoras, beta, permissões de admin, migração e curadoria de guias), BI com relatório semanal e drill-down por mês, Gerencial de Gravadoras (artistas, A&Rs, audições, playlists), área do artista, checkout de licenças e de planos com Pix (QR Code e timer), player de áudio com HLS, exportação CSV e landing pages de captação (pré-cadastro, early access, live de lançamento, rankings).
+Tecnologias: Kotlin, Spring Boot, JPA/Hibernate, PostgreSQL, Next.js, React, TypeScript, React Query, Tailwind CSS, Shadcn/UI, Docker.
 
 ### Pedidos (pedidos.marcusnonato.app)
 Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Tem dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Demo: https://mundo-doce.pedidos.marcusnonato.app
