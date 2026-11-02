@@ -38,24 +38,36 @@ export async function POST(req: Request) {
   }
 
   if (ratelimit) {
-    const ip = getClientIp(req);
-    const { success, reset } = await ratelimit.limit(ip);
-    if (!success) {
-      const retryAfter = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
-      return Response.json(
-        {
-          error:
-            "Você atingiu o limite de mensagens. Tente novamente em alguns minutos.",
-        },
-        {
-          status: 429,
-          headers: { "Retry-After": String(retryAfter) },
-        },
-      );
+    // Se o Upstash cair (credencial expirada, banco apagado), o chat segue sem limite
+    // em vez de devolver 500 para o visitante; o erro fica no log da Vercel.
+    try {
+      const ip = getClientIp(req);
+      const { success, reset } = await ratelimit.limit(ip);
+      if (!success) {
+        const retryAfter = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
+        return Response.json(
+          {
+            error:
+              "Você atingiu o limite de mensagens. Tente novamente em alguns minutos.",
+          },
+          {
+            status: 429,
+            headers: { "Retry-After": String(retryAfter) },
+          },
+        );
+      }
+    } catch (error) {
+      console.error("[chat] rate limit indisponível, seguindo sem limite:", error);
     }
   }
 
-  const { messages }: { messages: UIMessage[] } = await req.json();
+  let messages: UIMessage[];
+  try {
+    ({ messages } = await req.json());
+    if (!Array.isArray(messages)) throw new Error("messages ausente");
+  } catch {
+    return Response.json({ error: "Mensagem inválida." }, { status: 400 });
+  }
 
   const result = streamText({
     model: openai(process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
@@ -64,5 +76,11 @@ export async function POST(req: Request) {
     temperature: 0.4,
   });
 
-  return result.toUIMessageStreamResponse();
+  return result.toUIMessageStreamResponse({
+    onError: (error) => {
+      // O detalhe (chave, cota, modelo) vai para o log; o visitante vê só o aviso
+      console.error("[chat] erro do modelo:", error);
+      return "Não consegui responder agora. Tente de novo em instantes.";
+    },
+  });
 }
