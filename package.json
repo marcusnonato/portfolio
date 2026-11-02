@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@ai-sdk/google": "^3.0.83",
+    "@ai-sdk/openai": "^3.0.135",
     "@ai-sdk/react": "^3.0.169",
     "@auth/prisma-adapter": "^2.11.0",
     "@radix-ui/react-dialog": "^1.1.15",

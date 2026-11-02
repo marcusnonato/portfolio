@@ -7,7 +7,7 @@ export const CV_KNOWLEDGE = `
 - Localização: Manaus/AM, Brasil
 - GitHub: github.com/marcusnonato
 - LinkedIn: linkedin.com/in/marcusnonato
-- Portfólio: marcus-nonato.me
+- Portfólio: marcusnonato.app
 
 ## Sobre
 Desenvolvedor Full Stack e Mobile, especializado em React.js, React Native, Node.js (Express, Fastify) e Kotlin com Spring Boot. Tem experiência no desenvolvimento de interfaces modernas e responsivas, criação de APIs RESTful de alta performance, integração eficiente entre front-end e back-end, e modelagem de bancos de dados relacionais com TypeORM e JPA/Hibernate.
@@ -53,6 +53,10 @@ JavaScript, TypeScript, ReactJS, React Native, Node.js, Kotlin, Spring Boot, JPA
 ### SucessoAPP Landing
 Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.
 Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Docker, Shadcn/UI.
+
+### Pedidos (pedidos.marcusnonato.app)
+Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Tem dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Demo: https://mundo-doce.pedidos.marcusnonato.app
+Tecnologias: Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Better Auth, Tailwind CSS, Shadcn/UI, Vercel Blob, AbacatePay.
 
 ### FSW Foods
 Site de e-commerce para restaurantes, similar ao iFood, onde usuários podem buscar restaurantes, adicionar comidas ao carrinho e finalizar pedidos.

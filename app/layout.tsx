@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://marcus-nonato.me"),
+  metadataBase: new URL("https://marcusnonato.app"),
   title: {
     default: "Marcus Nonato - Desenvolvedor Full Stack & Mobile",
     template: "%s | Marcus Nonato",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "APIs RESTful",
     "Desenvolvedor Brasil",
   ],
-  authors: [{ name: "Marcus Nonato", url: "https://marcus-nonato.me" }],
+  authors: [{ name: "Marcus Nonato", url: "https://marcusnonato.app" }],
   creator: "Marcus Nonato",
   publisher: "Marcus Nonato",
   robots: {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://marcus-nonato.me",
+    url: "https://marcusnonato.app",
     siteName: "Marcus Nonato Portfolio",
     title: "Marcus Nonato - Desenvolvedor Full Stack & Mobile",
     description:

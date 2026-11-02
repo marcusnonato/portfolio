@@ -158,6 +158,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       demoUnavailable: "Demo Indisponível",
       descriptions: {
         "1": "Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.",
+        "7": "Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Conta com dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Construída com Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Better Auth, Tailwind CSS, Shadcn/UI e Vercel Blob.",
         "3": "Site de e-commerce para restaurantes, similar ao iFood, onde usuários podem buscar restaurantes, adicionar comidas ao carrinho e finalizar pedidos. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI e NextAuth.",
         "4": "Site de e-commerce para barbearias, onde usuários podem buscar serviços como: cortes de cabelo, barba e outros. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI e NextAuth.",
         "5": "E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos, adicionar ao carrinho e finalizar pedidos. Construído com Next.js, Tailwind CSS, TypeScript, PostgreSQL, Drizzle, Shadcn/UI e Better Auth.",
@@ -269,6 +270,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       demoUnavailable: "Demo Unavailable",
       descriptions: {
         "1": "A platform that connects songwriters and artists, offering secure licensing, automated contracts, royalty management and streaming analytics. It simplifies negotiations and centralizes music career management.",
+        "7": "A multi-tenant SaaS platform for restaurants and bakeries. Each store gets its own subdomain with a digital menu, Pix checkout (AbacatePay) and delivery with ZIP code autofill, plus a dashboard with a point of sale (POS), real-time kitchen, stock, sales history, cash closing and production forecast. It offers two plans (Menu and Full) and a Super Admin console with an audit log. Built with Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Better Auth, Tailwind CSS, Shadcn/UI and Vercel Blob.",
         "3": "An e-commerce site for restaurants, similar to iFood, where users can search restaurants, add food to the cart and place orders. Built with Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI and NextAuth.",
         "4": "An e-commerce site for barbershops, where users can browse services like haircuts, beard trims and more. Built with Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI and NextAuth.",
         "5": "A fashion and streetwear clothing e-commerce, where users can browse products, add to cart and place orders. Built with Next.js, Tailwind CSS, TypeScript, PostgreSQL, Drizzle, Shadcn/UI and Better Auth.",
