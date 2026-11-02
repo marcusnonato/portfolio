@@ -78,8 +78,8 @@ Plataforma de gestão financeira pessoal com inteligência artificial, onde usu�
 Tecnologias: Next.js 16, TypeScript, Prisma, PostgreSQL, Tailwind CSS, Shadcn/UI, Clerk, Stripe.
 
 ### Moto Market
-Plataforma para concessionárias de motos, permitindo exibir inventário e conectar clientes diretamente aos vendedores via WhatsApp de forma rápida e prática.
-Tecnologias: Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI, PostgreSQL.
+Vitrine para lojas de motos multimarcas (Honda, Yamaha, BMW, Kawasaki, Ducati). Cada modelo tem página própria com ficha técnica, foto e uma "plaqueta" com cilindrada, preço à vista e parcela estimada. Tem simulador de financiamento (sistema Price, entrada de 0 a 60%, de 12 a 60 vezes) que envia a simulação pelo WhatsApp, filtros por categoria e marca, busca, ordenação por preço ou cilindrada e comparação lado a lado de até 3 motos. As migrations do banco rodam automaticamente a cada deploy.
+Tecnologias: Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Tailwind CSS.
 `.trim();
 
 export const SYSTEM_PROMPT = `Você é o assistente virtual do portfólio do Marcus Nonato, um desenvolvedor Full Stack & Mobile brasileiro. Seu papel é responder perguntas de visitantes do portfólio sobre o Marcus — sua experiência profissional, habilidades técnicas, projetos, formação e contato.
