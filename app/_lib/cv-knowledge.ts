@@ -66,8 +66,8 @@ Site de e-commerce para restaurantes, similar ao iFood, onde usuários podem bus
 Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI, NextAuth.
 
 ### MV Barber
-Site de e-commerce para barbearias, onde usuários podem buscar serviços como cortes de cabelo, barba e outros.
-Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Prisma, Shadcn/UI, NextAuth.
+App de agendamento para barbearias. O cliente busca por barbearia ou serviço, escolhe o dia e um horário livre (de 45 em 45 minutos, das 9h às 21h) e recebe a reserva como um cartão de horário. Depois do atendimento, pode avaliar com 1 a 5 estrelas e comentário; a barbearia mostra a média e os comentários. Reservas e cancelamentos usam a sessão do servidor, sem horário duplicado. Visual escuro inspirado em cadeira de barbeiro (couro e latão).
+Tecnologias: Next.js 16, TypeScript, Prisma, PostgreSQL, NextAuth (Google), Tailwind CSS, Shadcn/UI.
 
 ### BEWEAR
 E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos, adicionar ao carrinho e finalizar pedidos.
