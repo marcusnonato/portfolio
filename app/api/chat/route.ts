@@ -1,4 +1,4 @@
-import { google } from "@ai-sdk/google";
+import { openai } from "@ai-sdk/openai";
 import { streamText, convertToModelMessages, UIMessage } from "ai";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
@@ -30,7 +30,7 @@ function getClientIp(req: Request): string {
 }
 
 export async function POST(req: Request) {
-  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+  if (!process.env.OPENAI_API_KEY) {
     return Response.json(
       { error: "Chat indisponível no momento." },
       { status: 503 },
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: google("gemini-2.5-flash"),
+    model: openai(process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     temperature: 0.4,
