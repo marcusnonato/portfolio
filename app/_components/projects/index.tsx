@@ -22,7 +22,26 @@ const mainProjects = [
     updatedAt: "2025-08-22",
     isInDevelopment: false,
   },
-
+  {
+    id: "7",
+    title: "Pedidos",
+    coverImage: "/checkout-app.png",
+    description:
+      "Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Conta com dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Construída com Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Better Auth, Tailwind CSS, Shadcn/UI e Vercel Blob.",
+    startDate: "2025-12",
+    finishDate: "Present",
+    repoLink: "https://mundo-doce.pedidos.marcusnonato.app",
+    demoLink: "https://mundo-doce.pedidos.marcusnonato.app",
+    images: [
+      "/checkout-app-1.png",
+      "/checkout-app-2.png",
+      "/checkout-app-3.png",
+      "/checkout-app-4.png",
+    ],
+    createdAt: "2025-12-15",
+    updatedAt: "2026-11-02",
+    isInDevelopment: false,
+  },
   {
     id: "3",
     title: "FSW Foods",
