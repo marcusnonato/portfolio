@@ -120,14 +120,19 @@ const mainProjects = [
   {
     id: "2",
     title: "Moto Market",
-    coverImage: "/moto-market.png",
+    coverImage: "/motomarket-cover.png",
     description:
-      "Moto Market é uma plataforma para concessionárias de motos, permitindo exibir inventário e conectar clientes diretamente aos vendedores via WhatsApp de forma rápida e prática. Construída com Next.js, Tailwind CSS, TypeScript, Prisma, Shadcn/UI e PostgreSQL.",
+      "Vitrine para lojas de motos multimarcas: cada modelo tem página própria com ficha técnica, foto e plaqueta com cilindrada, preço e parcela. Tem simulador de financiamento que manda a simulação pelo WhatsApp, filtros por categoria e marca, busca, ordenação e comparação lado a lado de até 3 motos. Construída com Next.js 16, React 19, TypeScript, Prisma, PostgreSQL e Tailwind CSS.",
     startDate: "2024-01",
     finishDate: null,
     repoLink: "https://github.com/marcusnonato/Moto-market",
     demoLink: "https://moto-market-navy.vercel.app/",
-    images: ["/moto-1.png", "/moto-2.png", "/moto-3.png", "/moto-4.png"],
+    images: [
+      "/motomarket-1.png",
+      "/motomarket-2.png",
+      "/motomarket-3.png",
+      "/motomarket-4.png",
+    ],
     createdAt: "2024-01-01",
     updatedAt: "2024-12-01",
     isInDevelopment: false,
