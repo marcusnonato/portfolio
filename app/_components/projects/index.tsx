@@ -7,12 +7,12 @@ import { useLanguage } from "@/app/_i18n/LanguageProvider";
 const mainProjects = [
   {
     id: "1",
-    title: "SucessoAPP Landing",
+    title: "SucessoAPP",
     coverImage: "/sucesso-app.png",
     description:
-      "Plataforma que conecta compositores e artistas, oferecendo licenciamento seguro, contratos automatizados, gestão de royalties e análises de streaming. Simplifica negociações e centraliza o gerenciamento de carreira musical.",
-    note: "Somos uma startup com 6 desenvolvedores e 2 designers (em breve expandindo em +2) criando uma plataforma de entretenimento multimídia. A ideia nasceu da falta de um lugar inclusivo e completo para acompanhar tudo o que gostamos. De filmes a mangás.",
-    startDate: "2025-06",
+      "Marketplace musical que conecta compositores, artistas, editoras e gravadoras para licenciar músicas inéditas. Como full stack, com mais de 1.400 commits, construí no backend (Kotlin e Spring Boot) as APIs de guias, audições, playlists colaborativas, editoras, assinaturas e do BI gerencial, e no front (Next.js e React Query) o painel administrativo, o Gerencial de Gravadoras, o checkout de licenças e planos com Pix e as landing pages de captação.",
+    note: "Startup de tecnologia para o mercado da música, com times de web, backend, Android e iOS.",
+    startDate: "2025-03",
     finishDate: "Present",
     repoLink: "https://admin.dev.sucessoapp.com/",
     demoLink: "https://admin.dev.sucessoapp.com/",
