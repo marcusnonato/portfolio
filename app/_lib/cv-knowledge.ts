@@ -74,8 +74,8 @@ E-commerce de roupas de moda e streetwear, onde usuários podem buscar produtos,
 Tecnologias: Next.js, Tailwind CSS, TypeScript, PostgreSQL, Drizzle, Shadcn/UI, Better Auth.
 
 ### Finance AI
-Plataforma de gestão financeira pessoal com inteligência artificial, onde usuários podem monitorar receitas, despesas e investimentos, visualizar análises por categoria através de gráficos interativos e gerar relatórios financeiros com IA. Possui sistema de assinatura freemium (gratuito com limite de 10 transações/mês ou premium ilimitado).
-Tecnologias: Next.js 16, TypeScript, Prisma, PostgreSQL, Tailwind CSS, Shadcn/UI, Clerk, Stripe.
+App de finanças pessoais que fecha o mês como um extrato bancário: mostra quanto sobrou, uma régua dividida entre gasto, investido e o que sobrou, e para onde foi o dinheiro por categoria. O extrato é agrupado por dia, com filtros por tipo (entrada, gasto, investimento), categoria e busca pelo nome, e navegação mês a mês entre anos. Cada usuário só vê e altera os próprios lançamentos. No Premium, um relatório com IA (GPT, via AI SDK) resume o mês, aponta até 3 pontos de atenção e 3 sugestões de economia; o relatório fica salvo por mês. O plano grátis tem limite de 10 lançamentos por mês, checado no servidor, e a assinatura é pelo Stripe. Tema escuro, login com Clerk em português e migrations automáticas a cada deploy.
+Tecnologias: Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Tailwind CSS, Clerk, Stripe, AI SDK (OpenAI).
 
 ### Moto Market
 Vitrine para lojas de motos multimarcas (Honda, Yamaha, BMW, Kawasaki, Ducati). Cada modelo tem página própria com ficha técnica, foto e uma "plaqueta" com cilindrada, preço à vista e parcela estimada. Tem simulador de financiamento (sistema Price, entrada de 0 a 60%, de 12 a 60 vezes) que envia a simulação pelo WhatsApp, filtros por categoria e marca, busca, ordenação por preço ou cilindrada e comparação lado a lado de até 3 motos. As migrations do banco rodam automaticamente a cada deploy.
