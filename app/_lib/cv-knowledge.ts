@@ -50,12 +50,22 @@ JavaScript, TypeScript, ReactJS, React Native, Node.js, Kotlin, Spring Boot, JPA
 
 ## Projetos
 
+### Uni-Snack (TCC)
+TCC de Engenharia da Computação em que Marcus desenvolveu todas as aplicações: API, app e painéis web. A Uninorte foi usada apenas como exemplo de instituição para demonstrar o sistema. O sistema une a cantina à rotina acadêmica e tem quatro partes ligadas à mesma API:
+- App do aluno (Expo, React Native): pedido e pagamento por Pix ou cartão, acompanhamento do preparo, código de entrega, matérias, horários e calendário.
+- Web da cantina (Next.js): pedidos em tempo real, cozinha, venda no balcão, previsão de demanda e fechamento.
+- Web de professor e coordenação (Next.js): chamada, notas, avisos, turmas e alunos. Os módulos acadêmicos são simulados.
+- API (NestJS, Prisma, PostgreSQL, Socket.IO): máquina de estados do pedido, webhooks de pagamento assinados e idempotentes, autenticação JWT com refresh tokens rotativos e quatro perfis de acesso.
+A previsão de demanda combina presença, 8 semanas de vendas e o calendário acadêmico, com margem de 15%. O repositório é privado e não há demo pública; o portfólio mostra as telas em um estudo de caso. O projeto não mediu redução de filas.
+Tecnologias: NestJS, TypeScript, Prisma, PostgreSQL, Socket.IO, JWT, AbacatePay, Expo, React Native, Expo Router, TanStack Query, Next.js, React, Tailwind CSS.
+
 ### SucessoAPP
-Marketplace musical que conecta compositores, artistas, editoras e gravadoras para licenciar músicas inéditas ("guias"). Marcus atua como full stack, com mais de 1.400 commits entre o painel web e o backend.
+Marketplace musical que conecta compositores, artistas, editoras e gravadoras para licenciar músicas inéditas ("guias"). Marcus atuou como full stack de janeiro de 2024 a janeiro de 2026, com mais de 1.400 commits entre o painel web e o backend.
 O que ele construiu:
 - Backend (Kotlin + Spring Boot, JPA, PostgreSQL): APIs de guias (upload, curtidas, histórico de reprodução, exclusão colaborativa com aprovação dos coautores), audições com submissões e encerramento automático por agendador, playlists colaborativas, editoras (contratos, dados bancários e Pix, participação nas vendas), gêneros e subgêneros, banners, indicações (referral), captação de leads, assinaturas e benefícios, relatórios financeiros em PDF, endpoints do BI gerencial e do questionário de qualificação, notificações e documentação Swagger.
 - Painel web (Next.js, TypeScript, React Query, Tailwind CSS, Shadcn/UI): painel administrativo (conteúdos, financeiro, guias, usuários, editoras, beta, permissões de admin, migração e curadoria de guias), BI com relatório semanal e drill-down por mês, Gerencial de Gravadoras (artistas, A&Rs, audições, playlists), área do artista, checkout de licenças e de planos com Pix (QR Code e timer), player de áudio com HLS, exportação CSV e landing pages de captação (pré-cadastro, early access, live de lançamento, rankings).
-Tecnologias: Kotlin, Spring Boot, JPA/Hibernate, PostgreSQL, Next.js, React, TypeScript, React Query, Tailwind CSS, Shadcn/UI, Docker.
+Por ser um produto privado de cliente, o portfólio mostra apenas a landing page pública (https://sucessoapp.com) e a arquitetura: monolito modular em Kotlin e Spring Boot, PostgreSQL separado por domínio, eventos com Kafka, cache e busca.
+Tecnologias: Kotlin, Spring Boot, JPA/Hibernate, PostgreSQL, Kafka, Redis, Elasticsearch, Next.js, React, TypeScript, React Query, Tailwind CSS, Shadcn/UI, Docker.
 
 ### Pedidos (pedidos.marcusnonato.app)
 Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Tem dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Demo: https://mundo-doce.pedidos.marcusnonato.app

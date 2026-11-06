@@ -1,13 +1,22 @@
-import { Code2, SquareDashedMousePointer } from "lucide-react";
+import {
+  Code2,
+  LayoutPanelLeft,
+  Lock,
+  SquareDashedMousePointer,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { MainProjectProps } from "@/app/_types";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 interface MobileProjectCardProps {
   project: MainProjectProps;
+  onOpenCaseStudy?: () => void;
 }
 
-export default function MobileProjectCard({ project }: MobileProjectCardProps) {
+export default function MobileProjectCard({
+  project,
+  onOpenCaseStudy,
+}: MobileProjectCardProps) {
   const { t } = useLanguage();
 
   return (
@@ -34,7 +43,16 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
         </p>
 
         <div className="flex flex-col gap-3">
-          {project.demoLink ? (
+          {project.caseStudy ? (
+            <button
+              type="button"
+              onClick={onOpenCaseStudy}
+              className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/20"
+            >
+              <LayoutPanelLeft size={18} />
+              {t.projects.viewCaseStudy}
+            </button>
+          ) : project.demoLink ? (
             <a
               href={project.demoLink}
               className="flex items-center justify-center gap-2 rounded-xl border-2 border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition-all hover:border-white/40 hover:bg-white/20"
@@ -51,15 +69,22 @@ export default function MobileProjectCard({ project }: MobileProjectCardProps) {
             </span>
           )}
 
-          <a
-            href={project.repoLink}
-            className="flex items-center justify-center gap-2 rounded-xl border-2 border-white px-4 py-3 font-semibold text-white transition-all hover:bg-white hover:text-black"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Code2 size={18} />
-            {t.projects.viewCode}
-          </a>
+          {project.repoLink ? (
+            <a
+              href={project.repoLink}
+              className="flex items-center justify-center gap-2 rounded-xl border-2 border-white px-4 py-3 font-semibold text-white transition-all hover:bg-white hover:text-black"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Code2 size={18} />
+              {t.projects.viewCode}
+            </a>
+          ) : (
+            <span className="flex items-center justify-center gap-2 rounded-xl border-2 border-zinc-700 px-4 py-3 text-sm font-medium text-zinc-400">
+              <Lock size={18} />
+              {t.projects.privateRepo}
+            </span>
+          )}
         </div>
 
         {project.images && project.images.length > 0 && (

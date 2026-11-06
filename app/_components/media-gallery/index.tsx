@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { createPortal } from "react-dom";
 import Image from "next/image";
+import ImageLightbox from "../image-lightbox";
 import { MediaGalleryProps } from "@/app/_types";
 
 const MediaGallery = ({ images }: MediaGalleryProps) => {
@@ -45,27 +45,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
     },
   });
 
-  useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape") setSelectedImage(null);
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedImage(null);
-    };
-
-    if (selectedImage) {
-      document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedImage]);
+  const closeLightbox = useCallback(() => setSelectedImage(null), []);
 
   return (
     <>
@@ -133,24 +113,13 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
         )}
       </div>
 
-      {selectedImage &&
-        createPortal(
-          <div
-            className="pointer-events-auto fixed inset-0 z-[2147483646] flex animate-[fadeIn_0.3s_ease] cursor-zoom-out items-center justify-center bg-black/95 [&[data-state=open]]:animate-[fadeIn_0.3s_ease]"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative z-[2147483647] max-h-[90vh] max-w-[90vw]">
-              <Image
-                src={selectedImage}
-                alt="Imagem expandida do projeto"
-                width={1200}
-                height={800}
-                className="max-h-[90vh] rounded-xl object-contain shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
-              />
-            </div>
-          </div>,
-          document.body,
-        )}
+      {selectedImage && (
+        <ImageLightbox
+          src={selectedImage}
+          alt="Imagem expandida do projeto"
+          onClose={closeLightbox}
+        />
+      )}
     </>
   );
 };
