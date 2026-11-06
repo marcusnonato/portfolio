@@ -1,4 +1,9 @@
-import { Code2, SquareDashedMousePointer } from "lucide-react";
+import {
+  Code2,
+  LayoutPanelLeft,
+  Lock,
+  SquareDashedMousePointer,
+} from "lucide-react";
 import MediaGallery from "../media-gallery";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
@@ -8,9 +13,14 @@ import { useLanguage } from "@/app/_i18n/LanguageProvider";
 interface MainProps {
   project: MainProjectProps;
   inverse?: boolean;
+  onOpenCaseStudy?: () => void;
 }
 
-export default function MainProject({ project, inverse }: MainProps) {
+export default function MainProject({
+  project,
+  inverse,
+  onOpenCaseStudy,
+}: MainProps) {
   const { t } = useLanguage();
   const ref = useRef(null);
 
@@ -65,7 +75,16 @@ export default function MainProject({ project, inverse }: MainProps) {
           <div
             className={`mt-6 flex w-fit flex-col gap-2 ${inverse ? "self-end" : ""} sm:flex-row`}
           >
-            {project.demoLink ? (
+            {project.caseStudy ? (
+              <button
+                type="button"
+                onClick={onOpenCaseStudy}
+                className="inline-flex origin-bottom cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
+              >
+                <LayoutPanelLeft size={18} />
+                {t.projects.viewCaseStudy}
+              </button>
+            ) : project.demoLink ? (
               <a
                 href={project.demoLink}
                 className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
@@ -88,15 +107,22 @@ export default function MainProject({ project, inverse }: MainProps) {
               </motion.span>
             )}
 
-            <a
-              href={project.repoLink}
-              className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Code2 size={18} />
-              {t.projects.viewCode}
-            </a>
+            {project.repoLink ? (
+              <a
+                href={project.repoLink}
+                className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Code2 size={18} />
+                {t.projects.viewCode}
+              </a>
+            ) : (
+              <span className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/30 px-6 py-3 font-semibold text-white/70">
+                <Lock size={18} />
+                {t.projects.privateRepo}
+              </span>
+            )}
           </div>
         </div>
 

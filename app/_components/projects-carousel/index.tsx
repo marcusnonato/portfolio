@@ -18,7 +18,7 @@ export const CarouselContainer2 = () => {
         "A digital platform designed to professionalize the music industry by connecting composers and artists. It provides secure licensing, automated contracts, and transparent royalty management, while also offering analytics for streaming performance. The solution simplifies negotiations, ensures legal protection, and centralizes career management for music professionals.",
       lastUpdated: "2024",
       repoLink: "Private",
-      liveLink: "https://admin.dev.sucessoapp.com/",
+      liveLink: "https://sucessoapp.com",
     },
     {
       cover: "/moto-market.png",
