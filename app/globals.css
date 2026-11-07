@@ -266,3 +266,15 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Barra de rolagem escura para áreas que são sempre escuras (ex.: estudo de caso).
+   color-scheme e scrollbar-color são herdados, então basta aplicar no container. */
+@utility scrollbar-dark {
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-zinc-700) transparent;
+
+  &:hover {
+    scrollbar-color: var(--color-zinc-500) transparent;
+  }
+}
