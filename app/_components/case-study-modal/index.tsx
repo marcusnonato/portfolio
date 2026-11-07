@@ -94,7 +94,7 @@ export default function CaseStudyModal({
       aria-modal="true"
       aria-labelledby="case-study-title"
       data-lenis-prevent
-      className="fixed inset-0 z-[2147483640] animate-[fadeIn_0.3s_ease] overflow-y-auto bg-zinc-950 text-white lg:overflow-hidden"
+      className="scrollbar-dark fixed inset-0 z-[2147483640] animate-[fadeIn_0.3s_ease] overflow-y-auto bg-zinc-950 text-white lg:overflow-hidden"
     >
       <button
         ref={closeRef}
