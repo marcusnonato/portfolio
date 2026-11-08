@@ -154,7 +154,7 @@ const mainProjects: MainProjectProps[] = [
   },
   {
     id: "7",
-    title: "Pedidos",
+    title: "Cardápio",
     coverImage: "/pedidos-loja-1.png",
     description:
       "Plataforma SaaS multi-loja para restaurantes e confeitarias. Cada loja ganha um subdomínio próprio com cardápio digital, checkout com Pix (AbacatePay) e entrega com CEP automático, além de um painel com Balcão (PDV), cozinha em tempo real, estoque, histórico, fechamento de caixa e previsão de produção. Conta com dois planos (Cardápio e Completo) e um console de Super Admin com auditoria. Construída com Next.js 16, React 19, TypeScript, Prisma, PostgreSQL, Better Auth, Tailwind CSS, Shadcn/UI e Vercel Blob.",
