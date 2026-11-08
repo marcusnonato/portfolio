@@ -100,7 +100,7 @@ export default function Header() {
           className={cn(
             "flex w-full items-center justify-between rounded-2xl border px-4 transition-all duration-500",
             scrolled
-              ? "bg-bg/80 mx-4 border-zinc-800 backdrop-blur-md md:mx-12 lg:mx-auto lg:max-w-4xl"
+              ? "bg-bg/80 mx-4 border-zinc-800 backdrop-blur-md md:mx-20 lg:mx-96"
               : "mx-4 border-transparent md:mx-12 lg:mx-32",
           )}
         >
