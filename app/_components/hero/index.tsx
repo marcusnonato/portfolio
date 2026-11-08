@@ -6,16 +6,6 @@ import { useLanguage } from "@/app/_i18n/LanguageProvider";
 import { buttonVariants } from "../ui/button";
 import { enterProps } from "../ui/reveal";
 
-/** Pontinho verde pulsando — o mesmo padrão do indicador online do avatar. */
-export function StatusDot() {
-  return (
-    <span className="relative flex h-2 w-2" aria-hidden="true">
-      <span className="bg-brand absolute inset-0 animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
-      <span className="bg-brand relative h-2 w-2 rounded-full" />
-    </span>
-  );
-}
-
 /** Lado direito do hero: grid de pontos + glow muito leve do acento (≤ 8%). */
 export function HeroBackdrop() {
   return (
@@ -34,7 +24,7 @@ export function Hero() {
 
   return (
     <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
-      {/* ===== Coluna esquerda: rótulo vertical em Mohave + disponibilidade ===== */}
+      {/* ===== Coluna esquerda: rótulo vertical em Mohave ===== */}
       <motion.div
         {...enterProps(0)}
         className="flex shrink-0 flex-col items-start gap-4 lg:gap-8 lg:pt-3"
@@ -44,10 +34,6 @@ export function Hero() {
           Marcus
           <br className="hidden lg:block" /> Vinicius
         </p>
-        <span className="border-line bg-surface-1 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium text-zinc-300">
-          <StatusDot />
-          {t.hero.available}
-        </span>
       </motion.div>
 
       {/* ===== Coluna direita: título, valor, CTAs e métricas ===== */}

@@ -42,7 +42,6 @@ export interface Dictionary {
     ctaProjects: string;
     ctaCv: string;
     greeting: string;
-    available: string;
     metrics: { value: string; label: string }[];
     techStack: string;
   };
@@ -129,7 +128,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaProjects: "Ver projetos",
       ctaCv: "Baixar CV",
       greeting: "Olá, eu sou",
-      available: "Disponível para projetos",
       metrics: [
         { value: "4", label: "anos de experiência" },
         { value: "+1.400", label: "commits em produção" },
@@ -686,7 +684,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaProjects: "View projects",
       ctaCv: "Download CV",
       greeting: "Hey, I'm",
-      available: "Available for projects",
       metrics: [
         { value: "4", label: "years of experience" },
         { value: "+1,400", label: "production commits" },
