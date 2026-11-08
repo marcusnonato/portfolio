@@ -21,23 +21,25 @@ export function About() {
       id="about"
       className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8"
     >
-      <motion.h1
+      <motion.span
+        aria-hidden="true"
         style={{
           x,
         }}
-        className="-mb-28 hidden text-3xl font-bold text-white/5 md:block md:text-[10rem]"
+        className="-mb-28 hidden select-none text-3xl font-bold text-white/5 md:block md:text-[10rem]"
       >
         {t.about.watermark}
-      </motion.h1>
-      <motion.h1
+      </motion.span>
+      <motion.span
+        aria-hidden="true"
         style={{
           x: xMobile,
         }}
-        className="-mb-8 block text-7xl font-bold text-white/5 md:hidden md:text-[10rem]"
+        className="-mb-8 block select-none text-7xl font-bold text-white/5 md:hidden md:text-[10rem]"
       >
         {t.about.watermark}
-      </motion.h1>
-      <motion.p
+      </motion.span>
+      <motion.h2
         initial={{ transform: "translateY(20px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0)", opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.1 }}
@@ -45,7 +47,7 @@ export function About() {
         className="mt-4 text-center text-3xl font-semibold md:text-6xl"
       >
         {t.about.heading}
-      </motion.p>
+      </motion.h2>
       <div className="mt-12 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row md:gap-18">
         <motion.div
           initial={{ transform: "scale(0)", opacity: 0 }}

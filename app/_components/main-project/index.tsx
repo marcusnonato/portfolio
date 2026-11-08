@@ -49,7 +49,7 @@ export default function MainProject({
           <div
             className={`mb-4 flex items-start ${inverse ? "justify-end" : ""} gap-1`}
           >
-            <motion.h1
+            <motion.h3
               initial={{ transform: "translateY(20px)", opacity: 0 }}
               whileInView={{ transform: "translateY(0)", opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ export default function MainProject({
               className="text-3xl font-bold text-white [text-shadow:0_2px_6px_rgba(0,0,0,0.8)] lg:text-5xl"
             >
               {project.title}
-            </motion.h1>
+            </motion.h3>
           </div>
 
           {project.description && (

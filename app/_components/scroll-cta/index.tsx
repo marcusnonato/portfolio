@@ -80,7 +80,8 @@ export function ScrollCta() {
     >
       <div className="sticky top-0 flex min-h-screen items-center justify-center overflow-hidden">
         <div className="relative">
-          <motion.h1
+          <motion.p
+              aria-hidden="true"
             style={{
               opacity: text1Opacity,
               scale: text1Scale,
@@ -89,9 +90,10 @@ export function ScrollCta() {
             className="absolute inset-0 flex items-center justify-center text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
           >
             {t.scrollCta.text1}
-          </motion.h1>
+          </motion.p>
 
-          <motion.h1
+          <motion.p
+              aria-hidden="true"
             style={{
               opacity: text2Opacity,
               scale: text2Scale,
@@ -101,10 +103,11 @@ export function ScrollCta() {
           >
             {t.scrollCta.text2[0]}
             <br /> {t.scrollCta.text2[1]}
-          </motion.h1>
+          </motion.p>
 
           <motion.div className="relative">
-            <motion.h1
+            <motion.p
+              aria-hidden="true"
               style={{
                 opacity: text3Opacity,
                 scale: text3Scale,
@@ -113,7 +116,7 @@ export function ScrollCta() {
               className="text-center text-5xl font-bold select-none md:text-7xl lg:text-[9rem]"
             >
               {t.scrollCta.text3}
-            </motion.h1>
+            </motion.p>
           </motion.div>
         </div>
       </div>
