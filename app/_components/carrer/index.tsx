@@ -11,9 +11,10 @@ import {
 import { useLenis } from "lenis/react";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
 import { SectionHeading } from "../ui/section-heading";
+import { Tag } from "../ui/tag";
 
 // vh de scroll reservado para cada experiência no modo pinado (desktop)
-const SEGMENT_VH = 100;
+const SEGMENT_VH = 50;
 
 const Carrer = () => {
   const { t } = useLanguage();
@@ -52,8 +53,7 @@ const Carrer = () => {
       const section = sectionRef.current;
       const scrollRange = section.offsetHeight - window.innerHeight;
       const target =
-        section.offsetTop +
-        ((i + 0.5) / experiences.length) * scrollRange;
+        section.offsetTop + ((i + 0.5) / experiences.length) * scrollRange;
       if (lenis) lenis.scrollTo(target, { duration: 1 });
       else window.scrollTo({ top: target, behavior: "smooth" });
     } else {
@@ -65,103 +65,152 @@ const Carrer = () => {
 
   return (
     <section
-      id="carrer"
+      id="career"
       ref={sectionRef}
-      className="relative bg-zinc-950 text-white"
-      style={isDesktop ? { height: `${experiences.length * SEGMENT_VH}vh` } : undefined}
+      aria-labelledby="career-title"
+      className="bg-bg relative text-white"
+      style={
+        isDesktop
+          ? { height: `${experiences.length * SEGMENT_VH + 100}vh` }
+          : undefined
+      }
     >
-      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-36 pb-16 lg:sticky lg:top-0 lg:h-screen lg:px-36 lg:pt-0 lg:pb-0">
+      <div className="relative flex flex-col justify-center overflow-hidden px-6 py-24 md:px-12 lg:sticky lg:top-0 lg:h-svh lg:px-36 lg:py-0">
         {/* indicador de progresso do scroll da seção (desktop) */}
         <div className="absolute inset-x-0 top-0 hidden h-1 bg-zinc-800/60 lg:block">
           <motion.div
             style={{ scaleX: scrollYProgress }}
-            className="h-full w-full origin-left bg-brand"
+            className="bg-brand h-full w-full origin-left"
           />
         </div>
 
         <SectionHeading
-          className="mb-10 lg:mb-14"
+          id="career-title"
+          className="mb-10 lg:mb-12"
           eyebrow={t.career.eyebrow}
           ghost={t.career.ghost}
           title={t.career.heading}
           subtitle={t.career.subtitle}
         />
 
-        <div className="flex w-full max-w-screen-2xl flex-col items-start justify-between gap-14 lg:flex-row lg:gap-20">
+        <div className="flex w-full max-w-screen-2xl flex-col items-start justify-between gap-10 lg:flex-row-reverse lg:gap-20">
+          <div className="flex w-full flex-col lg:w-auto lg:max-w-md lg:flex-1">
+            <p
+              id="career-list-label"
+              className="font-label mb-4 text-sm tracking-[0.08em] text-zinc-400 uppercase md:text-base"
+            >
+              {t.career.listHeading}
+            </p>
+
+            <div
+              role="tablist"
+              aria-labelledby="career-list-label"
+              aria-orientation="vertical"
+              className="flex flex-col"
+            >
+              {experiences.map((experience, index) => {
+                const selected = active === index;
+                return (
+                  <button
+                    key={experience.title}
+                    id={`career-tab-${index}`}
+                    role="tab"
+                    aria-selected={selected}
+                    aria-controls="career-panel"
+                    onClick={() => handleSelect(index)}
+                    className={`relative cursor-pointer border-l-2 px-5 py-4 text-left transition-colors duration-200 ${
+                      selected
+                        ? "border-brand bg-surface-1"
+                        : "border-white/15 hover:border-white/40"
+                    }`}
+                  >
+                    <span
+                      className={`flex flex-wrap items-center gap-2 text-base font-semibold transition-colors md:text-lg ${
+                        selected ? "text-white" : "text-zinc-300"
+                      }`}
+                    >
+                      {experience.title}
+                      {experience.current && (
+                        <CurrentBadge label={t.career.currentLabel} />
+                      )}
+                    </span>
+                    <span className="mt-1 block text-sm font-medium text-zinc-400">
+                      {experience.date}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentExp.title}
-              initial={{ opacity: 0, y: 20 }}
+              id="career-panel"
+              role="tabpanel"
+              aria-labelledby={`career-tab-${active}`}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="flex-1"
             >
-              <div className="mb-6 flex items-center gap-5">
-                <div>
-                  <h3 className="m-0 text-3xl font-semibold text-white md:text-4xl">
+              <div className="mb-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="m-0 text-2xl font-semibold text-white md:text-3xl">
                     {currentExp.title}
                   </h3>
-                  <span className="mt-2 flex items-center gap-2 text-lg text-zinc-400">
-                    <Calendar size={20} />
-                    {currentExp.date}
-                  </span>
+                  {currentExp.current && (
+                    <CurrentBadge label={t.career.currentLabel} />
+                  )}
                 </div>
+                <span className="mt-2 flex items-center gap-2 text-base text-zinc-400">
+                  <Calendar size={18} aria-hidden="true" />
+                  {currentExp.date}
+                </span>
               </div>
 
-              <p className="mb-8 text-lg leading-relaxed text-zinc-200 md:text-xl">
+              <p className="mb-5 max-w-[65ch] text-base leading-[1.7] text-zinc-300 lg:text-lg">
                 {currentExp.description}
               </p>
 
-              {currentExp.tags && (
-                <div className="flex flex-wrap gap-3">
-                  {currentExp.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="rounded-xl border px-4 py-2 text-base font-medium text-white shadow-[0_3px_0_0_currentColor] transition-[translate,box-shadow] duration-300 ease-out select-none hover:translate-y-[2px] hover:shadow-[0_1px_0_0_currentColor]"
+              {currentExp.highlights.length > 0 && (
+                <ul className="mb-6 flex flex-col gap-2">
+                  {currentExp.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-base leading-relaxed text-white"
                     >
-                      {tag}
-                    </span>
+                      <span
+                        aria-hidden="true"
+                        className="bg-brand mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full"
+                      />
+                      {item}
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
+
+              <div className="flex flex-wrap gap-2">
+                {currentExp.tags.map((tag) => (
+                  <Tag key={tag}>{tag}</Tag>
+                ))}
+              </div>
             </motion.div>
           </AnimatePresence>
-
-          <div className="flex w-full flex-1 flex-col lg:w-auto">
-            <h3 className="mb-5 text-2xl font-semibold text-white md:text-3xl">
-              {t.career.listHeading}
-            </h3>
-
-            {experiences.map((experience, index) => (
-              <button
-                key={index}
-                onClick={() => handleSelect(index)}
-                className={`relative cursor-pointer overflow-hidden border-l px-6 py-6 text-left transition-all duration-500 ${
-                  active === index
-                    ? "border-brand bg-gradient-to-br from-transparent to-zinc-600/10"
-                    : "border-zinc-400/40 bg-transparent hover:border-zinc-300/70"
-                }`}
-              >
-                <div className="mb-3 flex items-center gap-4">
-                  <h4
-                    className={`m-0 text-lg font-semibold transition-colors md:text-xl ${
-                      active === index ? "text-white" : "text-zinc-300"
-                    }`}
-                  >
-                    {experience.title}
-                  </h4>
-                </div>
-                <span className="text-sm font-medium text-zinc-400">
-                  {experience.date}
-                </span>
-              </button>
-            ))}
-          </div>
         </div>
       </div>
     </section>
   );
 };
+
+/** Selo verde do cargo atual. */
+function CurrentBadge({ label }: { label: string }) {
+  return (
+    <span className="border-brand/40 font-label text-brand inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs tracking-[0.08em] uppercase">
+      <span aria-hidden="true" className="bg-brand h-1.5 w-1.5 rounded-full" />
+      {label}
+    </span>
+  );
+}
 
 export default Carrer;

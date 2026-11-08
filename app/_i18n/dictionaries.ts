@@ -5,6 +5,10 @@ export interface Experience {
   description: string;
   date: string;
   tags: string[];
+  /** cargo atual: recebe o selo verde */
+  current?: boolean;
+  /** 1–2 impactos concretos do cargo */
+  highlights: string[];
 }
 
 export interface CaseStudyContent {
@@ -53,6 +57,7 @@ export interface Dictionary {
     heading: string;
     subtitle: string;
     listHeading: string;
+    currentLabel: string;
     experiences: Experience[];
   };
   projects: {
@@ -137,12 +142,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heading: "Carreira",
       subtitle: "Onde construí produtos de verdade",
       listHeading: "Experiências Profissionais",
+      currentLabel: "Atual",
       experiences: [
         {
           title: "Desenvolvedor de Software - Sidia",
           description:
             "Desenvolvimento full stack de aplicações web internas com ReactJS no front-end e Python com FastAPI no back-end, otimizando fluxos de trabalho corporativos. Criação de scripts de automação em Python para diferentes setores, reduzindo tarefas manuais. Integração de sistemas com bancos de dados SQL e NoSQL, garantindo escalabilidade e alta performance.",
           date: "Jan 2026 - Atualmente",
+          current: true,
+          highlights: [
+            "Scripts de automação em Python que reduziram tarefas manuais em diferentes setores.",
+            "Aplicações web internas full stack com ReactJS e FastAPI.",
+          ],
           tags: ["ReactJS", "Python", "FastAPI", "Automação", "SQL", "NoSQL"],
         },
         {
@@ -150,6 +161,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Construção de uma plataforma de marketplace musical escalável e de alta performance, atuando no front-end com Next.js e TypeScript e no back-end com Kotlin e Spring Boot. Liderança técnica na migração completa da aplicação web de Angular para Next.js, resultando em ganhos expressivos de velocidade, estrutura de código e manutenibilidade. Modelagem e integração de sistemas com PostgreSQL utilizando Prisma como ORM, garantindo transações seguras e arquitetura limpa.",
           date: "Jan 2024 - Jan 2026",
+          highlights: [
+            "Mais de 1.400 commits entre o front (Next.js) e o back (Kotlin/Spring Boot).",
+            "Liderança técnica na migração completa de Angular para Next.js.",
+          ],
           tags: [
             "Next.js",
             "TypeScript",
@@ -165,6 +180,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Criação do ecossistema Smarteduca, desenvolvendo do zero uma solução completa de gestão parental tanto para ambiente web quanto para dispositivos móveis. Atuação no front-end com React.js (Vite e Next.js) para interfaces web rápidas e responsivas, além de React Native para o app mobile. Implementação e consumo de serviços na nuvem com Firebase para banco de dados em tempo real, autenticação e regras de negócio.",
           date: "Jun 2024 - Nov 2024",
+          highlights: [
+            "Ecossistema Smarteduca construído do zero, com app web e mobile.",
+            "Banco em tempo real e autenticação com Firebase.",
+          ],
           tags: ["React", "React Native", "Vite", "Next.js", "Firebase"],
         },
         {
@@ -172,6 +191,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Criação de protótipo web e mobile feito no Figma. Criação da estrutura e arquitetura base do projeto (HTML, CSS e JavaScript para web). Android Studio para desenvolvimento de App Mobile.",
           date: "Ago 2023 - Dez 2023",
+          highlights: [
+            "Protótipo web e mobile desenhado no Figma.",
+            "Estrutura e arquitetura base do projeto web.",
+          ],
           tags: ["HTML", "CSS", "JavaScript", "Android Studio", "Figma"],
         },
       ],
@@ -667,12 +690,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heading: "Career",
       subtitle: "Where I've built real products",
       listHeading: "Professional Experience",
+      currentLabel: "Current",
       experiences: [
         {
           title: "Software Developer - Sidia",
           description:
             "Full stack development of internal web applications with ReactJS on the front-end and Python with FastAPI on the back-end, optimizing corporate workflows. Built Python automation scripts for different departments, reducing manual tasks. Integrated systems with SQL and NoSQL databases, ensuring scalability and high performance.",
           date: "Jan 2026 - Present",
+          current: true,
+          highlights: [
+            "Python automation scripts that cut manual work across departments.",
+            "Full stack internal web apps with ReactJS and FastAPI.",
+          ],
           tags: ["ReactJS", "Python", "FastAPI", "Automation", "SQL", "NoSQL"],
         },
         {
@@ -680,6 +709,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Built a scalable, high-performance music marketplace platform, working on the front-end with Next.js and TypeScript and on the back-end with Kotlin and Spring Boot. Technical lead on the full migration of the web app from Angular to Next.js, resulting in major gains in speed, code structure and maintainability. Modeled and integrated systems with PostgreSQL using Prisma as ORM, ensuring secure transactions and clean architecture.",
           date: "Jan 2024 - Jan 2026",
+          highlights: [
+            "Over 1,400 commits across the front end (Next.js) and back end (Kotlin/Spring Boot).",
+            "Technical lead on the full migration from Angular to Next.js.",
+          ],
           tags: [
             "Next.js",
             "TypeScript",
@@ -695,6 +728,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Created the Smarteduca ecosystem, building from scratch a complete parental-management solution for both web and mobile. Worked on the front-end with React.js (Vite and Next.js) for fast, responsive web interfaces, plus React Native for the mobile app. Implemented and consumed cloud services with Firebase for real-time database, authentication and business rules.",
           date: "Jun 2024 - Nov 2024",
+          highlights: [
+            "Built the Smarteduca ecosystem from scratch, with web and mobile apps.",
+            "Real-time database and authentication with Firebase.",
+          ],
           tags: ["React", "React Native", "Vite", "Next.js", "Firebase"],
         },
         {
@@ -702,6 +739,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Created web and mobile prototypes in Figma. Built the base structure and architecture of the project (HTML, CSS and JavaScript for web). Used Android Studio for mobile app development.",
           date: "Aug 2023 - Dec 2023",
+          highlights: [
+            "Web and mobile prototype designed in Figma.",
+            "Base structure and architecture of the web project.",
+          ],
           tags: ["HTML", "CSS", "JavaScript", "Android Studio", "Figma"],
         },
       ],
