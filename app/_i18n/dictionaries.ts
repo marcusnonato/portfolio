@@ -42,10 +42,10 @@ export interface Dictionary {
     eyebrow: string;
     watermark: string;
     heading: string;
-    intro: string;
-    bold: string;
-    afterBold: string;
-    outro: string;
+    /** **texto** = tecnologia destacada em branco */
+    paragraphs: string[];
+    imageAlt: string;
+    cta: string;
   };
   career: {
     eyebrow: string;
@@ -123,13 +123,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "01 — Sobre",
       watermark: "SOBRE MIM",
       heading: "Paixão, Criatividade e Código",
-      intro:
-        "Olá, sou Marcus Vinicius — Desenvolvedor Fullstack e Mobile do Brasil.",
-      bold: "Com 4 anos de experiência, sou especializado em React.js, React Native, Node.js e Kotlin com Spring Boot.",
-      afterBold:
-        "Construo interfaces modernas e responsivas integradas com arquiteturas de back-end escaláveis e APIs RESTful de alto desempenho.",
-      outro:
+      paragraphs: [
+        "Olá, sou Marcus Vinicius — Desenvolvedor Full Stack e Mobile do Brasil.",
+        "Com 4 anos de experiência, sou especializado em **React.js**, **React Native**, **Node.js** e **Kotlin com Spring Boot**. Construo interfaces modernas e responsivas integradas com arquiteturas de back-end escaláveis e **APIs RESTful** de alto desempenho.",
         "Meu foco em otimização, segurança e boas práticas me permite transformar ideias em aplicações robustas. Pronto para criar seu próximo projeto de sucesso?",
+      ],
+      imageAlt: "Ilustração em pixel art do Marcus programando",
+      cta: "Vamos conversar",
     },
     career: {
       eyebrow: "03 — Carreira",
@@ -653,13 +653,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "01 — About",
       watermark: "ABOUT ME",
       heading: "Passion, Creativity and Code",
-      intro:
-        "Hi, I'm Marcus Vinicius — a Fullstack and Mobile Developer from Brazil.",
-      bold: "With 4 years of experience, I specialize in React.js, React Native, Node.js and Kotlin with Spring Boot.",
-      afterBold:
-        "I build modern, responsive interfaces integrated with scalable back-end architectures and high-performance RESTful APIs.",
-      outro:
+      paragraphs: [
+        "Hi, I'm Marcus Vinicius — a Full Stack and Mobile Developer from Brazil.",
+        "With 4 years of experience, I specialize in **React.js**, **React Native**, **Node.js** and **Kotlin with Spring Boot**. I build modern, responsive interfaces integrated with scalable back-end architectures and high-performance **RESTful APIs**.",
         "My focus on optimization, security and best practices lets me turn ideas into robust applications. Ready to build your next successful project?",
+      ],
+      imageAlt: "Pixel art illustration of Marcus coding",
+      cta: "Let's talk",
     },
     career: {
       eyebrow: "03 — Career",
