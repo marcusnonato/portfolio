@@ -130,7 +130,7 @@ const Carrer = () => {
                   {currentExp.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="rounded-xl border px-4 py-2 text-base font-medium text-white shadow-[0_3px_0_0_currentColor] transition-[transform,box-shadow] duration-300 ease-out select-none hover:translate-y-[2px] hover:shadow-[0_1px_0_0_currentColor]"
+                      className="rounded-xl border px-4 py-2 text-base font-medium text-white shadow-[0_3px_0_0_currentColor] transition-[translate,box-shadow] duration-300 ease-out select-none hover:translate-y-[2px] hover:shadow-[0_1px_0_0_currentColor]"
                     >
                       {tag}
                     </span>
