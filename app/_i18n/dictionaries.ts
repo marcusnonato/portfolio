@@ -85,6 +85,7 @@ export interface Dictionary {
     text1: string;
     text2: [string, string];
     text3: string;
+    cta: string;
   };
   footer: {
     rights: string;
@@ -584,6 +585,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       text1: "QUER TRANSFORMAR IDEIAS?",
       text2: ["CONHEÇA MEUS", "TRABALHOS E"],
       text3: "TRANSFORME EM REALIDADE!",
+      cta: "Ver projetos",
     },
     footer: {
       rights: "© 2025 Marcus Nonato. Desenvolvedor Full Stack & Mobile",
@@ -1064,6 +1066,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       text1: "GOT AN IDEA?",
       text2: ["CHECK OUT MY", "WORK AND"],
       text3: "MAKE IT REAL!",
+      cta: "View projects",
     },
     footer: {
       rights: "© 2025 Marcus Nonato. Full Stack & Mobile Developer",

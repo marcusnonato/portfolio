@@ -35,7 +35,7 @@ export default function Main() {
       <About />
       <ScrollCta />
 
-      <div className="relative z-20 -mt-[500px] md:-mt-64">
+      <div className="relative z-20 -mt-24">
         <Projects />
       </div>
       <Carrer />
