@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
+import { SectionHeading } from "../ui/section-heading";
 
 export const SocialMedia = () => {
   const { t } = useLanguage();
@@ -16,12 +17,13 @@ export const SocialMedia = () => {
       >
         <div className="mx-auto px-4 md:px-10 lg:px-36">
           <div className="mb-15">
-            <h2 className="animate-fade-up mb-4 text-5xl font-bold text-white [animation-delay:0.2s] [animation-fill-mode:backwards] md:text-4xl">
-              {t.social.heading}
-            </h2>
-            <p className="animate-fade-up mb-12 text-xl text-zinc-300 [animation-delay:0.4s] [animation-fill-mode:backwards] md:text-lg">
-              {t.social.subtitle}
-            </p>
+            <SectionHeading
+              className="mb-12"
+              eyebrow={t.social.eyebrow}
+              ghost={t.social.ghost}
+              title={t.social.heading}
+              subtitle={t.social.subtitle}
+            />
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               <a

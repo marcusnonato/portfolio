@@ -36,6 +36,7 @@ export interface Dictionary {
     greeting: string;
   };
   about: {
+    eyebrow: string;
     watermark: string;
     heading: string;
     intro: string;
@@ -44,12 +45,16 @@ export interface Dictionary {
     outro: string;
   };
   career: {
+    eyebrow: string;
+    ghost: string;
     heading: string;
     subtitle: string;
     listHeading: string;
     experiences: Experience[];
   };
   projects: {
+    eyebrow: string;
+    ghost: string;
     heading: string;
     subtitle: string;
     viewDemo: string;
@@ -65,6 +70,8 @@ export interface Dictionary {
     caseStudies: Record<string, CaseStudyContent>;
   };
   social: {
+    eyebrow: string;
+    ghost: string;
     heading: string;
     subtitle: string;
     githubDesc: string;
@@ -100,6 +107,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       greeting: "Olá, eu sou",
     },
     about: {
+      eyebrow: "01 — Sobre",
       watermark: "SOBRE MIM",
       heading: "Paixão, Criatividade e Código",
       intro:
@@ -111,8 +119,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Meu foco em otimização, segurança e boas práticas me permite transformar ideias em aplicações robustas. Pronto para criar seu próximo projeto de sucesso?",
     },
     career: {
+      eyebrow: "03 — Carreira",
+      ghost: "CARREIRA",
       heading: "Carreira",
-      subtitle: "Desenvolvedor Full Stack & Mobile",
+      subtitle: "Onde construí produtos de verdade",
       listHeading: "Experiências Profissionais",
       experiences: [
         {
@@ -154,6 +164,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     projects: {
+      eyebrow: "02 — Projetos",
+      ghost: "PROJETOS",
       heading: "Projetos",
       subtitle: "Confira meus trabalhos em destaque",
       viewDemo: "Ver Demo",
@@ -550,6 +562,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     social: {
+      eyebrow: "04 — Contato",
+      ghost: "CONTATO",
       heading: "Redes Sociais",
       subtitle: "Encontre-me nas redes sociais e acompanhe meu trabalho",
       githubDesc: "Meus projetos e código",
@@ -584,6 +598,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       greeting: "Hey, I'm",
     },
     about: {
+      eyebrow: "01 — About",
       watermark: "ABOUT ME",
       heading: "Passion, Creativity and Code",
       intro:
@@ -595,8 +610,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "My focus on optimization, security and best practices lets me turn ideas into robust applications. Ready to build your next successful project?",
     },
     career: {
+      eyebrow: "03 — Career",
+      ghost: "CAREER",
       heading: "Career",
-      subtitle: "Full Stack & Mobile Developer",
+      subtitle: "Where I've built real products",
       listHeading: "Professional Experience",
       experiences: [
         {
@@ -638,6 +655,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
     },
     projects: {
+      eyebrow: "02 — Projects",
+      ghost: "PROJECTS",
       heading: "Projects",
       subtitle: "Check out my featured work",
       viewDemo: "View Demo",
@@ -1016,6 +1035,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     social: {
+      eyebrow: "04 — Contact",
+      ghost: "CONTACT",
       heading: "Social",
       subtitle: "Find me on social media and follow my work",
       githubDesc: "My projects and code",

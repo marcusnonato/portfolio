@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 import { useLenis } from "lenis/react";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
+import { SectionHeading } from "../ui/section-heading";
 
 // vh de scroll reservado para cada experiência no modo pinado (desktop)
 const SEGMENT_VH = 100;
@@ -78,26 +79,13 @@ const Carrer = () => {
           />
         </div>
 
-        <div className="mb-10 lg:mb-14">
-          <motion.h2
-            initial={{ transform: "translateY(20px)", opacity: 0 }}
-            whileInView={{ transform: "translateY(0)", opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, amount: 0.7 }}
-            className="mb-2 text-5xl font-bold text-white md:text-6xl"
-          >
-            {t.career.heading}
-          </motion.h2>
-          <motion.p
-            initial={{ transform: "translateY(20px)", opacity: 0 }}
-            whileInView={{ transform: "translateY(0)", opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            viewport={{ once: true, amount: 0.7 }}
-            className="m-0 text-xl text-white"
-          >
-            {t.career.subtitle}
-          </motion.p>
-        </div>
+        <SectionHeading
+          className="mb-10 lg:mb-14"
+          eyebrow={t.career.eyebrow}
+          ghost={t.career.ghost}
+          title={t.career.heading}
+          subtitle={t.career.subtitle}
+        />
 
         <div className="flex w-full max-w-screen-2xl flex-col items-start justify-between gap-14 lg:flex-row lg:gap-20">
           <AnimatePresence mode="wait">

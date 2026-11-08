@@ -1,53 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
+import { SectionHeading } from "../ui/section-heading";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 export function About() {
   const { t } = useLanguage();
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end end"],
-  });
-  const x = useTransform(scrollYProgress, [0, 1], ["-200px", "-70px"]);
-  const xMobile = useTransform(scrollYProgress, [0, 1], ["-70px", "0px"]);
 
   return (
     <div
-      ref={ref}
       id="about"
       className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8"
     >
-      <motion.span
-        aria-hidden="true"
-        style={{
-          x,
-        }}
-        className="-mb-28 hidden select-none text-3xl font-bold text-white/5 md:block md:text-[10rem]"
-      >
-        {t.about.watermark}
-      </motion.span>
-      <motion.span
-        aria-hidden="true"
-        style={{
-          x: xMobile,
-        }}
-        className="-mb-8 block select-none text-7xl font-bold text-white/5 md:hidden md:text-[10rem]"
-      >
-        {t.about.watermark}
-      </motion.span>
-      <motion.h2
-        initial={{ transform: "translateY(20px)", opacity: 0 }}
-        whileInView={{ transform: "translateY(0)", opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="mt-4 text-center text-3xl font-semibold md:text-6xl"
-      >
-        {t.about.heading}
-      </motion.h2>
+      <SectionHeading
+        align="center"
+        eyebrow={t.about.eyebrow}
+        ghost={t.about.watermark}
+        title={t.about.heading}
+      />
       <div className="mt-12 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row md:gap-18">
         <motion.div
           initial={{ transform: "scale(0)", opacity: 0 }}
