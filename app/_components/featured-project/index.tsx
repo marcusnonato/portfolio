@@ -2,12 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useReducedMotionSafe } from "../ui/use-reduced-motion";
 import { ArrowUpRight, LayoutPanelLeft, Lock } from "lucide-react";
 import MediaGallery from "../media-gallery";
 import { Tag } from "../ui/tag";
@@ -40,7 +36,7 @@ export default function FeaturedProject({
 }: FeaturedProjectProps) {
   const { t } = useLanguage();
   const ref = useRef<HTMLElement>(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "start start"],

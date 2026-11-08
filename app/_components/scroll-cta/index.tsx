@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  easeInOut,
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { easeInOut, motion, useScroll, useTransform } from "motion/react";
+import { useReducedMotionSafe } from "../ui/use-reduced-motion";
 import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
@@ -45,7 +40,7 @@ const giant =
 export function ScrollCta() {
   const { t } = useLanguage();
   const ref = useRef(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],

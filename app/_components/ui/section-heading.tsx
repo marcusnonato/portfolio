@@ -1,12 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useReducedMotionSafe } from "./use-reduced-motion";
 import { cn } from "@/app/_lib/utils";
 import { revealProps } from "./reveal";
 
@@ -34,7 +30,7 @@ export function SectionHeading({
   id,
 }: SectionHeadingProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

@@ -1,10 +1,11 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
-import { MotionConfig, useReducedMotion } from "motion/react";
+import { MotionConfig } from "motion/react";
+import { useReducedMotionSafe } from "../ui/use-reduced-motion";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotionSafe();
 
   return (
     // reducedMotion="user": com prefers-reduced-motion, o motion pula transforms
