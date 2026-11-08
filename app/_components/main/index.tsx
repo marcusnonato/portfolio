@@ -21,7 +21,7 @@ export default function Main() {
 
       <section
         id="home"
-        className="relative z-10 mb-0 flex min-h-[100vh] w-full flex-col items-center justify-start bg-zinc-950 px-6 text-white md:justify-center md:px-12 lg:px-36"
+        className="relative z-10 mb-0 flex min-h-[100vh] w-full flex-col items-center justify-center bg-zinc-950 px-6 text-white md:px-12 lg:px-36"
       >
         <LightRays color="rgba(255, 255, 255, 0.089)" />
         <Hero />

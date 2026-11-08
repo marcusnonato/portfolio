@@ -33,15 +33,7 @@ export interface Dictionary {
     tagline: string;
     ctaProjects: string;
     ctaCv: string;
-    code: {
-      name: string;
-      focus: string;
-      frontend: string;
-      backend: string;
-      databases: string;
-      years: string;
-      open: string;
-    };
+    greeting: string;
   };
   about: {
     watermark: string;
@@ -103,17 +95,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleAccent: "& Mobile",
       tagline:
         "Construo interfaces rápidas e back-ends que escalam — do React Native ao Spring Boot. 4 anos transformando ideia em produto.",
-      ctaProjects: "Ver projetos →",
+      ctaProjects: "Ver projetos",
       ctaCv: "Baixar CV",
-      code: {
-        name: "nome",
-        focus: "foco",
-        frontend: "frontend",
-        backend: "backend",
-        databases: "bancos",
-        years: "anos",
-        open: "aberto",
-      },
+      greeting: "Olá, eu sou",
     },
     about: {
       watermark: "SOBRE MIM",
@@ -595,17 +579,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleAccent: "Developer",
       tagline:
         "I build fast interfaces and back-ends that scale — from React Native to Spring Boot. 4 years turning ideas into products.",
-      ctaProjects: "View projects →",
+      ctaProjects: "View projects",
       ctaCv: "Download CV",
-      code: {
-        name: "name",
-        focus: "focus",
-        frontend: "frontend",
-        backend: "backend",
-        databases: "databases",
-        years: "years",
-        open: "open",
-      },
+      greeting: "Hey, I'm",
     },
     about: {
       watermark: "ABOUT ME",

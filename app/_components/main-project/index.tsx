@@ -79,7 +79,7 @@ export default function MainProject({
               <button
                 type="button"
                 onClick={onOpenCaseStudy}
-                className="inline-flex origin-bottom cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-white px-6 py-3 font-semibold text-white shadow-[0_6px_0_0_#fff] transition-[transform,box-shadow] duration-300 ease-out hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#fff]"
               >
                 <LayoutPanelLeft size={18} />
                 {t.projects.viewCaseStudy}
@@ -87,7 +87,7 @@ export default function MainProject({
             ) : project.demoLink ? (
               <a
                 href={project.demoLink}
-                className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white px-6 py-3 font-semibold text-white shadow-[0_6px_0_0_#fff] transition-[transform,box-shadow] duration-300 ease-out hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#fff]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -110,7 +110,7 @@ export default function MainProject({
             {project.repoLink ? (
               <a
                 href={project.repoLink}
-                className="inline-flex origin-bottom items-center justify-center rounded-2xl border-2 border-b-8 border-white px-6 py-3 font-semibold text-white transition-all duration-150 hover:scale-y-95 hover:border-b-4"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white px-6 py-3 font-semibold text-white shadow-[0_6px_0_0_#fff] transition-[transform,box-shadow] duration-300 ease-out hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#fff]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
