@@ -74,7 +74,7 @@ const Carrer = () => {
         <div className="absolute inset-x-0 top-0 hidden h-1 bg-zinc-800/60 lg:block">
           <motion.div
             style={{ scaleX: scrollYProgress }}
-            className="h-full w-full origin-left bg-[#8aee14]"
+            className="h-full w-full origin-left bg-brand"
           />
         </div>
 
@@ -151,7 +151,7 @@ const Carrer = () => {
                 onClick={() => handleSelect(index)}
                 className={`relative cursor-pointer overflow-hidden border-l px-6 py-6 text-left transition-all duration-500 ${
                   active === index
-                    ? "border-[#8aee14] bg-gradient-to-br from-transparent to-gray-600/10"
+                    ? "border-brand bg-gradient-to-br from-transparent to-gray-600/10"
                     : "border-gray-400/40 bg-transparent hover:border-gray-300/70"
                 }`}
               >

@@ -50,7 +50,7 @@ export function Preloader() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           {/* nome aparecendo letra por letra */}
-          <div className="flex font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[0.35em] text-white md:text-4xl">
+          <div className="flex font-display text-2xl font-semibold tracking-[0.35em] text-white md:text-4xl">
             {NAME.split("").map((char, i) => (
               <motion.span
                 key={i}
@@ -74,7 +74,7 @@ export function Preloader() {
 
           {/* barra de loading verde */}
           <motion.div
-            className="absolute bottom-0 left-0 h-1 bg-[#8aee14]"
+            className="absolute bottom-0 left-0 h-1 bg-brand"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1.9, ease: "easeInOut" }}

@@ -52,11 +52,11 @@ export default function Header() {
       aria-label="Mudar idioma"
       className={`flex items-center gap-1 text-xs font-medium ${className}`}
     >
-      <span className={locale === "pt" ? "text-[#8aee14]" : "text-gray-400"}>
+      <span className={locale === "pt" ? "text-brand" : "text-gray-400"}>
         PT
       </span>
       <span className="text-gray-600">/</span>
-      <span className={locale === "en" ? "text-[#8aee14]" : "text-gray-400"}>
+      <span className={locale === "en" ? "text-brand" : "text-gray-400"}>
         EN
       </span>
     </button>
@@ -81,7 +81,7 @@ export default function Header() {
                 href={item.href}
                 className={`pb-1 transition-all ${
                   activeSection === item.section
-                    ? "border-b-2 border-[#8aee14] text-white"
+                    ? "border-b-2 border-brand text-white"
                     : "border-b-2 border-transparent text-zinc-400 hover:text-white"
                 }`}
               >
@@ -119,7 +119,7 @@ export default function Header() {
                   }`}
                 >
                   <span
-                    className={`absolute top-0 h-0.5 w-8 rounded-full bg-[#8aee14] transition-opacity ${
+                    className={`absolute top-0 h-0.5 w-8 rounded-full bg-brand transition-opacity ${
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
                   />

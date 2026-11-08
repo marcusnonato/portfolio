@@ -37,7 +37,7 @@ export const BackToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           style={{ transformPerspective: 600 }}
-          className="fixed right-6 bottom-24 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#8aee14]/40 bg-zinc-950/80 text-[#8aee14] shadow-lg backdrop-blur-sm transition-colors hover:border-[#8aee14] hover:bg-[#8aee14] hover:text-zinc-950 md:right-10 md:bottom-10"
+          className="fixed right-6 bottom-24 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-brand/40 bg-zinc-950/80 text-brand shadow-lg backdrop-blur-sm transition-colors hover:border-brand hover:bg-brand hover:text-zinc-950 md:right-10 md:bottom-10"
         >
           <ArrowUp size={22} />
         </motion.button>

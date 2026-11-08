@@ -4,8 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* ===== Tokens da marca (fonte única da identidade visual) ===== */
+  --bg: #09090b; /* zinc-950 */
+  --fg: #fafafa;
+  --fg-muted: #a1a1aa; /* zinc-400 */
+  --fg-subtle: #71717a; /* zinc-500 */
+  --surface-1: rgb(255 255 255 / 0.05);
+  --surface-2: rgb(255 255 255 / 0.1);
+  --line: rgb(255 255 255 / 0.1);
+  --brand: #8aee14;
+  --brand-rgb: 138 238 20;
+  --shadow-solid: 0 6px 0 0 #fff;
+  --shadow-solid-pressed: 0 3px 0 0 #fff;
+  --ease-entry: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ===== shadcn/ui ===== */
   --primary: oklch(0.21 0.006 285.885);
-  --primary-light: #a78bfa;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -116,10 +130,10 @@
 @keyframes dotPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(138, 238, 20, 0.5);
+    box-shadow: 0 0 0 0 rgb(var(--brand-rgb) / 0.5);
   }
   70% {
-    box-shadow: 0 0 0 7px rgba(138, 238, 20, 0);
+    box-shadow: 0 0 0 7px rgb(var(--brand-rgb) / 0);
   }
 }
 
@@ -184,9 +198,19 @@ html {
 }
 
 @theme inline {
-  --color-brand: #8aee14;
-  --font-display: var(--font-display);
-  --font-mono: var(--font-mono);
+  --color-brand: var(--brand);
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --font-display: var(--font-exo);
+  --font-label: var(--font-condensed);
+  --shadow-solid: var(--shadow-solid);
+  --shadow-solid-pressed: var(--shadow-solid-pressed);
+  --ease-entry: var(--ease-entry);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

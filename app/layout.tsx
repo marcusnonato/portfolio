@@ -1,4 +1,4 @@
-import { Exo_2, JetBrains_Mono, Mohave } from "next/font/google";
+import { Exo_2, Mohave } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
@@ -16,12 +16,6 @@ const mohave = Mohave({
   variable: "--font-condensed",
   subsets: ["latin"],
   weight: ["400"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -100,7 +94,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${exo.className} ${jetbrainsMono.variable} ${mohave.variable} dark antialiased`}
+        className={`${exo.className} ${exo.variable} ${mohave.variable} dark antialiased`}
       >
         <LanguageProvider>
           <SmoothScroll>

@@ -14,7 +14,7 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col lg:w-fit gap-10 py-24 font-[family-name:var(--font-display)] md:py-0 lg:flex-row lg:items-center lg:gap-20">
+    <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col lg:w-fit gap-10 py-24 font-display md:py-0 lg:flex-row lg:items-center lg:gap-20">
       {/* ===== Coluna esquerda: avatar + saudação ===== */}
       <motion.div
         variants={fadeUp}
@@ -30,7 +30,7 @@ export function Hero() {
           className="rounded-full ring-2 ring-white/15"
           src="/me.jpg"
         />
-        <p className="font-[family-name:var(--font-condensed)] text-xl leading-snug tracking-[0.02em] text-zinc-100 uppercase md:text-2xl md:leading-[1.45]">
+        <p className="font-label text-xl leading-snug tracking-[0.02em] text-zinc-100 uppercase md:text-2xl md:leading-[1.45]">
           {t.hero.greeting} <br className="hidden lg:block" />
           Marcus
           <br className="hidden lg:block" /> Vinicius
@@ -62,7 +62,7 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="group inline-flex items-center gap-3 rounded-xl border-2 border-white bg-zinc-950 px-5 py-3 text-sm font-semibold tracking-wide text-white uppercase shadow-[0_6px_0_0_#fff] transition-[translate,box-shadow] duration-300 ease-out hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#fff]"
+            className="group inline-flex items-center gap-3 rounded-xl border-2 border-white bg-zinc-950 px-5 py-3 text-sm font-semibold tracking-wide text-white uppercase shadow-solid transition-[translate,box-shadow] duration-300 ease-out hover:translate-y-[3px] hover:shadow-solid-pressed"
           >
             {t.hero.ctaProjects}
             <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />

@@ -99,7 +99,7 @@ function AssistantAvatar() {
           className="object-cover"
         />
       </div>
-      <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full border border-zinc-950 bg-emerald-400" />
+      <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full border border-zinc-950 bg-brand" />
     </div>
   );
 }
@@ -184,8 +184,8 @@ export default function ChatBot() {
                 className="object-cover"
               />
             </span>
-            <span className="absolute -top-0.5 -right-0.5 z-10 h-3 w-3 rounded-full border-2 border-zinc-950 bg-emerald-400">
-              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="absolute -top-0.5 -right-0.5 z-10 h-3 w-3 rounded-full border-2 border-zinc-950 bg-brand">
+              <span className="absolute inset-0 animate-ping rounded-full bg-brand opacity-75" />
             </span>
           </motion.button>
         </SheetTrigger>
@@ -199,7 +199,7 @@ export default function ChatBot() {
           <SheetTitle className="flex flex-col text-white">
             <span className="text-base font-semibold">Assistente Virtual</span>
             <span className="flex items-center gap-1.5 text-xs font-normal text-gray-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand" />
               Online — responde sobre o Marcus
             </span>
           </SheetTitle>
