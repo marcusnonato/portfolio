@@ -19,7 +19,7 @@ export const SocialMedia = () => {
             <h2 className="animate-fade-up mb-4 text-5xl font-bold text-white [animation-delay:0.2s] [animation-fill-mode:backwards] md:text-4xl">
               {t.social.heading}
             </h2>
-            <p className="animate-fade-up mb-12 text-xl text-gray-300 [animation-delay:0.4s] [animation-fill-mode:backwards] md:text-lg">
+            <p className="animate-fade-up mb-12 text-xl text-zinc-300 [animation-delay:0.4s] [animation-fill-mode:backwards] md:text-lg">
               {t.social.subtitle}
             </p>
 
@@ -28,7 +28,7 @@ export const SocialMedia = () => {
                 href="https://github.com/marcusnonato/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group animate-fade-up relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-gray-700 hover:shadow-[0_20px_40px_rgba(51,51,51,0.3)] hover:before:left-full"
+                className="group animate-fade-up relative flex items-center overflow-hidden rounded-2xl border-2 border-white/10 bg-white/5 p-6 text-white no-underline backdrop-blur-sm transition-all duration-300 [animation-delay:0.6s] [animation-fill-mode:backwards] before:absolute before:top-0 before:-left-full before:h-full before:w-full before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:transition-all before:duration-500 before:content-[''] hover:-translate-y-1 hover:border-zinc-700 hover:shadow-[0_20px_40px_rgba(51,51,51,0.3)] hover:before:left-full"
               >
                 <Image
                   src="/github.png"
@@ -39,7 +39,7 @@ export const SocialMedia = () => {
                 />
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">GitHub</span>
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-zinc-300">
                     {t.social.githubDesc}
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export const SocialMedia = () => {
                 />
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">LinkedIn</span>
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-zinc-300">
                     {t.social.linkedinDesc}
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export const SocialMedia = () => {
                 />
                 <div className="flex flex-1 flex-col">
                   <span className="mb-1 text-xl font-semibold">Whatsapp</span>
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-zinc-300">
                     {t.social.whatsappDesc}
                   </span>
                 </div>

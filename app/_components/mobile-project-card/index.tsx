@@ -25,7 +25,7 @@ export default function MobileProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900 to-zinc-950 shadow-xl"
+      className="mb-8 overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-950 shadow-xl"
     >
       <div className="relative h-48 w-full overflow-hidden">
         <div

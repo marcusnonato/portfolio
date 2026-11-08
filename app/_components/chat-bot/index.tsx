@@ -65,7 +65,7 @@ function TypingHint({ text }: { text: string }) {
     <>
       {text.slice(0, count)}
       {!done && (
-        <span className="ml-px inline-block h-4 w-px translate-y-0.5 animate-pulse bg-gray-300" />
+        <span className="ml-px inline-block h-4 w-px translate-y-0.5 animate-pulse bg-zinc-300" />
       )}
     </>
   );
@@ -153,7 +153,7 @@ export default function ChatBot() {
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.8, x: 16 }}
               transition={{ type: "spring", stiffness: 260, damping: 22 }}
-              className="max-w-[15rem] rounded-2xl rounded-tr-sm border border-white/10 bg-zinc-900 px-4 py-3 text-left text-sm leading-snug text-gray-100 shadow-lg shadow-black/40"
+              className="max-w-[15rem] rounded-2xl rounded-tr-sm border border-white/10 bg-zinc-900 px-4 py-3 text-left text-sm leading-snug text-zinc-100 shadow-lg shadow-black/40"
             >
               <TypingHint text={HINT_TEXT} />
             </motion.button>
@@ -198,7 +198,7 @@ export default function ChatBot() {
         <SheetHeader className="border-b border-white/10 p-5">
           <SheetTitle className="flex flex-col text-white">
             <span className="text-base font-semibold">Assistente Virtual</span>
-            <span className="flex items-center gap-1.5 text-xs font-normal text-gray-400">
+            <span className="flex items-center gap-1.5 text-xs font-normal text-zinc-400">
               <span className="h-1.5 w-1.5 rounded-full bg-brand" />
               Online — responde sobre o Marcus
             </span>
@@ -224,7 +224,7 @@ export default function ChatBot() {
                       className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                         isUser
                           ? "rounded-br-sm bg-white whitespace-pre-wrap text-zinc-950"
-                          : "rounded-bl-sm border border-white/10 bg-zinc-900 text-gray-100"
+                          : "rounded-bl-sm border border-white/10 bg-zinc-900 text-zinc-100"
                       }`}
                     >
                       {text ? (
@@ -234,7 +234,7 @@ export default function ChatBot() {
                           <MarkdownMessage text={text} />
                         )
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-gray-400">
+                        <span className="inline-flex items-center gap-1 text-zinc-400">
                           <Loader2 className="h-3 w-3 animate-spin" />
                           pensando...
                         </span>
@@ -249,7 +249,7 @@ export default function ChatBot() {
               messages[messages.length - 1]?.role === "user" && (
                 <div className="flex items-end justify-start gap-2">
                   <AssistantAvatar />
-                  <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-gray-400">
+                  <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-400">
                     <Loader2 className="h-3 w-3 animate-spin" />
                     pensando...
                   </div>
@@ -274,7 +274,7 @@ export default function ChatBot() {
                 key={suggestion}
                 onClick={() => handleSend(suggestion)}
                 disabled={isLoading}
-                className="rounded-full border border-white/15 bg-zinc-900 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-white/40 hover:bg-zinc-800 disabled:opacity-50"
+                className="rounded-full border border-white/15 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-200 transition-colors hover:border-white/40 hover:bg-zinc-800 disabled:opacity-50"
               >
                 {suggestion}
               </button>
@@ -291,7 +291,7 @@ export default function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Pergunte algo sobre o Marcus..."
             disabled={isLoading}
-            className="flex-1 rounded-full border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-white/30 focus:outline-none disabled:opacity-50"
+            className="flex-1 rounded-full border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-white/30 focus:outline-none disabled:opacity-50"
           />
           <button
             type="submit"

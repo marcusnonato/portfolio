@@ -52,11 +52,11 @@ export default function Header() {
       aria-label="Mudar idioma"
       className={`flex items-center gap-1 text-xs font-medium ${className}`}
     >
-      <span className={locale === "pt" ? "text-brand" : "text-gray-400"}>
+      <span className={locale === "pt" ? "text-brand" : "text-zinc-400"}>
         PT
       </span>
-      <span className="text-gray-600">/</span>
-      <span className={locale === "en" ? "text-brand" : "text-gray-400"}>
+      <span className="text-zinc-600">/</span>
+      <span className={locale === "en" ? "text-brand" : "text-zinc-400"}>
         EN
       </span>
     </button>

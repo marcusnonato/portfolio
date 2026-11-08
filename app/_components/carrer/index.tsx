@@ -114,14 +114,14 @@ const Carrer = () => {
                   <h3 className="m-0 text-3xl font-semibold text-white md:text-4xl">
                     {currentExp.title}
                   </h3>
-                  <span className="mt-2 flex items-center gap-2 text-lg text-gray-400">
+                  <span className="mt-2 flex items-center gap-2 text-lg text-zinc-400">
                     <Calendar size={20} />
                     {currentExp.date}
                   </span>
                 </div>
               </div>
 
-              <p className="mb-8 text-lg leading-relaxed text-gray-200 md:text-xl">
+              <p className="mb-8 text-lg leading-relaxed text-zinc-200 md:text-xl">
                 {currentExp.description}
               </p>
 
@@ -151,20 +151,20 @@ const Carrer = () => {
                 onClick={() => handleSelect(index)}
                 className={`relative cursor-pointer overflow-hidden border-l px-6 py-6 text-left transition-all duration-500 ${
                   active === index
-                    ? "border-brand bg-gradient-to-br from-transparent to-gray-600/10"
-                    : "border-gray-400/40 bg-transparent hover:border-gray-300/70"
+                    ? "border-brand bg-gradient-to-br from-transparent to-zinc-600/10"
+                    : "border-zinc-400/40 bg-transparent hover:border-zinc-300/70"
                 }`}
               >
                 <div className="mb-3 flex items-center gap-4">
                   <h4
                     className={`m-0 text-lg font-semibold transition-colors md:text-xl ${
-                      active === index ? "text-white" : "text-gray-300"
+                      active === index ? "text-white" : "text-zinc-300"
                     }`}
                   >
                     {experience.title}
                   </h4>
                 </div>
-                <span className="text-sm font-medium text-gray-400">
+                <span className="text-sm font-medium text-zinc-400">
                   {experience.date}
                 </span>
               </button>

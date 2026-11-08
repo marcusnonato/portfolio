@@ -20,11 +20,11 @@ export default function Error({
         <h2 className="mb-4 text-4xl font-bold text-red-500">
           Algo deu errado!!
         </h2>
-        <p className="mb-6 text-lg text-gray-300">
+        <p className="mb-6 text-lg text-zinc-300">
           Desculpe, ocorreu um erro inesperado. Tente novamente.
         </p>
         <div className="mb-6 rounded-lg bg-zinc-900 p-4">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-zinc-400">
             {error.message || "Erro desconhecido"}
           </p>
         </div>

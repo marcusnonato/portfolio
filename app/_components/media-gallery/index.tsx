@@ -57,7 +57,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
               className="cursor-pointer transition-transform duration-300 hover:scale-95"
               onClick={() => setSelectedImage(img)}
             >
-              <div className="relative h-[180px] w-full rounded-xl border border-gray-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative h-[180px] w-full rounded-xl border border-zinc-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <Image
                   src={img}
                   alt={`Imagem do projeto ${index + 1}`}
@@ -80,7 +80,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
               className="keen-slider__slide cursor-pointer transition-transform duration-300 hover:scale-95"
               onClick={() => setSelectedImage(img)}
             >
-              <div className="relative h-[200px] w-full max-w-[250px] rounded-xl border border-gray-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative h-[200px] w-full max-w-[250px] rounded-xl border border-zinc-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <Image
                   src={img}
                   alt={`Imagem do projeto ${index + 1}`}
@@ -96,14 +96,14 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
         {slider && slider.current && !isDesktop && (
           <>
             <button
-              className="absolute top-1/2 left-[-10px] flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-gray-700 bg-gray-900 p-2 text-white transition-colors duration-200 hover:bg-gray-700"
+              className="absolute top-1/2 left-[-10px] flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 p-2 text-white transition-colors duration-200 hover:bg-zinc-700"
               onClick={() => slider.current?.prev()}
               aria-label="Imagem anterior"
             >
               &#10094;
             </button>
             <button
-              className="absolute top-1/2 right-[-10px] flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-gray-700 bg-gray-900 p-2 text-white transition-colors duration-200 hover:bg-gray-700"
+              className="absolute top-1/2 right-[-10px] flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 p-2 text-white transition-colors duration-200 hover:bg-zinc-700"
               onClick={() => slider.current?.next()}
               aria-label="Próxima imagem"
             >

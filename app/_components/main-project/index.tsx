@@ -35,7 +35,7 @@ export default function MainProject({
     <motion.section
       ref={ref}
       style={{ scale: scrollYProgress, borderRadius: borderRadius }}
-      className={`sticky top-0 min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-950 to-black px-4 py-16 text-white shadow-[0_4px_25px_rgba(0,0,0,0.3)] before:pointer-events-none before:absolute before:-top-px before:left-0 before:z-20 before:h-36 before:w-full before:bg-gradient-to-t before:from-transparent before:to-black before:content-[''] lg:px-36 lg:pt-36 lg:before:z-0`}
+      className={`sticky top-0 min-h-screen w-full overflow-hidden bg-gradient-to-br from-zinc-950 to-black px-4 py-16 text-white shadow-[0_4px_25px_rgba(0,0,0,0.3)] before:pointer-events-none before:absolute before:-top-px before:left-0 before:z-20 before:h-36 before:w-full before:bg-gradient-to-t before:from-transparent before:to-black before:content-[''] lg:px-36 lg:pt-36 lg:before:z-0`}
     >
       <div
         className="absolute inset-0 scale-105 bg-cover bg-top opacity-40 blur-sm"
@@ -66,7 +66,7 @@ export default function MainProject({
               whileInView={{ transform: "translateY(0)", opacity: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true, amount: 0.7 }}
-              className={`mb-6 max-w-2xl ${inverse ? "self-end text-end" : ""} text-xl leading-relaxed text-gray-300`}
+              className={`mb-6 max-w-2xl ${inverse ? "self-end text-end" : ""} text-xl leading-relaxed text-zinc-300`}
             >
               {project.description}
             </motion.p>
@@ -100,7 +100,7 @@ export default function MainProject({
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, amount: 0.7 }}
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-gray-400 opacity-70"
+                className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-zinc-700 px-3 py-2 text-sm font-medium text-zinc-400 opacity-70"
               >
                 <SquareDashedMousePointer size={18} />
                 {t.projects.demoUnavailable}

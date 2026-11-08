@@ -20,12 +20,12 @@ export default function GlobalError({
           <div className="max-w-md text-center">
             <h1 className="mb-4 text-5xl font-bold text-red-500">500</h1>
             <h2 className="mb-4 text-3xl font-bold">Erro Crítico</h2>
-            <p className="mb-6 text-lg text-gray-300">
+            <p className="mb-6 text-lg text-zinc-300">
               Ocorreu um erro crítico na aplicação. Por favor, tente recarregar
               a página.
             </p>
             <div className="mb-6 rounded-lg bg-zinc-900 p-4">
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-zinc-400">
                 {error.message || "Erro desconhecido"}
               </p>
             </div>

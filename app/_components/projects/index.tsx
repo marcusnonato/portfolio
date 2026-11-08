@@ -423,7 +423,7 @@ const Projects = () => {
           <h2 className="mb-3 text-4xl font-bold text-white">
             {t.projects.heading}
           </h2>
-          <p className="text-lg text-gray-400">{t.projects.subtitle}</p>
+          <p className="text-lg text-zinc-400">{t.projects.subtitle}</p>
         </div>
 
         {localizedProjects.map((project) => (

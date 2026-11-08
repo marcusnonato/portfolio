@@ -5,7 +5,7 @@ import {
   motion,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import { useRef } from "react";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
