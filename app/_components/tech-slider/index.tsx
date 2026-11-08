@@ -25,7 +25,7 @@ export const TechSlider = () => {
   const copies = [0, 1, 2];
 
   return (
-    <div className="group relative z-10 w-full overflow-hidden border-t border-line py-6 select-none md:py-8">
+    <div className="group border-line relative z-10 w-full overflow-hidden border-t py-6 select-none md:py-8">
       <p className="sr-only">
         {t.hero.techStack}: {logos.map((logo) => logo.name).join(", ")}
       </p>

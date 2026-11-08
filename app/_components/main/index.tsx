@@ -22,7 +22,7 @@ export default function Main() {
       {/* primeira dobra: hero + marquee colado no rodapé, em 100svh */}
       <section
         id="home"
-        className="relative z-10 flex min-h-svh w-full flex-col bg-bg pb-16 text-white md:pb-0"
+        className="bg-bg relative z-10 flex min-h-svh w-full flex-col pb-16 text-white md:pb-0"
       >
         <LightRays color="rgba(255, 255, 255, 0.089)" />
         <HeroBackdrop />

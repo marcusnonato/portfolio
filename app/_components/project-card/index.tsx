@@ -36,7 +36,7 @@ export default function ProjectCard({
   return (
     <motion.article
       {...revealProps(index)}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface-1 transition-[translate,border-color] duration-300 ease-out focus-within:border-brand/40 hover:-translate-y-1 hover:border-brand/40"
+      className="group border-line bg-surface-1 focus-within:border-brand/40 hover:border-brand/40 relative flex flex-col overflow-hidden rounded-2xl border transition-[translate,border-color] duration-300 ease-out hover:-translate-y-1"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image

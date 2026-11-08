@@ -10,8 +10,8 @@ import { enterProps } from "../ui/reveal";
 export function StatusDot() {
   return (
     <span className="relative flex h-2 w-2" aria-hidden="true">
-      <span className="absolute inset-0 animate-ping rounded-full bg-brand opacity-75 motion-reduce:animate-none" />
-      <span className="relative h-2 w-2 rounded-full bg-brand" />
+      <span className="bg-brand absolute inset-0 animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
+      <span className="bg-brand relative h-2 w-2 rounded-full" />
     </span>
   );
 }
@@ -44,7 +44,7 @@ export function Hero() {
           Marcus
           <br className="hidden lg:block" /> Vinicius
         </p>
-        <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-1 px-3 py-1.5 text-xs font-medium text-zinc-300">
+        <span className="border-line bg-surface-1 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium text-zinc-300">
           <StatusDot />
           {t.hero.available}
         </span>
@@ -74,7 +74,10 @@ export function Hero() {
           {...enterProps(3)}
           className="mt-6 flex flex-wrap items-center gap-4 md:mt-8"
         >
-          <a href="#projects" className={buttonVariants({ variant: "primary" })}>
+          <a
+            href="#projects"
+            className={buttonVariants({ variant: "primary" })}
+          >
             {t.hero.ctaProjects}
             <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
           </a>
@@ -90,7 +93,7 @@ export function Hero() {
 
         <motion.ul
           {...enterProps(4)}
-          className="mt-8 grid grid-cols-3 gap-4 font-label tracking-[0.04em] uppercase sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-6 sm:gap-y-3 md:mt-10"
+          className="font-label mt-8 grid grid-cols-3 gap-4 tracking-[0.04em] uppercase sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-6 sm:gap-y-3 md:mt-10"
         >
           {t.hero.metrics.map((metric, i) => (
             <li

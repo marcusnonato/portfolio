@@ -418,7 +418,7 @@ const Projects = () => {
     <section
       id="projects"
       aria-labelledby="projects-title"
-      className="relative rounded-t-[2.5rem] bg-bg text-white lg:rounded-t-[5rem]"
+      className="bg-bg relative rounded-t-[2.5rem] text-white lg:rounded-t-[5rem]"
     >
       <div className="px-6 pt-24 pb-12 md:px-12 lg:px-36 lg:pt-32 lg:pb-16">
         <SectionHeading
@@ -444,7 +444,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="relative grid gap-6 bg-bg px-6 pt-12 pb-24 md:grid-cols-2 md:px-12 lg:grid-cols-3 lg:px-36 lg:pt-24 lg:pb-32">
+      <div className="bg-bg relative grid gap-6 px-6 pt-12 pb-24 md:grid-cols-2 md:px-12 lg:grid-cols-3 lg:px-36 lg:pt-24 lg:pb-32">
         {others.map((project, index) => (
           <ProjectCard
             key={project.id}

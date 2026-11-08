@@ -53,29 +53,6 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes anima-seta {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(10px);
-    opacity: 0.7;
-  }
-}
-
 @keyframes tech-scroll {
   0% {
     transform: translateX(0);
@@ -96,88 +73,8 @@
   }
 }
 
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-}
-
-@keyframes pulseGlow {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes dotPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgb(var(--brand-rgb) / 0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 7px rgb(var(--brand-rgb) / 0);
-  }
-}
-
-.animate-blink {
-  animation: blink 1.1s steps(1) infinite;
-}
-
-.animate-floaty {
-  animation: floaty 5s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-.animate-dot-pulse {
-  animation: dotPulse 2s infinite;
-}
-
-.animate-fade-up {
-  animation: fade-up 0.5s 0.4s backwards;
-}
-
 .animate-tech-scroll {
   animation: tech-scroll 15s linear infinite;
-}
-
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2000ms;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .responsive-text-6xl {
-    font-size: 3rem !important;
-  }
-
-  .responsive-text-2xl {
-    font-size: 1.25rem !important;
-  }
 }
 
 html.lenis,
@@ -288,6 +185,29 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    /* textos fantasma gigantes nunca geram scroll horizontal (clip não quebra o sticky) */
+    overflow-x: clip;
+  }
+}
+
+/* Foco visível no teclado: anel no acento da marca em todo elemento interativo.
+   Fora de @layer de propósito, para nenhum utilitário conseguir removê-lo. */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* Movimento reduzido: sem animações em loop nem transições longas. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

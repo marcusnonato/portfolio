@@ -99,7 +99,7 @@ function AssistantAvatar() {
           className="object-cover"
         />
       </div>
-      <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full border border-zinc-950 bg-brand" />
+      <span className="bg-brand absolute right-0 bottom-0 h-2 w-2 rounded-full border border-zinc-950" />
     </div>
   );
 }
@@ -184,8 +184,8 @@ export default function ChatBot() {
                 className="object-cover"
               />
             </span>
-            <span className="absolute -top-0.5 -right-0.5 z-10 h-3 w-3 rounded-full border-2 border-zinc-950 bg-brand">
-              <span className="absolute inset-0 animate-ping rounded-full bg-brand opacity-75" />
+            <span className="bg-brand absolute -top-0.5 -right-0.5 z-10 h-3 w-3 rounded-full border-2 border-zinc-950">
+              <span className="bg-brand absolute inset-0 animate-ping rounded-full opacity-75" />
             </span>
           </motion.button>
         </SheetTrigger>
@@ -199,7 +199,7 @@ export default function ChatBot() {
           <SheetTitle className="flex flex-col text-white">
             <span className="text-base font-semibold">Assistente Virtual</span>
             <span className="flex items-center gap-1.5 text-xs font-normal text-zinc-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+              <span className="bg-brand h-1.5 w-1.5 rounded-full" />
               Online — responde sobre o Marcus
             </span>
           </SheetTitle>
@@ -245,16 +245,15 @@ export default function ChatBot() {
               })}
             </AnimatePresence>
 
-            {isLoading &&
-              messages[messages.length - 1]?.role === "user" && (
-                <div className="flex items-end justify-start gap-2">
-                  <AssistantAvatar />
-                  <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-400">
-                    <Loader2 className="h-3 w-3 animate-spin" />
-                    pensando...
-                  </div>
+            {isLoading && messages[messages.length - 1]?.role === "user" && (
+              <div className="flex items-end justify-start gap-2">
+                <AssistantAvatar />
+                <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-400">
+                  <Loader2 className="h-3 w-3 animate-spin" />
+                  pensando...
                 </div>
-              )}
+              </div>
+            )}
 
             {error && (
               <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-2.5 text-sm text-red-200">
@@ -291,7 +290,7 @@ export default function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Pergunte algo sobre o Marcus..."
             disabled={isLoading}
-            className="flex-1 rounded-full border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-white/30 focus:outline-none disabled:opacity-50"
+            className="flex-1 rounded-full border border-white/10 bg-zinc-900 px-4 py-2.5 text-sm text-white placeholder:text-zinc-400 focus:border-white/30 disabled:opacity-50"
           />
           <button
             type="submit"

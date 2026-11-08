@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useLenis } from "lenis/react";
 
 const NAME = "MARCUS VINICIUS";
@@ -9,19 +9,25 @@ const NAME = "MARCUS VINICIUS";
 export function Preloader() {
   const [loading, setLoading] = useState(true);
   const lenis = useLenis();
+  const reduceMotion = useReducedMotion();
 
   // trava o scroll enquanto a intro roda
   useEffect(() => {
+    // movimento reduzido: sem intro, conteúdo direto
+    if (reduceMotion) {
+      setLoading(false);
+      return;
+    }
     document.body.style.overflow = "hidden";
     lenis?.stop();
 
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
-  }, [lenis]);
+  }, [lenis, reduceMotion]);
 
   // libera o scroll quando a intro termina e faz a "subida" de entrada
   useEffect(() => {
-    if (!loading) {
+    if (!loading && !reduceMotion) {
       document.body.style.overflow = "";
       lenis?.start();
 
@@ -37,7 +43,7 @@ export function Preloader() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
-  }, [loading, lenis]);
+  }, [loading, lenis, reduceMotion]);
 
   return (
     <AnimatePresence>
@@ -50,7 +56,7 @@ export function Preloader() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           {/* nome aparecendo letra por letra */}
-          <div className="flex font-display text-2xl font-semibold tracking-[0.35em] text-white md:text-4xl">
+          <div className="font-display flex text-2xl font-semibold tracking-[0.35em] text-white md:text-4xl">
             {NAME.split("").map((char, i) => (
               <motion.span
                 key={i}
@@ -74,7 +80,7 @@ export function Preloader() {
 
           {/* barra de loading verde */}
           <motion.div
-            className="absolute bottom-0 left-0 h-1 bg-brand"
+            className="bg-brand absolute bottom-0 left-0 h-1"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1.9, ease: "easeInOut" }}

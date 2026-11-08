@@ -68,7 +68,7 @@ export default function FeaturedProject({
       ref={ref}
       style={{ scale: reduceMotion ? 1 : scale }}
       aria-labelledby={`project-${project.id}`}
-      className="sticky top-[min(1rem,calc(100svh-var(--card-h,0px)-5rem))] mx-4 mb-6 overflow-hidden rounded-2xl border border-line bg-bg md:mx-12 lg:top-0 lg:mx-0 lg:mb-0 lg:flex lg:h-svh lg:items-center lg:rounded-none lg:border-0"
+      className="border-line bg-bg sticky top-[min(1rem,calc(100svh-var(--card-h,0px)-5rem))] mx-4 mb-6 overflow-hidden rounded-2xl border md:mx-12 lg:top-0 lg:mx-0 lg:mb-0 lg:flex lg:h-svh lg:items-center lg:rounded-none lg:border-0"
     >
       {/* screenshot de fundo (desktop) + overlay escuro consistente para contraste AA */}
       <div aria-hidden="true" className="absolute inset-0 hidden lg:block">
@@ -83,7 +83,7 @@ export default function FeaturedProject({
         />
         <div
           className={cn(
-            "absolute inset-0 from-bg/95 via-bg/85 to-bg/60",
+            "from-bg/95 via-bg/85 to-bg/60 absolute inset-0",
             inverse ? "bg-gradient-to-l" : "bg-gradient-to-r",
           )}
         />
@@ -100,7 +100,7 @@ export default function FeaturedProject({
           blurDataURL={blurFor(project.coverImage)}
           className="object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg to-transparent" />
+        <div className="from-bg absolute inset-0 bg-gradient-to-t to-transparent" />
       </div>
 
       <div
@@ -142,7 +142,7 @@ export default function FeaturedProject({
                   key={item.label}
                   // no mobile a stack já aparece nas tags
                   className={cn(
-                    "border-l-2 border-line pl-4",
+                    "border-line border-l-2 pl-4",
                     i === 1 && "hidden lg:block",
                   )}
                 >

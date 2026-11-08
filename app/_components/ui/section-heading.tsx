@@ -57,7 +57,7 @@ export function SectionHeading({
         aria-hidden="true"
         style={{ x: reduceMotion ? 0 : x }}
         className={cn(
-          "pointer-events-none absolute top-1/2 -z-10 -translate-y-1/2 font-bold leading-none whitespace-nowrap text-white/5 uppercase select-none",
+          "pointer-events-none absolute top-1/2 -z-10 -translate-y-1/2 leading-none font-bold whitespace-nowrap text-white/5 uppercase select-none",
           "text-[clamp(4rem,15vw,10rem)]",
           centered ? "left-1/2 -translate-x-1/2" : "-left-2 md:-left-6",
         )}

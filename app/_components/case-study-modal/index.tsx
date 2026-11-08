@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Tag } from "../ui/tag";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { ExternalLink, X } from "lucide-react";
@@ -189,11 +190,8 @@ export default function CaseStudyModal({
 
             <ul className="mt-4 flex flex-wrap gap-2">
               {active.stack.map((tech) => (
-                <li
-                  key={tech}
-                  className="rounded-md bg-zinc-800 px-2 py-1 text-xs text-zinc-200"
-                >
-                  {tech}
+                <li key={tech}>
+                  <Tag className="px-2.5 text-xs">{tech}</Tag>
                 </li>
               ))}
             </ul>

@@ -10,9 +10,9 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-bg pb-[calc(10rem+env(safe-area-inset-bottom))] text-white md:pb-10">
+    <footer className="bg-bg relative pb-[calc(10rem+env(safe-area-inset-bottom))] text-white md:pb-10">
       <div className="px-6 md:px-12 lg:px-36">
-        <div className="flex flex-col items-center gap-8 border-t border-line pt-10 md:flex-row md:justify-between">
+        <div className="border-line flex flex-col items-center gap-8 border-t pt-10 md:flex-row md:justify-between">
           <Link
             href="#home"
             aria-label="Marcus Vinicius — Home"

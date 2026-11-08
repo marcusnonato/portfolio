@@ -11,7 +11,7 @@ export function Tag({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-xl border border-line bg-surface-1 px-3 py-1 text-sm font-medium text-zinc-300 select-none",
+        "border-line bg-surface-1 inline-flex items-center rounded-xl border px-3 py-1 text-sm font-medium text-zinc-300 select-none",
         className,
       )}
     >

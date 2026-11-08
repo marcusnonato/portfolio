@@ -65,7 +65,7 @@ export function About() {
           <motion.a
             {...revealProps(t.about.paragraphs.length + 1)}
             href="#contact"
-            className="group mt-3 inline-flex items-center gap-2 text-base font-semibold text-white underline decoration-white/30 underline-offset-8 transition-colors hover:decoration-brand"
+            className="group hover:decoration-brand mt-3 inline-flex items-center gap-2 text-base font-semibold text-white underline decoration-white/30 underline-offset-8 transition-colors"
           >
             {t.about.cta}
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

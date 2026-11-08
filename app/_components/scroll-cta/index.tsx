@@ -117,7 +117,7 @@ export function ScrollCta() {
     return (
       <div
         ref={ref}
-        className="flex min-h-svh w-full flex-col items-center justify-center bg-white px-4 py-24 text-bg"
+        className="text-bg flex min-h-svh w-full flex-col items-center justify-center bg-white px-4 py-24"
       >
         {finalFrame}
       </div>
@@ -150,7 +150,7 @@ export function ScrollCta() {
 
         <motion.div
           style={{ clipPath: clip3, y: y3, visibility: ctaVisibility }}
-          className="flex flex-col items-center text-bg [grid-area:1/1]"
+          className="text-bg flex flex-col items-center [grid-area:1/1]"
         >
           {finalFrame}
         </motion.div>

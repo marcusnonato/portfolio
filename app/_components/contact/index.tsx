@@ -52,7 +52,7 @@ export const Contact = () => {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="relative border-t border-line bg-bg px-6 py-24 text-white md:px-12 lg:px-36 lg:py-32"
+      className="border-line bg-bg relative border-t px-6 py-24 text-white md:px-12 lg:px-36 lg:py-32"
     >
       <SectionHeading
         id="contact-title"
@@ -67,7 +67,7 @@ export const Contact = () => {
         {/* bloco principal */}
         <motion.div
           {...revealProps(0)}
-          className="flex flex-col justify-between gap-10 rounded-2xl border border-line bg-surface-1 p-6 md:p-10 lg:col-span-2 lg:p-12"
+          className="border-line bg-surface-1 flex flex-col justify-between gap-10 rounded-2xl border p-6 md:p-10 lg:col-span-2 lg:p-12"
         >
           <div>
             <h3 className="text-3xl leading-tight font-semibold tracking-tight md:text-5xl">
@@ -92,7 +92,10 @@ export const Contact = () => {
               type="button"
               onClick={copyEmail}
               aria-label={`${t.contact.copyEmail}: ${EMAIL}`}
-              className={cn(buttonVariants({ variant: "ghost" }), "normal-case")}
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "normal-case",
+              )}
             >
               {copied ? (
                 <Check size={16} className="text-brand" />
@@ -118,7 +121,7 @@ export const Contact = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-5 rounded-2xl border border-line bg-surface-1 p-6 transition-colors duration-300 hover:border-brand/40 focus-visible:border-brand/40"
+              className="group border-line bg-surface-1 hover:border-brand/40 focus-visible:border-brand/40 flex items-center gap-5 rounded-2xl border p-6 transition-colors duration-300"
             >
               <Image
                 src={social.logo}
@@ -135,7 +138,7 @@ export const Contact = () => {
               </span>
               <ArrowUpRight
                 aria-hidden="true"
-                className="h-5 w-5 text-zinc-400 transition-[translate,color] duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-brand"
+                className="group-hover:text-brand h-5 w-5 text-zinc-400 transition-[translate,color] duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </motion.a>
           ))}

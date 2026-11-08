@@ -85,7 +85,7 @@ export default function Header() {
     <>
       <a
         href="#main"
-        className="fixed top-2 left-2 z-[110] -translate-y-20 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-bg focus:translate-y-0"
+        className="text-bg fixed top-2 left-2 z-[110] -translate-y-20 rounded-xl bg-white px-4 py-2 text-sm font-semibold focus:translate-y-0"
       >
         {t.nav.skip}
       </a>
@@ -100,7 +100,7 @@ export default function Header() {
           className={cn(
             "flex w-full items-center justify-between rounded-2xl border px-4 transition-all duration-500",
             scrolled
-              ? "mx-4 border-zinc-800 bg-bg/80 backdrop-blur-md md:mx-12 lg:mx-auto lg:max-w-4xl"
+              ? "bg-bg/80 mx-4 border-zinc-800 backdrop-blur-md md:mx-12 lg:mx-auto lg:max-w-4xl"
               : "mx-4 border-transparent md:mx-12 lg:mx-32",
           )}
         >
@@ -149,7 +149,7 @@ export default function Header() {
       {/* ===== Bottom tabs (mobile) ===== */}
       <nav
         aria-label={t.nav.label}
-        className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-800 bg-bg/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden"
+        className="bg-bg/95 fixed inset-x-0 bottom-0 z-50 border-t border-zinc-800 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden"
       >
         <ul className="grid grid-cols-5">
           {navItems.map((item) => {
@@ -168,7 +168,7 @@ export default function Header() {
                   <span
                     aria-hidden="true"
                     className={cn(
-                      "absolute top-0 h-0.5 w-8 rounded-full bg-brand transition-opacity",
+                      "bg-brand absolute top-0 h-0.5 w-8 rounded-full transition-opacity",
                       isActive ? "opacity-100" : "opacity-0",
                     )}
                   />
