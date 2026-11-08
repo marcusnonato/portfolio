@@ -1,7 +1,7 @@
 "use client";
 
 import { TechSlider } from "../tech-slider";
-import { SocialMedia } from "../social-media";
+import { Contact } from "../contact";
 import Projects from "../projects";
 import Header from "../header";
 import { About } from "../about";
@@ -39,7 +39,7 @@ export default function Main() {
         <Projects />
       </div>
       <Carrer />
-      <SocialMedia />
+      <Contact />
       <Footer />
 
       <BackToTop />

@@ -79,14 +79,18 @@ export interface Dictionary {
     descriptions: Record<string, string>;
     caseStudies: Record<string, CaseStudyContent>;
   };
-  social: {
+  contact: {
     eyebrow: string;
     ghost: string;
     heading: string;
     subtitle: string;
+    ctaTitle: string;
+    ctaText: string;
+    whatsapp: string;
+    copyEmail: string;
+    copied: string;
     githubDesc: string;
     linkedinDesc: string;
-    whatsappDesc: string;
   };
   scrollCta: {
     text1: string;
@@ -628,14 +632,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       },
     },
-    social: {
+    contact: {
       eyebrow: "04 — Contato",
       ghost: "CONTATO",
-      heading: "Redes Sociais",
-      subtitle: "Encontre-me nas redes sociais e acompanhe meu trabalho",
+      heading: "Contato",
+      subtitle: "Encontre-me nas redes ou fale comigo diretamente.",
+      ctaTitle: "Tem um projeto em mente?",
+      ctaText:
+        "Me conta o que você quer construir — do app mobile à API. Respondo pelo WhatsApp ou por e-mail.",
+      whatsapp: "Chamar no WhatsApp",
+      copyEmail: "Copiar e-mail",
+      copied: "Copiado!",
       githubDesc: "Meus projetos e código",
       linkedinDesc: "Carreira e networking",
-      whatsappDesc: "Converse diretamente comigo!",
     },
     scrollCta: {
       text1: "QUER TRANSFORMAR IDEIAS?",
@@ -1158,14 +1167,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       },
     },
-    social: {
+    contact: {
       eyebrow: "04 — Contact",
       ghost: "CONTACT",
-      heading: "Social",
-      subtitle: "Find me on social media and follow my work",
+      heading: "Contact",
+      subtitle: "Find me online or reach out directly.",
+      ctaTitle: "Got a project in mind?",
+      ctaText:
+        "Tell me what you want to build — from a mobile app to an API. I reply on WhatsApp or by email.",
+      whatsapp: "Message on WhatsApp",
+      copyEmail: "Copy email",
+      copied: "Copied!",
       githubDesc: "My projects and code",
       linkedinDesc: "Career and networking",
-      whatsappDesc: "Chat with me directly!",
     },
     scrollCta: {
       text1: "GOT AN IDEA?",
