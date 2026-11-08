@@ -28,7 +28,11 @@ export interface Dictionary {
     home: string;
     about: string;
     projects: string;
-    social: string;
+    career: string;
+    contact: string;
+    label: string;
+    language: string;
+    skip: string;
   };
   hero: {
     titleA: string;
@@ -99,6 +103,7 @@ export interface Dictionary {
     cta: string;
   };
   footer: {
+    /** o ano (dinâmico) é prefixado no componente */
     rights: string;
   };
 }
@@ -109,7 +114,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       home: "Home",
       about: "Sobre",
       projects: "Projetos",
-      social: "Redes Sociais",
+      career: "Carreira",
+      contact: "Contato",
+      label: "Navegação principal",
+      language: "Mudar idioma para inglês",
+      skip: "Pular para o conteúdo",
     },
     hero: {
       titleA: "Desenvolvedor",
@@ -653,7 +662,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "Ver projetos",
     },
     footer: {
-      rights: "© 2025 Marcus Nonato. Desenvolvedor Full Stack & Mobile",
+      rights: "Marcus Nonato. Desenvolvedor Full Stack & Mobile",
     },
   },
 
@@ -662,7 +671,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       home: "Home",
       about: "About",
       projects: "Projects",
-      social: "Social",
+      career: "Career",
+      contact: "Contact",
+      label: "Main navigation",
+      language: "Switch language to Portuguese",
+      skip: "Skip to content",
     },
     hero: {
       titleA: "Full Stack",
@@ -1188,7 +1201,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       cta: "View projects",
     },
     footer: {
-      rights: "© 2025 Marcus Nonato. Full Stack & Mobile Developer",
+      rights: "Marcus Nonato. Full Stack & Mobile Developer",
     },
   },
 };

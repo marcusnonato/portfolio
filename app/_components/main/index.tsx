@@ -15,7 +15,7 @@ import { BackToTop } from "../back-to-top";
 
 export default function Main() {
   return (
-    <main className="relative min-h-screen">
+    <main id="main" className="relative min-h-screen">
       <Preloader />
       <Header />
 
