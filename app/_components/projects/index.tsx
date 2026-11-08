@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import CaseStudyModal from "../case-study-modal";
-import MainProject from "../main-project";
-import MobileProjectCard from "../mobile-project-card";
+import FeaturedProject from "../featured-project";
+import ProjectCard from "../project-card";
+import { SectionHeading } from "../ui/section-heading";
 import { useLanguage } from "@/app/_i18n/LanguageProvider";
 import { MainProjectProps } from "@/app/_types";
 
@@ -388,15 +389,26 @@ const mainProjects: MainProjectProps[] = [
   },
 ];
 
+// produção real e maior impacto: ganham o stacking em tela cheia
+const FEATURED_IDS = ["1", "7"];
+
 const Projects = () => {
   const { t } = useLanguage();
   const [caseStudyId, setCaseStudyId] = useState<string | null>(null);
 
-  // usa a descrição traduzida (por id), mantendo o restante dos dados
   const localizedProjects = mainProjects.map((project) => ({
     ...project,
     description: t.projects.descriptions[project.id] ?? project.description,
   }));
+
+  // destaques primeiro, depois a grade, numerados nessa ordem
+  const featured = FEATURED_IDS.map(
+    (id) => localizedProjects.find((project) => project.id === id)!,
+  );
+  const others = localizedProjects.filter(
+    (project) => !FEATURED_IDS.includes(project.id),
+  );
+  const total = localizedProjects.length;
 
   const caseStudyProject = localizedProjects.find(
     (project) => project.id === caseStudyId,
@@ -405,31 +417,41 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="top-0 flex h-full min-h-screen flex-col text-white"
+      aria-labelledby="projects-title"
+      className="relative rounded-t-[2.5rem] bg-bg text-white lg:rounded-t-[5rem]"
     >
-      <div className="hidden w-full flex-col justify-center lg:flex">
-        {localizedProjects.map((project, index) => (
-          <MainProject
-            project={project}
+      <div className="px-6 pt-24 pb-12 md:px-12 lg:px-36 lg:pt-32 lg:pb-16">
+        <SectionHeading
+          id="projects-title"
+          eyebrow={t.projects.eyebrow}
+          ghost={t.projects.ghost}
+          title={t.projects.heading}
+          subtitle={t.projects.subtitle}
+        />
+      </div>
+
+      {/* destaques empilhados (sticky) — uma única lista, adaptada por CSS */}
+      <div>
+        {featured.map((project, index) => (
+          <FeaturedProject
             key={project.id}
+            project={project}
+            position={index + 1}
+            total={total}
             inverse={index % 2 !== 0}
             onOpenCaseStudy={() => setCaseStudyId(project.id)}
           />
         ))}
       </div>
 
-      <div className="flex w-full flex-col px-4 py-8 lg:hidden">
-        <div className="mb-8">
-          <h2 className="mb-3 text-4xl font-bold text-white">
-            {t.projects.heading}
-          </h2>
-          <p className="text-lg text-zinc-400">{t.projects.subtitle}</p>
-        </div>
-
-        {localizedProjects.map((project) => (
-          <MobileProjectCard
-            project={project}
+      <div className="relative grid gap-6 bg-bg px-6 pt-12 pb-24 md:grid-cols-2 md:px-12 lg:grid-cols-3 lg:px-36 lg:pt-24 lg:pb-32">
+        {others.map((project, index) => (
+          <ProjectCard
             key={project.id}
+            project={project}
+            position={featured.length + index + 1}
+            total={total}
+            index={index % 3}
             onOpenCaseStudy={() => setCaseStudyId(project.id)}
           />
         ))}

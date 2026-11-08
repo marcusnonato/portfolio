@@ -19,6 +19,8 @@ interface SectionHeadingProps {
   subtitle?: string;
   align?: "left" | "center";
   className?: string;
+  /** id do h2, para aria-labelledby da seção */
+  id?: string;
 }
 
 /** Padrão único de título de seção: eyebrow + fantasma + h2 (+ subtítulo). */
@@ -29,6 +31,7 @@ export function SectionHeading({
   subtitle,
   align = "left",
   className,
+  id,
 }: SectionHeadingProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
@@ -70,6 +73,7 @@ export function SectionHeading({
       </motion.p>
       <motion.h2
         {...revealProps(1)}
+        id={id}
         className="mt-3 text-4xl leading-[1.1] font-semibold tracking-tight text-white md:text-6xl"
       >
         {title}

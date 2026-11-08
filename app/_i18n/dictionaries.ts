@@ -69,6 +69,8 @@ export interface Dictionary {
     privateRepo: string;
     overview: string;
     keyFeatures: string;
+    openGallery: string;
+    highlights: Record<string, { label: string; text: string }[]>;
     descriptions: Record<string, string>;
     caseStudies: Record<string, CaseStudyContent>;
   };
@@ -188,6 +190,37 @@ export const dictionaries: Record<Locale, Dictionary> = {
       privateRepo: "Repositório privado",
       overview: "Visão geral",
       keyFeatures: "Principais funcionalidades",
+      openGallery: "Ampliar imagem",
+      highlights: {
+        "1": [
+          {
+            label: "O que fiz",
+            text: "Full stack com mais de 1.400 commits: APIs de audições, playlists, assinaturas e BI no backend; painel admin e checkout com Pix no front.",
+          },
+          {
+            label: "Stack",
+            text: "Kotlin, Spring Boot, PostgreSQL, Next.js e React Query.",
+          },
+          {
+            label: "Resultado",
+            text: "Marketplace em produção conectando compositores, artistas, editoras e gravadoras, com times de web, backend, Android e iOS.",
+          },
+        ],
+        "7": [
+          {
+            label: "O que fiz",
+            text: "SaaS multi-loja do zero: subdomínio por loja, cardápio digital, checkout com Pix e entrega com CEP automático.",
+          },
+          {
+            label: "Stack",
+            text: "Next.js 16, React 19, Prisma, PostgreSQL, Better Auth e Vercel Blob.",
+          },
+          {
+            label: "Resultado",
+            text: "Painel com PDV, cozinha em tempo real, estoque e fechamento de caixa, em dois planos e com console de Super Admin.",
+          },
+        ],
+      },
       descriptions: {
         "8": "TCC usando a Uninorte como exemplo de instituição: um sistema que une a cantina à rotina acadêmica. O aluno pede e paga pelo app, a cantina recebe o pedido em tempo real e o aluno acompanha o preparo até retirar com um código. Inclui painéis web para cantina, professores e coordenação, além de previsão de demanda. Construído com NestJS, PostgreSQL, Socket.IO, Expo, React Native e Next.js.",
         "1": "Marketplace musical que conecta compositores, artistas, editoras e gravadoras para licenciar músicas inéditas. Como full stack, com mais de 1.400 commits, construí no backend (Kotlin e Spring Boot) as APIs de guias, audições, playlists colaborativas, editoras, assinaturas e do BI gerencial, e no front (Next.js e React Query) o painel administrativo, o Gerencial de Gravadoras, o checkout de licenças e planos com Pix e as landing pages de captação.",
@@ -687,6 +720,37 @@ export const dictionaries: Record<Locale, Dictionary> = {
       privateRepo: "Private repository",
       overview: "Overview",
       keyFeatures: "Key features",
+      openGallery: "Enlarge image",
+      highlights: {
+        "1": [
+          {
+            label: "What I did",
+            text: "Full stack with over 1,400 commits: backend APIs for auditions, playlists, subscriptions and BI; admin dashboard and Pix checkout on the front end.",
+          },
+          {
+            label: "Stack",
+            text: "Kotlin, Spring Boot, PostgreSQL, Next.js and React Query.",
+          },
+          {
+            label: "Outcome",
+            text: "A marketplace in production connecting songwriters, artists, publishers and labels, with web, backend, Android and iOS teams.",
+          },
+        ],
+        "7": [
+          {
+            label: "What I did",
+            text: "A multi-tenant SaaS built from scratch: a subdomain per store, digital menu, Pix checkout and delivery with ZIP code autofill.",
+          },
+          {
+            label: "Stack",
+            text: "Next.js 16, React 19, Prisma, PostgreSQL, Better Auth and Vercel Blob.",
+          },
+          {
+            label: "Outcome",
+            text: "A dashboard with POS, real-time kitchen, stock and cash closing, across two plans and with a Super Admin console.",
+          },
+        ],
+      },
       descriptions: {
         "8": "A capstone project using Uninorte as an example institution: a system that connects the campus cafeteria to academic life. Students order and pay in the app, the cafeteria receives the order in real time, and students follow it until they pick it up with a code. It includes web panels for the cafeteria, professors and coordinators, plus demand forecasting. Built with NestJS, PostgreSQL, Socket.IO, Expo, React Native and Next.js.",
         "1": "A music marketplace that connects songwriters, artists, publishers and record labels to license unreleased songs. As a full stack developer with over 1,400 commits, I built the backend APIs (Kotlin and Spring Boot) for demos, auditions, collaborative playlists, publishers, subscriptions and the management BI, and on the frontend (Next.js and React Query) the admin dashboard, the record label portal, the Pix checkout for licenses and plans, and the lead generation landing pages.",

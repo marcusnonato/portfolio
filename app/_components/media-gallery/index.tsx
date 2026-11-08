@@ -52,21 +52,23 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
       <div className="relative w-full py-2">
         <div className="hidden lg:grid lg:grid-cols-2 lg:gap-4">
           {images.map((img, index) => (
-            <div
+            <button
+              type="button"
               key={index}
-              className="cursor-pointer transition-transform duration-300 hover:scale-95"
+              aria-label={`Ampliar imagem ${index + 1}`}
+              className="block cursor-pointer rounded-xl transition-transform duration-300 hover:scale-95"
               onClick={() => setSelectedImage(img)}
             >
-              <div className="relative h-[180px] w-full rounded-xl border border-zinc-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative h-[180px] w-full rounded-xl border border-white/15 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <Image
                   src={img}
                   alt={`Imagem do projeto ${index + 1}`}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(min-width: 1024px) 20vw, 50vw"
                   className="rounded-lg object-cover"
                 />
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -80,7 +82,7 @@ const MediaGallery = ({ images }: MediaGalleryProps) => {
               className="keen-slider__slide cursor-pointer transition-transform duration-300 hover:scale-95"
               onClick={() => setSelectedImage(img)}
             >
-              <div className="relative h-[200px] w-full max-w-[250px] rounded-xl border border-zinc-400 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative h-[200px] w-full max-w-[250px] rounded-xl border border-white/15 p-2 shadow-[0_8px_18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <Image
                   src={img}
                   alt={`Imagem do projeto ${index + 1}`}
