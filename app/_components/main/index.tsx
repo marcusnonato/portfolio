@@ -8,7 +8,7 @@ import { About } from "../about";
 import Carrer from "../carrer";
 import { ScrollCta } from "../scroll-cta";
 import { Footer } from "../footer";
-import { Hero } from "../hero";
+import { Hero, HeroBackdrop } from "../hero";
 import { Preloader } from "../preloader";
 import { LightRays } from "../ui/light-rays";
 import { BackToTop } from "../back-to-top";
@@ -19,18 +19,20 @@ export default function Main() {
       <Preloader />
       <Header />
 
+      {/* primeira dobra: hero + marquee colado no rodapé, em 100svh */}
       <section
         id="home"
-        className="relative z-10 mb-0 flex min-h-[100vh] w-full flex-col items-center justify-center bg-zinc-950 px-6 text-white md:px-12 lg:px-36"
+        className="relative z-10 flex min-h-svh w-full flex-col bg-bg pb-16 text-white md:pb-0"
       >
         <LightRays color="rgba(255, 255, 255, 0.089)" />
-        <Hero />
+        <HeroBackdrop />
+        <div className="flex flex-1 items-center px-6 pt-24 pb-8 md:px-12 md:pb-12 lg:px-36">
+          <Hero />
+        </div>
+        <TechSlider />
       </section>
 
-      <TechSlider />
-      <div className="mt-6 md:mt-0">
-        <About />
-      </div>
+      <About />
       <ScrollCta />
 
       <div className="relative z-20 -mt-[500px] md:-mt-64">

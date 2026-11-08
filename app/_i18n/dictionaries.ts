@@ -34,6 +34,9 @@ export interface Dictionary {
     ctaProjects: string;
     ctaCv: string;
     greeting: string;
+    available: string;
+    metrics: { value: string; label: string }[];
+    techStack: string;
   };
   about: {
     eyebrow: string;
@@ -101,10 +104,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleB: "Full Stack",
       titleAccent: "& Mobile",
       tagline:
-        "Construo interfaces rápidas e back-ends que escalam — do React Native ao Spring Boot. 4 anos transformando ideia em produto.",
+        "4 anos construindo produtos web e mobile de ponta a ponta — de APIs em Kotlin/Spring Boot a apps em React Native.",
       ctaProjects: "Ver projetos",
       ctaCv: "Baixar CV",
       greeting: "Olá, eu sou",
+      available: "Disponível para projetos",
+      metrics: [
+        { value: "4", label: "anos de experiência" },
+        { value: "+1.400", label: "commits em produção" },
+        { value: "8", label: "produtos entregues" },
+      ],
+      techStack: "Tecnologias que uso",
     },
     about: {
       eyebrow: "01 — Sobre",
@@ -592,10 +602,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       titleB: "& Mobile",
       titleAccent: "Developer",
       tagline:
-        "I build fast interfaces and back-ends that scale — from React Native to Spring Boot. 4 years turning ideas into products.",
+        "4 years building web and mobile products end to end — from Kotlin/Spring Boot APIs to React Native apps.",
       ctaProjects: "View projects",
       ctaCv: "Download CV",
       greeting: "Hey, I'm",
+      available: "Available for projects",
+      metrics: [
+        { value: "4", label: "years of experience" },
+        { value: "+1,400", label: "production commits" },
+        { value: "8", label: "products shipped" },
+      ],
+      techStack: "Technologies I use",
     },
     about: {
       eyebrow: "01 — About",

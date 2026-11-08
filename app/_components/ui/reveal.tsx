@@ -13,6 +13,13 @@ export const revealProps = (index = 0) => ({
   transition: { ...ENTRY_TRANSITION, delay: index * STAGGER },
 });
 
+/** Mesma entrada, disparada no mount (conteúdo acima da dobra). */
+export const enterProps = (index = 0) => ({
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  transition: { ...ENTRY_TRANSITION, delay: index * STAGGER },
+});
+
 interface RevealProps extends HTMLMotionProps<"div"> {
   /** posição no grupo, usada para o stagger */
   index?: number;

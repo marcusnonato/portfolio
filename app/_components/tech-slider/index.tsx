@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { useLanguage } from "@/app/_i18n/LanguageProvider";
 
 const logos = [
   { src: "/react-logo.svg", name: "React" },
@@ -18,32 +20,36 @@ const logos = [
 ];
 
 export const TechSlider = () => {
-  const repeatedLogos = [...logos, ...logos, ...logos];
+  const { t } = useLanguage();
+  // 3 cópias para o loop contínuo; só a primeira é lida por leitores de tela
+  const copies = [0, 1, 2];
 
   return (
-    <div className="relative bottom-0 z-0 w-full overflow-hidden border-t-2 py-10 select-none">
-      <div className="animate-tech-scroll flex gap-8">
-        {repeatedLogos.map((logo, index) => (
-          <Tooltip key={index}>
-            <TooltipTrigger>
-              <div
-                key={`${logo.src}-${index}`}
-                className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl p-3 opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100"
-              >
-                <Image
-                  src={logo.src}
-                  alt={`Logo ${logo.name}`}
-                  width={80}
-                  height={80}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p className="font-semibold">{logo.name}</p>
-            </TooltipContent>
-          </Tooltip>
-        ))}
+    <div className="group relative z-10 w-full overflow-hidden border-t border-line py-6 select-none md:py-8">
+      <p className="sr-only">
+        {t.hero.techStack}: {logos.map((logo) => logo.name).join(", ")}
+      </p>
+      <div
+        aria-hidden="true"
+        className="animate-tech-scroll flex w-max gap-8 group-hover:[animation-play-state:paused] motion-reduce:animate-none"
+      >
+        {copies.map((copy) =>
+          logos.map((logo) => (
+            <div
+              key={`${copy}-${logo.src}`}
+              title={logo.name}
+              className="flex h-14 w-14 flex-shrink-0 items-center justify-center p-3 opacity-60 transition-opacity duration-300 hover:opacity-100"
+            >
+              <Image
+                src={logo.src}
+                alt=""
+                width={56}
+                height={56}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          )),
+        )}
       </div>
     </div>
   );
