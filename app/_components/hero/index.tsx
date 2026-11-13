@@ -69,7 +69,7 @@ export function Hero() {
           </a>
           <a
             href="/MARCUS_NONATO_CURRICULO.pdf"
-            download
+            download="Marcus-Nonato-CV.pdf"
             className={buttonVariants({ variant: "ghost" })}
           >
             <Download className="h-4 w-4" />
